@@ -1932,3 +1932,160 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* ===============================================
+   Tooltip Styles
+   =============================================== */
+
+.tooltip-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    cursor: help;
+    position: relative;
+    vertical-align: middle;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+}
+
+.info-icon {
+    color: #0056B3;
+    transition: color 0.2s ease;
+}
+
+.tooltip-trigger:hover .info-icon,
+.tooltip-trigger:focus .info-icon {
+    color: #003d82;
+}
+
+.tooltip-content {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background: #ffffff;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    width: 360px;
+    max-width: 90vw;
+    left: 0;
+    top: calc(100% + 8px);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.tooltip-content.show {
+    display: block;
+    animation: tooltipFadeIn 0.2s ease;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tooltip-header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #0056B3;
+}
+
+.tooltip-section {
+    margin-bottom: 12px;
+}
+
+.tooltip-section:last-child {
+    margin-bottom: 0;
+}
+
+.tooltip-section strong {
+    display: block;
+    color: #0056B3;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.tooltip-section ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.tooltip-section li {
+    margin-bottom: 6px;
+    color: #4B5563;
+}
+
+.tooltip-section li:last-child {
+    margin-bottom: 0;
+}
+
+.tooltip-section li strong {
+    display: inline;
+    color: #1F2937;
+    font-weight: 600;
+}
+
+/* Tooltip positioning for mobile */
+@media (max-width: 768px) {
+    .tooltip-content {
+        width: calc(100vw - 32px);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .tooltip-content.show {
+        animation: tooltipFadeInMobile 0.2s ease;
+    }
+    
+    @keyframes tooltipFadeInMobile {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+}
+
+/* Close button for tooltips on mobile */
+.tooltip-close {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .tooltip-close {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: none;
+        border: none;
+        font-size: 1.25rem;
+        color: #6B7280;
+        cursor: pointer;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        line-height: 1;
+    }
+    
+    .tooltip-close:hover {
+        color: #1F2937;
+    }
+}

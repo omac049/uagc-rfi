@@ -1545,9 +1545,116 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+/**
+ * Initialize tooltip functionality
+ */
+function initTooltips() {
+    const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
+    
+    tooltipTriggers.forEach(trigger => {
+        const tooltipId = trigger.getAttribute('data-tooltip');
+        const tooltipContent = document.getElementById(`tooltip-${tooltipId}`);
+        
+        if (!tooltipContent) return;
+        
+        // Click handler for desktop and mobile
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isExpanded = tooltipContent.classList.contains('show');
+            
+            // Close all other tooltips
+            document.querySelectorAll('.tooltip-content.show').forEach(t => {
+                if (t !== tooltipContent) {
+                    t.classList.remove('show');
+                    t.setAttribute('aria-hidden', 'true');
+                }
+            });
+            
+            // Reset all other triggers
+            document.querySelectorAll('.tooltip-trigger').forEach(t => {
+                if (t !== trigger) {
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Toggle this tooltip
+            tooltipContent.classList.toggle('show');
+            
+            // Update ARIA attributes
+            const newExpandedState = !isExpanded;
+            trigger.setAttribute('aria-expanded', newExpandedState.toString());
+            tooltipContent.setAttribute('aria-hidden', (!newExpandedState).toString());
+            
+            // Track analytics
+            if (newExpandedState) {
+                trackEvent('tooltip_opened', { tooltip: tooltipId });
+            }
+        });
+        
+        // Hover handlers for desktop only
+        if (window.matchMedia('(min-width: 769px)').matches) {
+            trigger.addEventListener('mouseenter', () => {
+                tooltipContent.classList.add('show');
+                trigger.setAttribute('aria-expanded', 'true');
+                tooltipContent.setAttribute('aria-hidden', 'false');
+                trackEvent('tooltip_opened', { tooltip: tooltipId });
+            });
+            
+            trigger.addEventListener('mouseleave', () => {
+                // Delay closing to allow user to move to tooltip
+                setTimeout(() => {
+                    if (!tooltipContent.matches(':hover')) {
+                        tooltipContent.classList.remove('show');
+                        trigger.setAttribute('aria-expanded', 'false');
+                        tooltipContent.setAttribute('aria-hidden', 'true');
+                    }
+                }, 100);
+            });
+            
+            tooltipContent.addEventListener('mouseleave', () => {
+                tooltipContent.classList.remove('show');
+                trigger.setAttribute('aria-expanded', 'false');
+                tooltipContent.setAttribute('aria-hidden', 'true');
+            });
+        }
+    });
+    
+    // Close tooltips when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.tooltip-trigger') && !e.target.closest('.tooltip-content')) {
+            document.querySelectorAll('.tooltip-content.show').forEach(t => {
+                t.classList.remove('show');
+                t.setAttribute('aria-hidden', 'true');
+            });
+            document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+                trigger.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+    
+    // Close tooltips on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.tooltip-content.show').forEach(t => {
+                t.classList.remove('show');
+                t.setAttribute('aria-hidden', 'true');
+            });
+            document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+                trigger.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+}
+
 // Initialize form when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => {
+        init();
+        initTooltips();
+    });
 } else {
     init();
+    initTooltips();
 }

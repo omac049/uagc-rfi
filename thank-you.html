@@ -204,6 +204,16 @@
             color: var(--arizona-red);
         }
         
+        /* Program Highlight Section Hover Effects */
+        .program-highlight-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .program-highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(12, 35, 75, 0.15) !important;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .thank-you-title {
@@ -221,6 +231,22 @@
             
             .step-card {
                 padding: var(--spacing-xl);
+            }
+            
+            .program-highlight-section {
+                padding: var(--spacing-2xl) 0 !important;
+            }
+            
+            .program-highlight-card {
+                padding: var(--spacing-xl) !important;
+            }
+            
+            .program-highlight-card h2 {
+                font-size: 1.5rem !important;
+            }
+            
+            .program-highlight-card p {
+                font-size: 1rem !important;
             }
             
             .cta-buttons {
@@ -303,10 +329,29 @@
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                 </div>
-                <h1 class="thank-you-title">Welcome, <span id="userName">Student</span>!</h1>
-                <p class="thank-you-subtitle">You're one step closer to earning your degree</p>
+                <h1 class="thank-you-title">Welcome to Your Future, <span id="userName">Student</span>!</h1>
+                <p class="thank-you-subtitle" id="personalizedSubtitle">You're one step closer to earning your degree</p>
                 <div class="program-badge" id="programBadge">Your Selected Program</div>
-                <p class="hero-subtext">Ready to start your application for <strong id="programNameInline"></strong>?</p>
+                <p class="hero-subtext">We're excited to help you pursue <strong id="programNameInline"></strong> and transform your career goals into reality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Highlight Section -->
+    <section class="program-highlight-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: var(--spacing-3xl) 0;">
+        <div class="container">
+            <div class="program-highlight-card" style="background: white; border-radius: 1rem; padding: var(--spacing-2xl); box-shadow: 0 4px 12px rgba(12, 35, 75, 0.1); max-width: 800px; margin: 0 auto; text-align: center;">
+                <div style="display: inline-block; background: linear-gradient(135deg, var(--arizona-blue) 0%, #1a3d6b 100%); color: white; padding: var(--spacing-sm) var(--spacing-lg); border-radius: 50px; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--spacing-lg);" id="educationLevelBadge">
+                    Program
+                </div>
+                <h2 style="font-size: 2rem; font-weight: 700; color: var(--arizona-blue); margin-bottom: var(--spacing-md);" id="programNameLarge">Your Selected Program</h2>
+                <p style="font-size: 1.125rem; color: var(--color-text); line-height: 1.6; margin-bottom: var(--spacing-xl);" id="programDescription">Learn more about this program and discover how it can help you achieve your career goals.</p>
+                <a href="#" class="btn-cta btn-cta-primary" id="btnExploreProgram" style="display: inline-flex; padding: 1rem 2.5rem; font-size: 1.0625rem; border-radius: 50px; font-weight: 700; text-decoration: none; align-items: center; gap: var(--spacing-sm); transition: var(--transition); text-transform: uppercase; letter-spacing: 0.5px; background: var(--arizona-red); color: white; border: 2px solid var(--arizona-red);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    Explore Program Details
+                </a>
             </div>
         </div>
     </section>
@@ -314,7 +359,7 @@
     <!-- What Happens Next Section -->
     <section class="next-steps-section">
         <div class="container">
-            <h2 class="section-title">Your Journey to a Degree Starts Now</h2>
+            <h2 class="section-title">Your Journey Starts Now</h2>
             <p class="section-subtitle">Here's what to expect next on your path to <span id="programNameInText"></span></p>
             <div class="steps-grid">
                                 <div class="step-card">
@@ -363,8 +408,8 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="section-title">Don't Wait - Apply Today!</h2>
-            <p class="section-subtitle">You've expressed interest in <strong id="programNameCTA"></strong>. Take the next step and start your application now.</p>
+            <h2 class="section-title" id="ctaTitle">Ready to Take the Next Step?</h2>
+            <p class="section-subtitle" id="ctaSubtitle">You've expressed interest in <strong id="programNameCTA"></strong>. Let's turn that interest into action!</p>
             <div class="cta-buttons">
                 <a href="https://www.uagc.edu/apply" class="btn-cta btn-cta-primary" id="btnStartApplication">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -375,14 +420,14 @@
                     </svg>
                     Start Your Application Now
                 </a>
-                <a href="#" class="btn-cta btn-cta-secondary" id="btnLearnMore">
+                <a href="tel:+18667111700" class="btn-cta btn-cta-secondary" id="btnCallNow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
-                    Explore Program Details
+                    Call Now: (866) 711-1700
                 </a>
             </div>
-            <p class="cta-contact">Questions? Call us at <strong><a href="tel:+18667111700">+1 (866) 711-1700</a></strong></p>
+            <p class="cta-contact">Questions? Your dedicated admissions counselor is ready to help. <br><strong>Email: <a href="mailto:admissions@uagc.edu">admissions@uagc.edu</a></strong></p>
         </div>
     </section>
 
@@ -437,65 +482,211 @@
         const programName = urlParams.get('programName') || 'Your Program';
         const programId = urlParams.get('programId') || '';
         const email = urlParams.get('email') || 'your email';
+        const educationLevel = urlParams.get('educationLevel') || 'undergraduate';
 
-        // Update all personalized content with program name
-        document.getElementById('userName').textContent = firstName;
-        
-        // Update all program name references
-        const programElements = [
-            'programBadge',
-            'programNameInline',
-            'programNameInText',
-            'programNameCTA'
-        ];
-        
-        programElements.forEach(elementId => {
-            const element = document.getElementById(elementId);
-            if (element) {
-                element.textContent = programName;
+        /**
+         * Generate program URL slug from program name
+         */
+        function generateProgramSlug(name) {
+            return name
+                .toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w\-]/g, '')
+                .replace(/\-+/g, '-')
+                .replace(/^(aa|ba|bs|ma|ms|m)-in-/, '')
+                .replace(/^(aa|ba|bs|ma|ms|m)-of-/, '');
+        }
+
+        /**
+         * Get program-specific description
+         */
+        function getProgramDescription(level) {
+            const descriptions = {
+                undergraduate: "This undergraduate program is designed to provide you with the foundational knowledge and practical skills needed to excel in your chosen field.",
+                graduate: "This advanced graduate program will enhance your expertise and open doors to leadership opportunities in your professional career."
+            };
+            return descriptions[level] || descriptions.undergraduate;
+        }
+
+        /**
+         * Get education level display name
+         */
+        function getEducationLevelDisplay(level) {
+            const displays = {
+                undergraduate: "Undergraduate Program",
+                graduate: "Graduate Program"
+            };
+            return displays[level] || "Program";
+        }
+
+        /**
+         * Get personalized subtitle based on education level
+         */
+        function getPersonalizedSubtitle(level) {
+            const subtitles = {
+                undergraduate: "You're taking the first step towards building a strong foundation for your career.",
+                graduate: "You're advancing your career with an advanced degree designed for professionals like you."
+            };
+            return subtitles[level] || "You're one step closer to earning your degree.";
+        }
+
+        /**
+         * Get personalized CTA based on education level
+         */
+        function getPersonalizedCTA(level) {
+            const ctas = {
+                undergraduate: {
+                    title: "Ready to Start Your Educational Journey?",
+                    subtitle: `You've expressed interest in ${programName}. Let's transform your future together!`
+                },
+                graduate: {
+                    title: "Ready to Advance Your Career?",
+                    subtitle: `You've expressed interest in ${programName}. Take the next step in your professional development!`
+                }
+            };
+            return ctas[level] || ctas.undergraduate;
+        }
+
+        // Initialize personalization
+        function initializePersonalization() {
+            // Update user name
+            document.getElementById('userName').textContent = firstName;
+            
+            // Update personalized subtitle
+            const personalizedSubtitle = document.getElementById('personalizedSubtitle');
+            if (personalizedSubtitle) {
+                personalizedSubtitle.textContent = getPersonalizedSubtitle(educationLevel);
             }
-        });
-        
-        // Update email reference
-        if (email) {
+
+            // Update all program name references
+            const programElements = [
+                'programBadge',
+                'programNameInline',
+                'programNameInText',
+                'programNameCTA',
+                'programNameLarge'
+            ];
+            
+            programElements.forEach(elementId => {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.textContent = programName;
+                }
+            });
+
+            // Update education level badge
+            const educationLevelBadge = document.getElementById('educationLevelBadge');
+            if (educationLevelBadge) {
+                educationLevelBadge.textContent = getEducationLevelDisplay(educationLevel);
+            }
+
+            // Update program description
+            const programDescription = document.getElementById('programDescription');
+            if (programDescription) {
+                programDescription.textContent = getProgramDescription(educationLevel);
+            }
+            
+            // Update email reference
             const emailElement = document.getElementById('userEmail');
-            if (emailElement) {
+            if (emailElement && email) {
                 emailElement.textContent = email;
             }
-        }
 
-        // Update Learn More button with program link
-        if (programId) {
-            const learnMoreBtn = document.getElementById('btnLearnMore');
-            if (learnMoreBtn) {
-                // Try to construct a program URL based on programId
-                learnMoreBtn.href = `https://www.uagc.edu/online-degrees/${programId}`;
-            }
-        }
+            // Generate program URL
+            const programSlug = generateProgramSlug(programName);
+            const programUrl = `https://www.uagc.edu/online-degrees/${programSlug}`;
 
-        // Track page view and conversion
-        if (typeof gtag === 'function') {
-            gtag('event', 'page_view', {
-                page_title: 'Thank You Page',
-                page_location: window.location.href,
-                program: programName
+            // Update all program link buttons
+            const exploreButtons = [
+                document.getElementById('btnExploreProgram'),
+                document.getElementById('btnLearnMore')
+            ];
+
+            exploreButtons.forEach(btn => {
+                if (btn) {
+                    btn.href = programUrl;
+                }
             });
+
+            // Update CTA section with personalized messaging
+            const ctaData = getPersonalizedCTA(educationLevel);
+            const ctaTitle = document.getElementById('ctaTitle');
+            const ctaSubtitle = document.getElementById('ctaSubtitle');
             
-            // Track thank you page as a conversion point
-            gtag('event', 'conversion', {
-                send_to: 'AW-CONVERSION_ID', // Replace with actual conversion ID
-                event_category: 'RFI',
-                event_label: programName,
-                value: 1.0
+            if (ctaTitle) {
+                ctaTitle.textContent = ctaData.title;
+            }
+            if (ctaSubtitle) {
+                ctaSubtitle.innerHTML = ctaData.subtitle;
+            }
+
+            // Update application button with program parameter
+            const applicationUrl = `https://www.uagc.edu/apply?program=${encodeURIComponent(programName)}&source=rfi`;
+            const btnStartApplication = document.getElementById('btnStartApplication');
+            if (btnStartApplication) {
+                btnStartApplication.href = applicationUrl;
+            }
+
+            console.log('Thank you page personalization initialized:', {
+                firstName,
+                programName,
+                educationLevel,
+                programUrl,
+                applicationUrl
             });
         }
 
-        // Facebook Pixel tracking (if available)
-        if (typeof fbq === 'function') {
-            fbq('track', 'Lead', {
-                content_name: programName,
-                status: 'thank_you_page'
+        // Track analytics
+        function trackAnalytics() {
+            // Google Analytics 4
+            if (typeof gtag === 'function') {
+                gtag('event', 'page_view', {
+                    page_title: 'Thank You Page',
+                    page_location: window.location.href,
+                    program: programName,
+                    education_level: educationLevel
+                });
+                
+                // Track thank you page as a conversion point
+                gtag('event', 'conversion', {
+                    send_to: 'AW-CONVERSION_ID', // Replace with actual conversion ID
+                    event_category: 'RFI',
+                    event_label: programName,
+                    value: 1.0
+                });
+
+                // Track RFI completion
+                gtag('event', 'generate_lead', {
+                    currency: 'USD',
+                    value: 1.0,
+                    items: [{
+                        item_name: programName,
+                        item_category: educationLevel
+                    }]
+                });
+            }
+
+            // Facebook Pixel tracking (if available)
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead', {
+                    content_name: programName,
+                    content_category: educationLevel,
+                    status: 'thank_you_page'
+                });
+            }
+
+            console.log('Analytics tracked for:', programName);
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                initializePersonalization();
+                trackAnalytics();
             });
+        } else {
+            initializePersonalization();
+            trackAnalytics();
         }
     </script>
 </body>

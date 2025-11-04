@@ -78,7 +78,30 @@
                     <div class="form-group">
                         <label for="educationLevel" class="form-label required">
                             Education Level
+                            <button type="button" class="tooltip-trigger" data-tooltip="education-level" aria-label="More information about education levels" aria-expanded="false">
+                                <svg class="info-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M8 7V11M8 5V5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
                         </label>
+                        <div class="tooltip-content" id="tooltip-education-level" role="tooltip" aria-hidden="true">
+                            <div class="tooltip-header">Understanding Education Levels</div>
+                            <div class="tooltip-section">
+                                <strong>Undergraduate</strong>
+                                <ul>
+                                    <li><strong>Associate's Degree:</strong> A 2-year degree that provides foundational knowledge in a specific field</li>
+                                    <li><strong>Bachelor's Degree:</strong> A 4-year degree that offers comprehensive study in your chosen major</li>
+                                </ul>
+                            </div>
+                            <div class="tooltip-section">
+                                <strong>Graduate</strong>
+                                <ul>
+                                    <li><strong>Master's Degree:</strong> Advanced study beyond a bachelor's, typically 1-2 years</li>
+                                    <li><strong>Doctoral Degree:</strong> The highest level of academic achievement in a field</li>
+                                </ul>
+                            </div>
+                        </div>
                         <select 
                             id="educationLevel" 
                             name="educationLevel" 
@@ -88,8 +111,8 @@
                             aria-describedby="educationLevelHelp"
                         >
                             <option value="">Select Education Level*</option>
-                            <option value="undergraduate">Undergraduate</option>
-                            <option value="graduate">Graduate</option>
+                            <option value="undergraduate">Undergraduate (Associate's & Bachelor's)</option>
+                            <option value="graduate">Graduate (Master's & Doctoral)</option>
                         </select>
                         <span class="form-help" id="educationLevelHelp">Choose your degree level</span>
                         <span class="form-error" id="educationLevelError" role="alert"></span>
