@@ -202,7 +202,6 @@ body {
     color: var(--arizona-blue);
     margin-bottom: var(--spacing-lg);
     padding-bottom: var(--spacing-sm);
-    border-bottom: 3px solid var(--arizona-red);
 }
 
 /* Form Groups */
@@ -311,6 +310,52 @@ body {
 .form-input.error,
 .form-select.error {
     border-color: var(--color-error);
+}
+
+/* Field Success Indicator */
+.field-success {
+    display: none;
+    font-size: 0.85rem;
+    color: #10b981;
+    margin-top: 6px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+}
+
+.field-success svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+/* Email Suggestion */
+.email-suggestion {
+    display: none;
+    font-size: 0.85rem;
+    color: #f59e0b;
+    margin-top: 6px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    animation: slideIn 0.3s ease;
+}
+
+.email-suggestion:hover {
+    color: #d97706;
+}
+
+.email-suggestion strong {
+    color: #0C234B;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Radio Buttons */

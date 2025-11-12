@@ -45,6 +45,7 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
+const zipCode = document.getElementById('zipCode');
 const state = document.getElementById('state');
 const tcpaConsent = document.getElementById('tcpaConsent');
 const programId = document.getElementById('programId');
@@ -74,7 +75,179 @@ function init() {
     // Set up engagement detection (messages only appear after user interacts)
     setupEngagementDetection();
     
+    // Initialize smart autocomplete features
+    initSmartAutocomplete();
+    
     console.log('RFI 2.0 Form with UX AI Initialized');
+}
+
+/**
+ * Initialize Smart Autocomplete Features
+ * Includes: email suggestions, phone formatting, ZIP lookup, success indicators
+ */
+function initSmartAutocomplete() {
+    // Email domain suggestion
+    if (email) {
+        email.addEventListener('blur', checkEmailDomain);
+        email.addEventListener('input', () => {
+            const suggestionEl = email.parentElement.querySelector('.email-suggestion');
+            if (suggestionEl) suggestionEl.style.display = 'none';
+        });
+    }
+    
+    // ZIP code lookup
+    if (zipCode) {
+        zipCode.addEventListener('blur', lookupZipCode);
+        zipCode.addEventListener('input', (e) => {
+            // Only allow numbers
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 5);
+        });
+    }
+    
+    // Success indicators for all required fields
+    const requiredFields = [firstName, lastName, email, phone, zipCode];
+    requiredFields.forEach(field => {
+        if (field) {
+            field.addEventListener('blur', showFieldSuccess);
+            field.addEventListener('input', () => {
+                // Hide success indicator when user starts typing again
+                const successEl = field.parentElement.querySelector('.field-success');
+                if (successEl && field.value.length < 2) {
+                    successEl.style.display = 'none';
+                }
+            });
+        }
+    });
+    
+    console.log('Smart autocomplete features initialized');
+}
+
+/**
+ * Check email domain for common typos and suggest corrections
+ */
+function checkEmailDomain(e) {
+    const emailValue = e.target.value.toLowerCase().trim();
+    if (!emailValue || !emailValue.includes('@')) return;
+    
+    const [localPart, domainPart] = emailValue.split('@');
+    
+    // Common email domains and their typos
+    const domainSuggestions = {
+        'gmial.com': 'gmail.com',
+        'gmai.com': 'gmail.com',
+        'gmil.com': 'gmail.com',
+        'gmal.com': 'gmail.com',
+        'yahooo.com': 'yahoo.com',
+        'yaho.com': 'yahoo.com',
+        'yahho.com': 'yahoo.com',
+        'hotmial.com': 'hotmail.com',
+        'hotmai.com': 'hotmail.com',
+        'outlok.com': 'outlook.com',
+        'outloo.com': 'outlook.com',
+        'iclou.com': 'icloud.com',
+        'icoud.com': 'icloud.com'
+    };
+    
+    const suggestionEl = email.parentElement.querySelector('.email-suggestion');
+    const suggestedEmailEl = email.parentElement.querySelector('.suggested-email');
+    
+    if (domainSuggestions[domainPart] && suggestionEl && suggestedEmailEl) {
+        const correctedEmail = `${localPart}@${domainSuggestions[domainPart]}`;
+        suggestedEmailEl.textContent = correctedEmail;
+        suggestionEl.style.display = 'block';
+        
+        // Click to apply suggestion
+        suggestionEl.onclick = function() {
+            email.value = correctedEmail;
+            suggestionEl.style.display = 'none';
+            showFieldSuccess({ target: email });
+        };
+    }
+}
+
+/**
+ * Lookup ZIP code to auto-populate city/state
+ */
+async function lookupZipCode(e) {
+    const zipValue = e.target.value.trim();
+    
+    if (zipValue.length !== 5) {
+        return;
+    }
+    
+    const successEl = zipCode.parentElement.querySelector('.field-success');
+    const zipLocationEl = zipCode.parentElement.querySelector('.zip-location');
+    
+    try {
+        // Use free ZIP code API
+        const response = await fetch(`https://api.zippopotam.us/us/${zipValue}`);
+        
+        if (response.ok) {
+            const data = await response.json();
+            const place = data.places[0];
+            const cityName = place['place name'];
+            const stateAbbr = place['state abbreviation'];
+            
+            // Auto-populate state dropdown
+            if (state) {
+                state.value = stateAbbr;
+            }
+            
+            // Show success message with location
+            if (successEl && zipLocationEl) {
+                zipLocationEl.textContent = `${cityName}, ${stateAbbr}`;
+                successEl.style.display = 'block';
+            }
+            
+            console.log(`ZIP ${zipValue} found: ${cityName}, ${stateAbbr}`);
+        } else {
+            // Invalid ZIP
+            if (successEl) {
+                successEl.style.display = 'none';
+            }
+        }
+    } catch (error) {
+        console.log('ZIP lookup not available:', error);
+        // Silently fail - this is an enhancement, not critical
+    }
+}
+
+/**
+ * Show success indicator for valid fields
+ */
+function showFieldSuccess(e) {
+    const field = e.target;
+    const successEl = field.parentElement.querySelector('.field-success');
+    const errorEl = field.parentElement.querySelector('.form-error');
+    
+    if (!successEl) return;
+    
+    // Don't show success if there's an error
+    if (errorEl && errorEl.textContent) {
+        successEl.style.display = 'none';
+        return;
+    }
+    
+    // Validate field is filled and valid
+    let isValid = false;
+    
+    if (field.type === 'email') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        isValid = emailRegex.test(field.value);
+    } else if (field.type === 'tel') {
+        const phoneRegex = /^\(\d{3}\)\s\d{3}-\d{4}$/;
+        isValid = phoneRegex.test(field.value);
+    } else if (field.id === 'zipCode') {
+        isValid = field.value.length === 5 && /^\d{5}$/.test(field.value);
+    } else {
+        isValid = field.value.trim().length >= 2;
+    }
+    
+    if (isValid) {
+        successEl.style.display = 'block';
+    } else {
+        successEl.style.display = 'none';
+    }
 }
 
 /**
@@ -1359,6 +1532,10 @@ function gatherFormData() {
     // Get military status
     const militaryStatus = document.querySelector('input[name="militaryStatus"]:checked')?.value || null;
     
+    // Get start timeline
+    const startTimelineEl = document.getElementById('startTimeline');
+    const startTimeline = startTimelineEl ? startTimelineEl.value : null;
+    
     return {
         // Program Information
         educationLevel: educationLevel.value,
@@ -1372,8 +1549,10 @@ function gatherFormData() {
         lastName: lastName.value.trim(),
         email: email.value.trim(),
         phone: phone.value.replace(/\D/g, ''), // Send digits only
+        zipCode: zipCode ? zipCode.value.trim() : null,
         state: state.value,
         militaryStatus: militaryStatus,
+        startTimeline: startTimeline,
         
         // Consent
         tcpaConsent: tcpaConsent.checked,
