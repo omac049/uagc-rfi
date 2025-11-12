@@ -237,8 +237,8 @@
 
                     <!-- Step 2: Personal Information -->
                     <div class="form-step" id="step2" data-step="2">
-                        <p class="step-meta" style="color: #007D8A; font-size: 0.9rem; margin: 0 0 20px 0; font-weight: 600;">
-                            <span id="progressText">Step 2 of 2</span> • 6-7 fields • ~30 seconds
+                        <p class="step-meta" style="color: #007d8a; font-size: 0.9rem; margin: 0 0 20px 0; font-weight: 600;">
+                            <span id="progressText">Step 2 of 2</span>
                         </p>
 
                         <div class="form-row">
@@ -252,7 +252,6 @@
                                     required
                                     aria-required="true"
                                     autocomplete="given-name"
-                                    placeholder="John"
                                 />
                                 <span class="form-error" id="firstNameError" role="alert"></span>
                             </div>
@@ -267,7 +266,6 @@
                                     required
                                     aria-required="true"
                                     autocomplete="family-name"
-                                    placeholder="Smith"
                                 />
                                 <span class="form-error" id="lastNameError" role="alert"></span>
                             </div>
@@ -283,7 +281,6 @@
                                 required
                                 aria-required="true"
                                 autocomplete="email"
-                                placeholder="john.smith@example.com"
                             />
                             <span class="form-error" id="emailError" role="alert"></span>
                         </div>
@@ -299,10 +296,7 @@
                                     required
                                     aria-required="true"
                                     autocomplete="tel"
-                                    placeholder="(555) 123-4567"
-                                    aria-describedby="phoneHelp"
                                 />
-                                <span class="form-help" id="phoneHelp">So we can call or text you with info</span>
                                 <span class="form-error" id="phoneError" role="alert"></span>
                             </div>
 
@@ -401,7 +395,6 @@
                                 id="startTimeline" 
                                 name="startTimeline" 
                                 class="form-select"
-                                aria-describedby="startTimelineHelp"
                             >
                                 <option value="">Select timeline...</option>
                                 <option value="within-3-months">Within 3 months</option>
@@ -409,7 +402,6 @@
                                 <option value="6-12-months">6-12 months</option>
                                 <option value="just-exploring">Just exploring options</option>
                             </select>
-                            <span class="form-help" id="startTimelineHelp">Helps us provide relevant program start dates</span>
                         </div>
 
                         <div class="form-group">
@@ -422,22 +414,10 @@
                                     aria-required="true"
                                 />
                                 <span class="checkbox-text">
-                                    I agree to be contacted by UAGC via phone, email, or text message at the contact information provided. 
-                                    I understand that calls may be made using automated dialing technology, and that providing my consent is not 
-                                    required to purchase goods or services. Message and data rates may apply.
-                                    <a href="#" target="_blank" class="privacy-link">Privacy Policy</a>
+                                    I agree that UAGC may contact me about educational services by email, phone, or text at the number provided, including using automated technology. Consent not required to enroll. <a href="#" target="_blank" class="privacy-link">Privacy Policy</a>
                                 </span>
                             </label>
                             <span class="form-error" id="tcpaConsentError" role="alert"></span>
-                        </div>
-
-                                                <div class="privacy-reassurance">
-                            <svg class="lock-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">                   
-                                <rect x="3" y="7" width="10" height="7" rx="1" fill="currentColor"/>
-                                <path d="M5 7V5C5 3.34315 6.34315 2 8 2C9.65685 2 11 3.34315 11 5V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                <circle cx="8" cy="10.5" r="1" fill="white"/>
-                            </svg>
-                            Your information is secure and will be used only by UAGC for educational opportunities.                                             
                         </div>
 
                         <!-- Trust Signals - Bottom of Step 2 -->
