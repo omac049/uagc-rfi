@@ -236,15 +236,15 @@
                     </div>
 
                     <!-- Step 2: Personal Information -->
-                    <div class="form-step" id="step2" data-step="2">
-                        <p class="step-meta" style="color: #007d8a; font-size: 0.9rem; margin: 0 0 20px 0; font-weight: 600;">
+                    <div class="form-step" id="step2" data-step="2" style="max-width: 100%;">
+                        <p class="step-meta" style="color: #007d8a; font-size: 0.9rem; margin: 0 0 16px 0; font-weight: 600;">
                             <span id="progressText">Step 2 of 2</span>
                         </p>
 
-                        <!-- Core Contact Info -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName" class="form-label required">First Name</label>
+                        <!-- Core Contact Info - Compact Layout -->
+                        <div class="form-row" style="gap: 15px; margin-bottom: 15px;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="firstName" class="form-label required" style="margin-bottom: 6px;">First Name</label>
                                 <input 
                                     type="text" 
                                     id="firstName" 
@@ -258,16 +258,15 @@
                                     placeholder="John"
                                 />
                                 <span class="form-error" id="firstNameError" role="alert"></span>
-                                <span class="field-success" style="display: none; color: #10b981; font-size: 0.85rem; margin-top: 4px;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin-right: 4px;">
+                                <span class="field-success" style="display: none; color: #10b981; font-size: 0.8rem; margin-top: 2px;" title="Looks good!">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle;">
                                         <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                     </svg>
-                                    Looks good!
                                 </span>
                             </div>
 
-                            <div class="form-group">
-                                <label for="lastName" class="form-label required">Last Name</label>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="lastName" class="form-label required" style="margin-bottom: 6px;">Last Name</label>
                                 <input 
                                     type="text" 
                                     id="lastName" 
@@ -281,17 +280,16 @@
                                     placeholder="Smith"
                                 />
                                 <span class="form-error" id="lastNameError" role="alert"></span>
-                                <span class="field-success" style="display: none; color: #10b981; font-size: 0.85rem; margin-top: 4px;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin-right: 4px;">
+                                <span class="field-success" style="display: none; color: #10b981; font-size: 0.8rem; margin-top: 2px;" title="Looks good!">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle;">
                                         <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                     </svg>
-                                    Looks good!
                                 </span>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="form-label required">Email Address</label>
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="email" class="form-label required" style="margin-bottom: 6px;">Email Address</label>
                             <input 
                                 type="email" 
                                 id="email" 
@@ -305,20 +303,19 @@
                                 placeholder="john.smith@example.com"
                             />
                             <span class="form-error" id="emailError" role="alert"></span>
-                            <span class="email-suggestion" style="display: none; color: #f59e0b; font-size: 0.85rem; margin-top: 4px; cursor: pointer;">
+                            <span class="email-suggestion" style="display: none; color: #f59e0b; font-size: 0.8rem; margin-top: 2px; cursor: pointer;">
                                 Did you mean <strong class="suggested-email"></strong>? <span style="text-decoration: underline;">Click to use</span>
                             </span>
-                            <span class="field-success" style="display: none; color: #10b981; font-size: 0.85rem; margin-top: 4px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin-right: 4px;">
+                            <span class="field-success" style="display: none; color: #10b981; font-size: 0.8rem; margin-top: 2px;" title="Looks good!">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle;">
                                     <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                 </svg>
-                                Looks good!
                             </span>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone" class="form-label required">Phone Number</label>
+                        <div class="form-row" style="gap: 15px; margin-bottom: 15px;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="phone" class="form-label required" style="margin-bottom: 6px;">Phone</label>
                                 <input 
                                     type="tel" 
                                     id="phone" 
@@ -332,16 +329,15 @@
                                     maxlength="14"
                                 />
                                 <span class="form-error" id="phoneError" role="alert"></span>
-                                <span class="field-success" style="display: none; color: #10b981; font-size: 0.85rem; margin-top: 4px;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin-right: 4px;">
+                                <span class="field-success" style="display: none; color: #10b981; font-size: 0.8rem; margin-top: 2px;" title="Looks good!">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle;">
                                         <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                     </svg>
-                                    Looks good!
                                 </span>
                             </div>
 
-                            <div class="form-group">
-                                <label for="zipCode" class="form-label required">ZIP Code</label>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="zipCode" class="form-label required" style="margin-bottom: 6px;">ZIP Code</label>
                                 <input 
                                     type="text" 
                                     id="zipCode" 
@@ -356,8 +352,8 @@
                                     placeholder="12345"
                                 />
                                 <span class="form-error" id="zipCodeError" role="alert"></span>
-                                <span class="field-success" style="display: none; color: #10b981; font-size: 0.85rem; margin-top: 4px;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin-right: 4px;">
+                                <span class="field-success" style="display: none; color: #10b981; font-size: 0.75rem; margin-top: 2px;" title="Location verified">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin-right: 3px;">
                                         <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                     </svg>
                                     <span class="zip-location"></span>
@@ -431,102 +427,104 @@
                             <span class="form-error" id="stateError" role="alert"></span>
                         </div>
 
-                        <!-- Optional Fields - Lower Priority -->
-                        <div style="border-top: 1px solid #e5e7eb; margin: 25px 0 20px 0; padding-top: 25px;">
-                            <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 20px;">Help us personalize your experience (optional)</p>
+                        <!-- Optional Fields - Compact -->
+                        <details style="border-top: 1px solid #e5e7eb; margin: 15px 0; padding-top: 15px;">
+                            <summary style="color: #6b7280; font-size: 0.85rem; margin-bottom: 15px; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.2s;">
+                                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Optional: Help us personalize your experience
+                            </summary>
                             
-                            <div class="form-group">
-                                <label class="form-label">Military Status</label>
-                                <div class="radio-group">
-                                    <label class="radio-label">
-                                        <input type="radio" name="militaryStatus" value="active-duty" autocomplete="off" />
-                                        <span>Active Duty U.S. Military</span>
-                                    </label>
-                                    <label class="radio-label">
-                                        <input type="radio" name="militaryStatus" value="veteran" autocomplete="off" />
-                                        <span>Veteran</span>
-                                    </label>
-                                    <label class="radio-label">
-                                        <input type="radio" name="militaryStatus" value="spouse-dependent" autocomplete="off" />
-                                        <span>Military Spouse or Dependent</span>
-                                    </label>
-                                    <label class="radio-label">
-                                        <input type="radio" name="militaryStatus" value="no" autocomplete="off" />
-                                        <span>No</span>
-                                    </label>
+                            <div class="form-row" style="gap: 15px; margin-bottom: 0;">
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label class="form-label" style="margin-bottom: 8px; font-size: 0.9rem;">Military Status</label>
+                                    <div class="radio-group" style="gap: 8px;">
+                                        <label class="radio-label" style="padding: 8px 12px; font-size: 0.9rem;">
+                                            <input type="radio" name="militaryStatus" value="active-duty" autocomplete="off" />
+                                            <span>Active Duty</span>
+                                        </label>
+                                        <label class="radio-label" style="padding: 8px 12px; font-size: 0.9rem;">
+                                            <input type="radio" name="militaryStatus" value="veteran" autocomplete="off" />
+                                            <span>Veteran</span>
+                                        </label>
+                                        <label class="radio-label" style="padding: 8px 12px; font-size: 0.9rem;">
+                                            <input type="radio" name="militaryStatus" value="spouse-dependent" autocomplete="off" />
+                                            <span>Spouse/Dependent</span>
+                                        </label>
+                                        <label class="radio-label" style="padding: 8px 12px; font-size: 0.9rem;">
+                                            <input type="radio" name="militaryStatus" value="no" autocomplete="off" />
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="startTimeline" class="form-label" style="margin-bottom: 8px; font-size: 0.9rem;">Start Timeline</label>
+                                    <select 
+                                        id="startTimeline" 
+                                        name="startTimeline" 
+                                        class="form-select"
+                                        autocomplete="off"
+                                        style="font-size: 0.9rem;"
+                                    >
+                                        <option value="">Select timeline...</option>
+                                        <option value="within-3-months">Within 3 months</option>
+                                        <option value="3-6-months">3-6 months</option>
+                                        <option value="6-12-months">6-12 months</option>
+                                        <option value="just-exploring">Just exploring</option>
+                                    </select>
                                 </div>
                             </div>
+                        </details>
 
-                            <div class="form-group">
-                                <label for="startTimeline" class="form-label">When do you plan to start?</label>
-                                <select 
-                                    id="startTimeline" 
-                                    name="startTimeline" 
-                                    class="form-select"
-                                    autocomplete="off"
-                                >
-                                    <option value="">Select timeline...</option>
-                                    <option value="within-3-months">Within 3 months</option>
-                                    <option value="3-6-months">3-6 months</option>
-                                    <option value="6-12-months">6-12 months</option>
-                                    <option value="just-exploring">Just exploring options</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
+                        <!-- Compact TCPA Consent -->
+                        <div class="form-group" style="margin: 15px 0 12px 0;">
+                            <label class="checkbox-label" style="align-items: flex-start;">
                                 <input 
                                     type="checkbox" 
                                     id="tcpaConsent" 
                                     name="tcpaConsent" 
                                     required
                                     aria-required="true"
+                                    style="margin-top: 2px;"
                                 />
-                                <span class="checkbox-text">
+                                <span class="checkbox-text" style="font-size: 0.85rem; line-height: 1.5;">
                                     I agree that UAGC may contact me about educational services by email, phone, or text at the number provided, including using automated technology. Consent not required to enroll. <a href="#" target="_blank" class="privacy-link">Privacy Policy</a>
                                 </span>
                             </label>
                             <span class="form-error" id="tcpaConsentError" role="alert"></span>
                         </div>
 
-                        <!-- Trust Signals - Bottom of Step 2 -->
-                        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 8px; padding: 18px; margin: 25px 0 20px 0; border: 1px solid #e5e7eb;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                                <!-- Value Props -->
-                                <div style="display: flex; gap: 25px; flex-wrap: wrap; align-items: center;">
-                                    <div style="display: flex; align-items: center; gap: 6px;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
+                        <!-- Compact Trust Signals -->
+                        <div style="background: #f9fafb; border-radius: 6px; padding: 12px 15px; margin: 12px 0 15px 0; border: 1px solid #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                                <div style="display: flex; gap: 18px; flex-wrap: wrap; align-items: center;">
+                                    <div style="display: flex; align-items: center; gap: 5px;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
                                             <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                        <span style="font-size: 0.85rem; color: #4b5563;">100% Online</span>
+                                        <span style="font-size: 0.8rem; color: #4b5563;">100% Online</span>
                                     </div>
-                                    <div style="display: flex; align-items: center; gap: 6px;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
+                                    <div style="display: flex; align-items: center; gap: 5px;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
                                             <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                        <span style="font-size: 0.85rem; color: #4b5563;">Transfer Credits</span>
+                                        <span style="font-size: 0.8rem; color: #4b5563;">Transfer Credits</span>
                                     </div>
-                                    <div style="display: flex; align-items: center; gap: 6px;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
+                                    <div style="display: flex; align-items: center; gap: 5px;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
                                             <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                        <span style="font-size: 0.85rem; color: #4b5563;">Military Support</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 6px;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
-                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        <span style="font-size: 0.85rem; color: #4b5563;">WSCUC Accredited</span>
+                                        <span style="font-size: 0.8rem; color: #4b5563;">WSCUC Accredited</span>
                                     </div>
                                 </div>
                                 
-                                <!-- Phone Number -->
-                                <div style="display: flex; align-items: center; gap: 6px;">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #0C234B;">
+                                <div style="display: flex; align-items: center; gap: 5px;">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #0C234B;">
                                         <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    <a href="tel:1-866-711-1700" style="font-size: 0.9rem; font-weight: 700; color: #0C234B; text-decoration: none;">1-866-711-1700</a>
+                                    <a href="tel:1-866-711-1700" style="font-size: 0.85rem; font-weight: 700; color: #0C234B; text-decoration: none;">1-866-711-1700</a>
                                 </div>
                             </div>
                         </div>

@@ -358,6 +358,19 @@ body {
     }
 }
 
+/* Collapsible Optional Section */
+details[open] summary svg {
+    transform: rotate(90deg);
+}
+
+details summary {
+    transition: color 0.2s ease;
+}
+
+details summary:hover {
+    color: #0C234B;
+}
+
 /* Radio Buttons */
 .radio-group {
     display: flex;
