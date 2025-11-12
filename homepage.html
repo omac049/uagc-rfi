@@ -238,48 +238,9 @@
                     <!-- Step 2: Personal Information -->
                     <div class="form-step" id="step2" data-step="2">
                         <h3 class="step-title">Your Contact Information</h3>
-                        <p class="step-meta" style="color: #007D8A; font-size: 0.9rem; margin: -10px 0 20px 0; font-weight: 600;">6-7 fields • ~30 seconds</p>
-
-                        <!-- Trust Signals - Integrated into Step 2 -->
-                        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 8px; padding: 20px; margin-bottom: 25px; border: 1px solid #e5e7eb;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                                <!-- Value Props -->
-                                <div style="display: flex; gap: 25px; flex-wrap: wrap; align-items: center;">
-                                    <div style="display: flex; align-items: center; gap: 6px;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
-                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        <span style="font-size: 0.85rem; color: #4b5563;">100% Online</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 6px;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
-                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        <span style="font-size: 0.85rem; color: #4b5563;">Transfer Credits</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 6px;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
-                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        <span style="font-size: 0.85rem; color: #4b5563;">Military Support</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 6px;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
-                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        <span style="font-size: 0.85rem; color: #4b5563;">WSCUC Accredited</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Phone Number -->
-                                <div style="display: flex; align-items: center; gap: 6px;">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #0C234B;">
-                                        <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    <a href="tel:1-866-711-1700" style="font-size: 0.9rem; font-weight: 700; color: #0C234B; text-decoration: none;">1-866-711-1700</a>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="step-meta" style="color: #007D8A; font-size: 0.9rem; margin: -10px 0 20px 0; font-weight: 600;">
+                            <span id="progressText">Step 2 of 2</span> • 6-7 fields • ~30 seconds
+                        </p>
 
                         <div class="form-row">
                             <div class="form-group">
@@ -480,20 +441,49 @@
                             Your information is secure and will be used only by UAGC for educational opportunities.                                             
                         </div>
 
-                        <div class="alternative-contact" style="background: #fff3cd; border-left: 4px solid #EF9600; padding: 16px 20px; margin: 20px 0; border-radius: 4px;">
-                            <p style="margin: 0; color: #856404; font-size: 0.95rem; line-height: 1.6;">
-                                <strong>📞 Prefer to speak with someone?</strong> Call <a href="tel:1-866-711-1700" style="color: #0C234B; font-weight: 700; text-decoration: none;">1-866-711-1700</a> to request information without providing consent.
-                            </p>
+                        <!-- Trust Signals - Bottom of Step 2 -->
+                        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 8px; padding: 18px; margin: 25px 0 20px 0; border: 1px solid #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                                <!-- Value Props -->
+                                <div style="display: flex; gap: 25px; flex-wrap: wrap; align-items: center;">
+                                    <div style="display: flex; align-items: center; gap: 6px;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
+                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span style="font-size: 0.85rem; color: #4b5563;">100% Online</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 6px;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
+                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span style="font-size: 0.85rem; color: #4b5563;">Transfer Credits</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 6px;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
+                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span style="font-size: 0.85rem; color: #4b5563;">Military Support</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 6px;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #28a745;">
+                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span style="font-size: 0.85rem; color: #4b5563;">WSCUC Accredited</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Phone Number -->
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #0C234B;">
+                                        <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <a href="tel:1-866-711-1700" style="font-size: 0.9rem; font-weight: 700; color: #0C234B; text-decoration: none;">1-866-711-1700</a>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="button-group">
-                                                        <button type="button" class="btn btn-secondary btn-back" id="btnBack">                                                              
-                                <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">                
-                                    <path d="M13 17L5 10L13 3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>    
-                                </svg>
-                                Back
-                            </button>
-                                                        <button type="submit" class="btn btn-primary btn-submit" id="btnSubmit">                                                            
+                            <button type="submit" class="btn btn-primary btn-submit" id="btnSubmit">                                                            
                                 Submit Request
                                 <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">                
                                     <path d="M3 10H17M17 10L12 5M17 10L12 15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>                                                             
