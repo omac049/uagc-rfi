@@ -760,7 +760,9 @@ function setupEventListeners() {
     
     // Navigation buttons
     btnNext.addEventListener('click', handleNextStep);
-    btnBack.addEventListener('click', handleBackStep);
+    if (btnBack) {
+        btnBack.addEventListener('click', handleBackStep);
+    }
     
     // Form submission
     form.addEventListener('submit', handleSubmit);
