@@ -1046,9 +1046,220 @@
                 padding: 0;
             }
         }
+
+        /* 🎨 Enhanced Visual Hierarchy & Navigation */
+        
+        /* Sticky Back-to-Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--dark-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        /* Section Dividers with Icons */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 60px 0 40px 0;
+            padding: 20px 0;
+            border-top: 3px solid var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+            background: linear-gradient(90deg, rgba(12,35,75,0.03) 0%, rgba(12,35,75,0.08) 50%, rgba(12,35,75,0.03) 100%);
+        }
+
+        .section-divider .icon {
+            font-size: 2.5rem;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .section-divider .text {
+            flex: 1;
+        }
+
+        .section-divider h2 {
+            margin: 0;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-divider .subtitle {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Visual Stats Cards - Compact Version */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-compact {
+            background: white;
+            border-left: 4px solid var(--primary-blue);
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+        }
+
+        .stat-compact:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .stat-compact .label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .stat-compact .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .stat-compact .change {
+            font-size: 0.75rem;
+            margin-top: 5px;
+        }
+
+        /* Improved Badge System */
+        .badge-cluster {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .badge.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .badge.warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .badge.danger {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .badge.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        /* Quick Summary Boxes */
+        .quick-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .quick-summary h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quick-summary ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .quick-summary li {
+            margin-bottom: 8px;
+        }
+
+        /* Progress Reading Indicator */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-red) 100%);
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        @media print {
+            .back-to-top, .reading-progress {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
+    
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="reading-progress"></div>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Back to top">
+        ↑
+    </button>
     
     <!-- Modern Professional Hero Section -->
     <div style="position: relative; margin: -30px -30px 40px -30px; overflow: hidden; background: white;">
@@ -1448,7 +1659,14 @@
         
     </section>
     
-    <hr>
+    <!-- Visual Section Divider -->
+    <div class="section-divider">
+        <div class="icon">📊</div>
+        <div class="text">
+            <h2>Section 1: Current State Analysis</h2>
+            <p class="subtitle">Understanding UAGC's baseline and identifying opportunities</p>
+        </div>
+    </div>
     
     <!-- The Problem -->
     <section id="the-problem">
@@ -1828,9 +2046,13 @@
     
     <hr>
     
-    <!-- Visual Section Break -->
-    <div style="height: 40px; background: linear-gradient(90deg, var(--primary-blue) 0%, var(--info-blue) 100%); margin: 60px -20px 40px; display: flex; align-items: center; padding: 0 40px; border-radius: 8px;">
-        <span style="color: white; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">📊 Section 2: Competitive Intelligence</span>
+    <!-- Visual Section Divider -->
+    <div class="section-divider">
+        <div class="icon">🏆</div>
+        <div class="text">
+            <h2>Section 2: Competitive Intelligence</h2>
+            <p class="subtitle">Deep dive into how industry leaders structure their RFI forms</p>
+        </div>
     </div>
     
     <!-- Competitive Analysis -->
@@ -3307,9 +3529,13 @@
     
     <hr>
     
-    <!-- Visual Section Break -->
-    <div style="height: 40px; background: linear-gradient(90deg, var(--success-green) 0%, #20c997 100%); margin: 60px -20px 40px; display: flex; align-items: center; padding: 0 40px; border-radius: 8px;">
-        <span style="color: white; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">✅ Section 3: Feature Synthesis</span>
+    <!-- Visual Section Divider -->
+    <div class="section-divider">
+        <div class="icon">📋</div>
+        <div class="text">
+            <h2>Section 3: Feature Synthesis</h2>
+            <p class="subtitle">Comprehensive comparison matrix across all competitors</p>
+        </div>
     </div>
     
     <!-- Research-Backed Solutions -->
@@ -4547,6 +4773,48 @@
                 detail.open = false;
             });
         }
+
+        // 🎨 Enhanced UX Features
+        
+        // Back to Top Button
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/Hide Back to Top Button & Update Reading Progress
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            const progressBar = document.getElementById('reading-progress');
+            
+            // Show button after scrolling down 300px
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+            
+            // Update reading progress bar
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
     
 </body>
