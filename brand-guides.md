@@ -4,12 +4,13 @@
 
 ### Official University Logo
 
-The University of Arizona Global Campus logo consists of 8 distinct SVG path elements that must all be included for proper display:
+**Source File:** `UAGC_Main_Horizontal_RGB_FullColor.svg`
+
+The University of Arizona Global Campus logo is the official institutional mark and must be used consistently across all digital properties.
 
 #### Logo Dimensions
-- **Width:** 180px
-- **Height:** 32px
-- **ViewBox:** `0 0 181 32`
+- **Original ViewBox:** `0 0 376.2 67.23`
+- **Implemented Size:** 220px × 39px (scaled for web)
 - **Aspect Ratio:** 5.625:1 (maintain for all sizes)
 
 ### Logo Components (8 Required Paths)
@@ -39,105 +40,80 @@ The University of Arizona Global Campus logo consists of 8 distinct SVG path ele
 
 ## Logo Usage by Background
 
+### Official Logo File
+
+All implementations should use the official `UAGC_Main_Horizontal_RGB_FullColor.svg` file which contains:
+- Embedded CSS styles for color classes
+- `.cls-1{fill:#0c234b;}` - Arizona Blue for text
+- `.cls-2{fill:#fff;}` - White for elements  
+- `.cls-3{fill:#ab0520;}` - Arizona Red for accent
+
 ### On Light Backgrounds (homepage.html, thank-you.html)
 
-**Fill Colors:**
-- Paths 1, 2, 5, 8: `#0C234B` (Arizona Blue)
-- Paths 3, 6, 7: `#FFFFFF` (White)
-- Path 4: `#AB0520` (Arizona Red - always red)
+**Implementation:** Use the official logo directly without modification.
 
 ```html
-<svg width="180" height="32" viewBox="0 0 181 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Path 1: GLOBAL CAMPUS - Dark Blue -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M176.815 27.2242..." fill="#0C234B"/>
-    
-    <!-- Path 2: THE UNIVERSITY OF ARIZONA - Dark Blue -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M166.694 11.8638..." fill="#0C234B"/>
-    
-    <!-- Path 3: A Background - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.48744 0L6.48388..." fill="white"/>
-    
-    <!-- Path 4: A Red Accent - Arizona Red (ALWAYS) -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6962 3.82214..." fill="#AB0520"/>
-    
-    <!-- Path 5: A Outline - Dark Blue -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9409 3.92059..." fill="#0C234B"/>
-    
-    <!-- Path 6: Registered Trademark - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M36.3989 27.5712..." fill="white"/>
-    
-    <!-- Path 7: A Inner Triangle - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9345 17.6724..." fill="white"/>
-    
-    <!-- Path 8: Vertical Separator - Dark Blue -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.1172 31.9999..." fill="#0C234B"/>
+<svg width="220" height="39" viewBox="0 0 376.2 67.23" xmlns="http://www.w3.org/2000/svg">
+    <!-- Official logo SVG content from UAGC_Main_Horizontal_RGB_FullColor.svg -->
 </svg>
 ```
+
+**The logo renders correctly on light backgrounds with:**
+- Arizona Blue (#0c234b) for institutional text
+- White for "A" logo elements (visible against light background)
+- Arizona Red (#ab0520) for signature accent triangle
 
 ### On Dark Backgrounds (index.html)
 
-**Fill Colors:**
-- Paths 1, 2, 5, 8: `#FFFFFF` (White) - Changed from blue
-- Paths 3, 6, 7: `#FFFFFF` (White) - Stays white
-- Path 4: `#AB0520` (Arizona Red - always red)
+**Implementation:** Place logo in a white background container.
+
+**The Block "A" design requires a white/light background to display correctly.** The white elements in the logo need contrast to be visible.
 
 ```html
-<svg width="180" height="32" viewBox="0 0 181 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Path 1: GLOBAL CAMPUS - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M176.815 27.2242..." fill="white"/>
-    
-    <!-- Path 2: THE UNIVERSITY OF ARIZONA - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M166.694 11.8638..." fill="white"/>
-    
-    <!-- Path 3: A Background - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.48744 0L6.48388..." fill="white"/>
-    
-    <!-- Path 4: A Red Accent - Arizona Red (ALWAYS) -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6962 3.82214..." fill="#AB0520"/>
-    
-    <!-- Path 5: A Outline - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9409 3.92059..." fill="white"/>
-    
-    <!-- Path 6: Registered Trademark - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M36.3989 27.5712..." fill="white"/>
-    
-    <!-- Path 7: A Inner Triangle - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9345 17.6724..." fill="white"/>
-    
-    <!-- Path 8: Vertical Separator - White -->
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.1172 31.9999..." fill="white"/>
-</svg>
+<div style="background: white; padding: 12px 20px; border-radius: 8px; display: inline-block;">
+    <svg width="220" height="39" viewBox="0 0 376.2 67.23" xmlns="http://www.w3.org/2000/svg">
+        <!-- Official logo SVG content from UAGC_Main_Horizontal_RGB_FullColor.svg -->
+    </svg>
+</div>
 ```
+
+**White Container Specifications:**
+- Background: `white`
+- Padding: `12px 20px`
+- Border Radius: `8px`
+- Display: `inline-block`
+
+This ensures the logo displays correctly with proper contrast on dark backgrounds.
 
 ---
 
 ## Logo Usage Rules
 
 ### ✅ DO:
-- Always include all 8 path elements
-- Maintain the 180x32 dimension ratio when scaling
-- Use Arizona Red (#AB0520) for the "A" accent (Path 4) on ALL backgrounds
-- Convert #0C234B fills to white when placing on dark backgrounds
-- Ensure minimum size of 90px width for readability
-- Provide adequate clear space (minimum 16px) around logo
+- Use the official `UAGC_Main_Horizontal_RGB_FullColor.svg` logo file
+- Add a white background container when placing on dark backgrounds
+- Maintain the 220x39px size for web implementations
+- Ensure minimum padding of 12px when using white containers
+- Maintain the original aspect ratio when scaling
 
 ### ❌ DON'T:
-- Remove any of the 8 path elements
-- Change the Arizona Red accent color
+- Modify the logo colors or structure
+- Place the logo directly on dark backgrounds without a white container
+- Remove any of the logo elements
 - Distort the aspect ratio
-- Use filters or CSS transforms to modify colors
+- Use the logo smaller than 110px width for readability
 - Place logo on busy or patterned backgrounds without sufficient contrast
-- Use the logo smaller than 90px width
 
 ---
 
 ## File Locations
 
-| File | Background | Logo Type |
-|------|------------|-----------|
-| `homepage.html` | Light (white) | Dark blue text + white A |
-| `thank-you.html` | Light (white) | Dark blue text + white A |
-| `index.html` | Dark (gradient blue) | White text + white A |
+| File | Background | Logo Implementation |
+|------|------------|---------------------|
+| `homepage.html` | Light (white) | Official logo directly |
+| `thank-you.html` | Light (white) | Official logo directly |
+| `index.html` | Dark (gradient blue) | Official logo + white container |
+| **Source** | N/A | `UAGC_Main_Horizontal_RGB_FullColor.svg` |
 
 ---
 
@@ -153,31 +129,39 @@ Use: `"University of Arizona Global Campus"`
 
 ---
 
-## Technical Notes
+## Technical Implementation Notes
 
-- SVG format ensures crisp display at all resolutions
-- No external fonts required - paths are embedded
-- All 8 paths must render for complete logo
-- Arizona Red (#AB0520) is the only color that never changes
-- Logo maintains brand consistency across all platforms
+- **Source File:** The official logo file `UAGC_Main_Horizontal_RGB_FullColor.svg` contains all brand colors as embedded CSS classes
+- **Block "A" Design:** The logo's white elements require a light background for visibility
+- **SVG Format:** Ensures crisp display at all resolutions and scales
+- **No External Fonts:** All text is path-based, no font dependencies
+- **Arizona Red (#ab0520):** This signature color appears consistently across all backgrounds
+- **Responsive:** SVG scales perfectly for mobile and desktop displays
 
 ---
 
-## Quick Reference: Color Conversion
+## Quick Reference: Implementation Guide
 
-When converting logo between backgrounds:
+**For Light Backgrounds:**
+```html
+<!-- Direct implementation -->
+<svg width="220" height="39" viewBox="0 0 376.2 67.23" ...>
+    <!-- Official logo content -->
+</svg>
+```
 
-**Light → Dark Background:**
-- Change `fill="#0C234B"` to `fill="white"` (Paths 1, 2, 5, 8)
-- Keep `fill="white"` as is (Paths 3, 6, 7)
-- Keep `fill="#AB0520"` as is (Path 4 - ALWAYS)
-
-**Dark → Light Background:**
-- Change `fill="white"` to `fill="#0C234B"` (Paths 1, 2, 5, 8 only)
-- Keep `fill="white"` for Paths 3, 6, 7
-- Keep `fill="#AB0520"` as is (Path 4 - ALWAYS)
+**For Dark Backgrounds:**
+```html
+<!-- With white container -->
+<div style="background: white; padding: 12px 20px; border-radius: 8px; display: inline-block;">
+    <svg width="220" height="39" viewBox="0 0 376.2 67.23" ...>
+        <!-- Official logo content -->
+    </svg>
+</div>
+```
 
 ---
 
 *Last Updated: November 13, 2025*
+*Official Logo File: UAGC_Main_Horizontal_RGB_FullColor.svg*
 
