@@ -1,66 +1,183 @@
 # UAGC Brand Guidelines
 
-## Color Palette
+## Logo Specifications
 
-### Primary Colors
+### Official University Logo
 
-| Color | Name | HEX | RGB | CMYK | Pantone |
-|:---:|:---|:---|:---|:---|:---|
-| ![#AB0520](https://via.placeholder.com/15/AB0520/000000?text=+) | Arizona Red | `#AB0520` | 171, 5, 32 | 18, 100, 83, 8 | 200 |
-| ![#0C234B](https://via.placeholder.com/15/0C234B/000000?text=+) | Arizona Blue | `#0C234B` | 12, 35, 75 | 100, 71, 0, 58 | 281/282 |
+The University of Arizona Global Campus logo consists of 8 distinct SVG path elements that must all be included for proper display:
 
-### Highlight Colors
+#### Logo Dimensions
+- **Width:** 180px
+- **Height:** 32px
+- **ViewBox:** `0 0 181 32`
+- **Aspect Ratio:** 5.625:1 (maintain for all sizes)
 
-| Color | Name | HEX | RGB | CMYK | Pantone |
-|:---:|:---|:---|:---|:---|:---|
-| ![#EF9600](https://via.placeholder.com/15/EF9600/000000?text=+) | Orange | `#EF9600` | 239, 150, 0 | 0, 45, 100, 0 | 2012 |
-| ![#81D3EB](https://via.placeholder.com/15/81D3EB/000000?text=+) | Sky | `#81D3EB` | 129, 211, 235 | 45, 0, 5, 0 | 2905 |
-| ![#0076A8](https://via.placeholder.com/15/0076A8/000000?text=+) | Blue | `#0076A8` | 0, 118, 168 | 95, 41, 10, 0 | 7690 |
-| ![#621244](https://via.placeholder.com/15/621244/000000?text=+) | Purple | `#621244` | 98, 18, 68 | 23, 100, 0, 58 | 2357 |
+### Logo Components (8 Required Paths)
 
-### Neutral Colors
+1. **Path 1: "GLOBAL CAMPUS" Text** - Main institutional text
+2. **Path 2: "THE UNIVERSITY OF ARIZONA" Text** - Secondary institutional text  
+3. **Path 3: "A" Logo Background Shape** - Block A background
+4. **Path 4: "A" Red Accent** - Signature Arizona red triangle
+5. **Path 5: "A" Outline** - Block A border
+6. **Path 6: Registered Trademark Symbol** - ® mark
+7. **Path 7: "A" Inner Triangle** - Interior white triangle
+8. **Path 8: Vertical Separator Line** - Right border divider
 
-| Color | Name | HEX | RGB | CMYK | Pantone |
-|:---:|:---|:---|:---|:---|:---|
-| ![#D0D0CE](https://via.placeholder.com/15/D0D0CE/000000?text=+) | Light Gray | `#D0D0CE` | 208, 208, 206 | 5, 3, 5, 11 | Cool Gray 2 |
-| ![#53565A](https://via.placeholder.com/15/53565A/000000?text=+) | Dark Gray | `#53565A` | 83, 86, 90 | 44, 34, 22, 77 | Cool Gray 11 |
-| ![#0076A8](https://via.placeholder.com/15/0076A8/000000?text=+) | Tan | `#0076A8` | 0, 118, 168 | 95, 41, 10, 0 | 7690 |
+---
 
-### Secondary Colors
+## Color Specifications
 
-| Color | Name | HEX | RGB | CMYK | Pantone |
-|:---:|:---|:---|:---|:---|:---|
-| ![#007D8A](https://via.placeholder.com/15/007D8A/000000?text=+) | River | `#007D8A` | 0, 125, 138 | 100, 0, 30, 26 | 7713 |
-| ![#98A4AE](https://via.placeholder.com/15/98A4AE/000000?text=+) | Silver | `#98A4AE` | 152, 164, 174 | 24, 9, 8, 22 | 7543 |
-| ![#F9E17D](https://via.placeholder.com/15/F9E17D/000000?text=+) | Yellow | `#F9E17D` | 249, 225, 125 | 0, 4, 58, 0 | 2002 |
+### Brand Colors
 
-## CSS Variables
+| Color Name | Hex Code | RGB | Usage |
+|------------|----------|-----|--------|
+| **Arizona Blue** | `#0C234B` | rgb(12, 35, 75) | Primary brand color, text on light backgrounds |
+| **Arizona Red** | `#AB0520` | rgb(171, 5, 32) | Signature accent, always used for "A" triangle |
+| **White** | `#FFFFFF` | rgb(255, 255, 255) | Text on dark backgrounds, logo elements |
 
-```css
-:root {
-  /* Primary Colors */
-  --arizona-red: #AB0520;
-  --arizona-blue: #0C234B;
-  
-  /* Highlight Colors */
-  --highlight-orange: #EF9600;
-  --highlight-sky: #81D3EB;
-  --highlight-blue: #0076A8;
-  --highlight-purple: #621244;
-  
-  /* Neutral Colors */
-  --light-gray: #D0D0CE;
-  --dark-gray: #53565A;
-  --tan: #0076A8;
-  
-  /* Secondary Colors */
-  --river: #007D8A;
-  --silver: #98A4AE;
-  --yellow: #F9E17D;
-}
+---
+
+## Logo Usage by Background
+
+### On Light Backgrounds (homepage.html, thank-you.html)
+
+**Fill Colors:**
+- Paths 1, 2, 5, 8: `#0C234B` (Arizona Blue)
+- Paths 3, 6, 7: `#FFFFFF` (White)
+- Path 4: `#AB0520` (Arizona Red - always red)
+
+```html
+<svg width="180" height="32" viewBox="0 0 181 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Path 1: GLOBAL CAMPUS - Dark Blue -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M176.815 27.2242..." fill="#0C234B"/>
+    
+    <!-- Path 2: THE UNIVERSITY OF ARIZONA - Dark Blue -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M166.694 11.8638..." fill="#0C234B"/>
+    
+    <!-- Path 3: A Background - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.48744 0L6.48388..." fill="white"/>
+    
+    <!-- Path 4: A Red Accent - Arizona Red (ALWAYS) -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6962 3.82214..." fill="#AB0520"/>
+    
+    <!-- Path 5: A Outline - Dark Blue -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9409 3.92059..." fill="#0C234B"/>
+    
+    <!-- Path 6: Registered Trademark - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M36.3989 27.5712..." fill="white"/>
+    
+    <!-- Path 7: A Inner Triangle - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9345 17.6724..." fill="white"/>
+    
+    <!-- Path 8: Vertical Separator - Dark Blue -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.1172 31.9999..." fill="#0C234B"/>
+</svg>
 ```
 
-## Typography
+### On Dark Backgrounds (index.html)
 
-**Proxima Nova** is the primary typeface for UAGC branding materials.
+**Fill Colors:**
+- Paths 1, 2, 5, 8: `#FFFFFF` (White) - Changed from blue
+- Paths 3, 6, 7: `#FFFFFF` (White) - Stays white
+- Path 4: `#AB0520` (Arizona Red - always red)
+
+```html
+<svg width="180" height="32" viewBox="0 0 181 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Path 1: GLOBAL CAMPUS - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M176.815 27.2242..." fill="white"/>
+    
+    <!-- Path 2: THE UNIVERSITY OF ARIZONA - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M166.694 11.8638..." fill="white"/>
+    
+    <!-- Path 3: A Background - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.48744 0L6.48388..." fill="white"/>
+    
+    <!-- Path 4: A Red Accent - Arizona Red (ALWAYS) -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6962 3.82214..." fill="#AB0520"/>
+    
+    <!-- Path 5: A Outline - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9409 3.92059..." fill="white"/>
+    
+    <!-- Path 6: Registered Trademark - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M36.3989 27.5712..." fill="white"/>
+    
+    <!-- Path 7: A Inner Triangle - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9345 17.6724..." fill="white"/>
+    
+    <!-- Path 8: Vertical Separator - White -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.1172 31.9999..." fill="white"/>
+</svg>
+```
+
+---
+
+## Logo Usage Rules
+
+### ✅ DO:
+- Always include all 8 path elements
+- Maintain the 180x32 dimension ratio when scaling
+- Use Arizona Red (#AB0520) for the "A" accent (Path 4) on ALL backgrounds
+- Convert #0C234B fills to white when placing on dark backgrounds
+- Ensure minimum size of 90px width for readability
+- Provide adequate clear space (minimum 16px) around logo
+
+### ❌ DON'T:
+- Remove any of the 8 path elements
+- Change the Arizona Red accent color
+- Distort the aspect ratio
+- Use filters or CSS transforms to modify colors
+- Place logo on busy or patterned backgrounds without sufficient contrast
+- Use the logo smaller than 90px width
+
+---
+
+## File Locations
+
+| File | Background | Logo Type |
+|------|------------|-----------|
+| `homepage.html` | Light (white) | Dark blue text + white A |
+| `thank-you.html` | Light (white) | Dark blue text + white A |
+| `index.html` | Dark (gradient blue) | White text + white A |
+
+---
+
+## Accessibility
+
+### Contrast Ratios
+- White logo on dark background: >7:1 (WCAG AAA)
+- Dark blue (#0C234B) on white: >10:1 (WCAG AAA)
+- Red accent visible on all backgrounds
+
+### Alt Text
+Use: `"University of Arizona Global Campus"`
+
+---
+
+## Technical Notes
+
+- SVG format ensures crisp display at all resolutions
+- No external fonts required - paths are embedded
+- All 8 paths must render for complete logo
+- Arizona Red (#AB0520) is the only color that never changes
+- Logo maintains brand consistency across all platforms
+
+---
+
+## Quick Reference: Color Conversion
+
+When converting logo between backgrounds:
+
+**Light → Dark Background:**
+- Change `fill="#0C234B"` to `fill="white"` (Paths 1, 2, 5, 8)
+- Keep `fill="white"` as is (Paths 3, 6, 7)
+- Keep `fill="#AB0520"` as is (Path 4 - ALWAYS)
+
+**Dark → Light Background:**
+- Change `fill="white"` to `fill="#0C234B"` (Paths 1, 2, 5, 8 only)
+- Keep `fill="white"` for Paths 3, 6, 7
+- Keep `fill="#AB0520"` as is (Path 4 - ALWAYS)
+
+---
+
+*Last Updated: November 13, 2025*
 
