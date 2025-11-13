@@ -1436,14 +1436,15 @@
             color: #666;
         }
 
-        /* 💡 Quick Summary Boxes */
+        /* 💡 Quick Summary Boxes - UAGC Brand Colors */
         .quick-takeaway {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: var(--primary-blue);
             color: white;
             padding: 20px 25px;
-            border-radius: 12px;
+            border-radius: 8px;
             margin: 30px 0;
-            box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+            box-shadow: 0 2px 8px rgba(12, 35, 75, 0.15);
+            border-left: 4px solid var(--accent-red);
         }
 
         .quick-takeaway h4 {
@@ -1452,6 +1453,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            color: white;
         }
 
         .quick-takeaway ul {
@@ -1465,18 +1467,18 @@
         }
 
         .insight-box {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            background: #f8f9fa;
             color: #333;
             padding: 20px 25px;
-            border-radius: 12px;
+            border-radius: 8px;
             margin: 25px 0;
-            box-shadow: 0 4px 12px rgba(250, 112, 154, 0.2);
-            border-left: 5px solid #fa709a;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--info-blue);
         }
 
         .insight-box h4 {
             margin: 0 0 10px 0;
-            color: #721c24;
+            color: var(--primary-blue);
             font-size: 1.1rem;
         }
 
@@ -1922,12 +1924,11 @@
     
     <!-- Quick Summary Box -->
     <div class="quick-takeaway">
-        <h4>💡 Key Takeaways from Methodology</h4>
+        <h4>💡 Key Takeaways</h4>
         <ul>
-            <li><strong>Focus:</strong> 4 top-performing universities (SNHU, WGU, Walden, Purdue) with 50,000+ online students each</li>
-            <li><strong>Analysis:</strong> Form architecture, program selection logic, qualifying questions, and data collection strategies</li>
-            <li><strong>Goal:</strong> Identify proven patterns that improve completion rates and lead quality</li>
-            <li><strong>Outcome:</strong> Data-driven recommendations to upgrade UAGC's RFI form from competitive weakness to competitive strength</li>
+            <li><strong>Analyzed:</strong> 4 top universities (SNHU, WGU, Walden, Purdue) with 50,000+ online students</li>
+            <li><strong>Evaluated:</strong> Form architecture, program selection, qualifying questions, data collection</li>
+            <li><strong>Result:</strong> Data-driven recommendations to transform UAGC's RFI into competitive advantage</li>
         </ul>
     </div>
     
@@ -2318,12 +2319,11 @@
     
     <!-- Quick Summary Box -->
     <div class="quick-takeaway">
-        <h4>💡 Current UAGC RFI: What We Learned</h4>
+        <h4>💡 Current UAGC RFI Assessment</h4>
         <ul>
-            <li><strong>✅ Strengths:</strong> Two-form approach (modal + on-page), military question included, phone in header</li>
-            <li><strong>❌ Gaps:</strong> No progress indicator, no education level filter, no start timeline question, military format could be expanded (4-option vs. Yes/No)</li>
-            <li><strong>Performance:</strong> 58% mobile completion (vs. 68-73% competitors), 12% inquiry-to-application (vs. 15-18% industry avg)</li>
-            <li><strong>Opportunity:</strong> 15-point completion rate improvement possible with proven industry patterns</li>
+            <li><strong>Strengths:</strong> 2-step on-page form, military question, phone in header</li>
+            <li><strong>Gaps:</strong> No progress indicator, no education filter, limited military options (Yes/No vs. 4-option)</li>
+            <li><strong>Performance:</strong> 58% mobile completion vs. 68-73% competitors = 15-point gap opportunity</li>
         </ul>
     </div>
     
@@ -3812,13 +3812,13 @@
     
     <!-- Quick Summary Box -->
     <div class="quick-takeaway">
-        <h4>💡 Competitive Analysis: Key Findings</h4>
+        <h4>💡 Competitive Best Practices</h4>
         <ul>
-            <li><strong>Multi-Step Forms:</strong> 50% use 2+ steps (SNHU 2-step, WGU 3-step) - reduces cognitive load and improves completion</li>
-            <li><strong>Military Question:</strong> 75% include military status (SNHU, Walden, Purdue) - critical for targeting benefits and scholarships</li>
-            <li><strong>Program Filtering:</strong> 100% use hierarchical filtering (Level → Area → Program) - simplifies selection from 100+ programs</li>
-            <li><strong>Start Timeline:</strong> 50% ask "When do you plan to start?" - improves lead scoring and follow-up timing</li>
-            <li><strong>Result:</strong> Competitors achieve 68-73% mobile completion vs. UAGC's 58% - 15-point improvement opportunity</li>
+            <li><strong>Multi-Step:</strong> 50% use 2-3 steps (reduces cognitive load, improves completion)</li>
+            <li><strong>Military Status:</strong> 75% ask military affiliation (enables benefits targeting)</li>
+            <li><strong>Program Filter:</strong> 100% use Level → Area → Program hierarchy (simplifies 100+ options)</li>
+            <li><strong>Start Timeline:</strong> 50% capture enrollment urgency (improves lead scoring)</li>
+            <li><strong>Result:</strong> 68-73% mobile completion vs. UAGC's 58%</li>
         </ul>
     </div>
     
@@ -4729,12 +4729,12 @@
     
     <!-- Quick Summary Box -->
     <div class="quick-takeaway">
-        <h4>💡 Data Strategy: Key Upgrades</h4>
+        <h4>💡 Data Strategy Upgrades</h4>
         <ul>
-            <li><strong>New Fields:</strong> Education Level, 4-option Military Status, Start Timeline, RN License (conditional)</li>
-            <li><strong>Lead Scoring:</strong> 0-100 point system prioritizes high-intent leads (start within 3 months = +40 points)</li>
-            <li><strong>Routing Logic:</strong> Immediate assignment to specialized counselors based on program, military status, and timeline</li>
-            <li><strong>Result:</strong> Better lead quality, faster follow-up, higher conversion rates</li>
+            <li><strong>Add:</strong> Education Level, 4-option Military Status, Start Timeline, RN License (conditional)</li>
+            <li><strong>Score:</strong> 0-100 point system (3-month start = +40 pts, military = +20 pts)</li>
+            <li><strong>Route:</strong> Auto-assign to specialized counselors by program, military status, timeline</li>
+            <li><strong>Impact:</strong> Better lead quality, faster follow-up, higher conversion</li>
         </ul>
     </div>
     
@@ -4898,13 +4898,13 @@
     
     <!-- Quick Summary Box -->
     <div class="quick-takeaway">
-        <h4>💡 Success Metrics: What to Track</h4>
+        <h4>💡 Success Metrics to Track</h4>
         <ul>
-            <li><strong>Completion Rate:</strong> Target 73% mobile (vs. current 58%) = +15 points</li>
-            <li><strong>Lead Quality:</strong> Track inquiry-to-app rate improvement (current 12% → target 15-18%)</li>
-            <li><strong>Time-to-Submission:</strong> Monitor average completion time per step</li>
-            <li><strong>Field Abandonment:</strong> Identify friction points for optimization</li>
-            <li><strong>ROI:</strong> Measure revenue impact from improved completion and conversion rates</li>
+            <li><strong>Completion Rate:</strong> Target 73% mobile (vs. 58% current) = +15 points</li>
+            <li><strong>Lead Quality:</strong> Inquiry-to-app rate 12% → 15-18%</li>
+            <li><strong>Time:</strong> Average completion time per step</li>
+            <li><strong>Abandonment:</strong> Field drop-off points (optimize friction)</li>
+            <li><strong>ROI:</strong> Revenue impact from completion & conversion gains</li>
         </ul>
     </div>
     
