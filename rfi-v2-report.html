@@ -4518,54 +4518,153 @@
         
         <h2>Data Fields: Current vs. Recommended</h2>
         
-        <table>
-            <thead>
-                <tr>
-                    <th>Field</th>
-                    <th>Current UAGC</th>
-                    <th>Recommended RFI 2.0</th>
-                    <th>Impact</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Education Level</strong></td>
-                    <td>❌ Not captured</td>
-                    <td>✅ Undergrad/Grad</td>
-                    <td>Immediate program filtering, better counselor routing</td>
-                </tr>
-                <tr>
-                    <td><strong>Program Interest</strong></td>
-                    <td>✅ Area → Degree filtering (2-step on-page)</td>
-                    <td>✅ Add Education Level first → Area → Degree</td>
-                    <td>Level-first filtering improves clarity by 37% (UX research)</td>
-                </tr>
-                <tr>
-                    <td><strong>Military Status</strong></td>
-                    <td>✅ Yes/No (both forms)</td>
-                    <td>✅ 4-option radio (all forms)</td>
-                    <td>Expand to 4 options for better segmentation: Active/Veteran/Spouse/No</td>
-                </tr>
-                <tr>
-                    <td><strong>RN License</strong></td>
-                    <td>❌ Not captured</td>
-                    <td>✅ Conditional (nursing only)</td>
-                    <td>BSN/MSN program qualification, better routing</td>
-                </tr>
-                <tr>
-                    <td><strong>Start Timeline</strong></td>
-                    <td>❌ Not captured</td>
-                    <td>✅ 4-option dropdown</td>
-                    <td>Lead scoring, counselor prioritization, forecasting</td>
-                </tr>
-                <tr>
-                    <td><strong>Full Address</strong></td>
-                    <td>⚠️ State only (dropdown)</td>
-                    <td>✅ Maintain State (sufficient)</td>
-                    <td>State is sufficient for regulatory/routing needs</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card-grid">
+            
+            <!-- Card 1: Education Level -->
+            <div class="visual-card">
+                <div class="card-header">
+                    <div class="card-icon">📚</div>
+                    <h3 class="card-title">Education Level</h3>
+                </div>
+                <div class="card-body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">Current</div>
+                            <div class="badge danger">❌ Not captured</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">RFI 2.0</div>
+                            <div class="badge success">✅ Required</div>
+                        </div>
+                    </div>
+                    <strong>Undergrad/Grad Selection</strong>
+                </div>
+                <div class="card-footer">
+                    <strong>Impact:</strong> Immediate program filtering, better counselor routing
+                </div>
+            </div>
+            
+            <!-- Card 2: Program Interest -->
+            <div class="visual-card">
+                <div class="card-header">
+                    <div class="card-icon">🎓</div>
+                    <h3 class="card-title">Program Interest</h3>
+                </div>
+                <div class="card-body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">Current</div>
+                            <div class="badge info">✅ 2-step filter</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">RFI 2.0</div>
+                            <div class="badge success">✅ 3-level filter</div>
+                        </div>
+                    </div>
+                    <strong>Level → Area → Degree</strong>
+                </div>
+                <div class="card-footer">
+                    <strong>Impact:</strong> 37% improvement in clarity (UX research)
+                </div>
+            </div>
+            
+            <!-- Card 3: Military Status -->
+            <div class="visual-card">
+                <div class="card-header">
+                    <div class="card-icon">🎖️</div>
+                    <h3 class="card-title">Military Status</h3>
+                </div>
+                <div class="card-body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">Current</div>
+                            <div class="badge warning">⚠️ Yes/No</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">RFI 2.0</div>
+                            <div class="badge success">✅ 4-option</div>
+                        </div>
+                    </div>
+                    <strong>Active / Veteran / Spouse / No</strong>
+                </div>
+                <div class="card-footer">
+                    <strong>Impact:</strong> Better segmentation for benefits and scholarships
+                </div>
+            </div>
+            
+            <!-- Card 4: RN License -->
+            <div class="visual-card">
+                <div class="card-header">
+                    <div class="card-icon">⚕️</div>
+                    <h3 class="card-title">RN License</h3>
+                </div>
+                <div class="card-body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">Current</div>
+                            <div class="badge danger">❌ Not captured</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">RFI 2.0</div>
+                            <div class="badge success">✅ Conditional</div>
+                        </div>
+                    </div>
+                    <strong>Shows only for nursing programs</strong>
+                </div>
+                <div class="card-footer">
+                    <strong>Impact:</strong> BSN/MSN program qualification, better routing
+                </div>
+            </div>
+            
+            <!-- Card 5: Start Timeline -->
+            <div class="visual-card">
+                <div class="card-header">
+                    <div class="card-icon">📅</div>
+                    <h3 class="card-title">Start Timeline</h3>
+                </div>
+                <div class="card-body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">Current</div>
+                            <div class="badge danger">❌ Not captured</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">RFI 2.0</div>
+                            <div class="badge success">✅ 4-option</div>
+                        </div>
+                    </div>
+                    <strong>Immediate / 3mo / 6mo / 12mo+</strong>
+                </div>
+                <div class="card-footer">
+                    <strong>Impact:</strong> Lead scoring, counselor prioritization, forecasting
+                </div>
+            </div>
+            
+            <!-- Card 6: Location -->
+            <div class="visual-card">
+                <div class="card-header">
+                    <div class="card-icon">📍</div>
+                    <h3 class="card-title">Location</h3>
+                </div>
+                <div class="card-body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">Current</div>
+                            <div class="badge success">✅ State dropdown</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">RFI 2.0</div>
+                            <div class="badge success">✅ Maintain</div>
+                        </div>
+                    </div>
+                    <strong>State dropdown is sufficient</strong>
+                </div>
+                <div class="card-footer">
+                    <strong>Impact:</strong> Meets regulatory/routing needs without friction
+                </div>
+            </div>
+            
+        </div>
         
         <h2>Lead Scoring Model</h2>
         
@@ -4628,11 +4727,26 @@
         </div>
     </section>
     
+    <!-- Quick Summary Box -->
+    <div class="quick-takeaway">
+        <h4>💡 Data Strategy: Key Upgrades</h4>
+        <ul>
+            <li><strong>New Fields:</strong> Education Level, 4-option Military Status, Start Timeline, RN License (conditional)</li>
+            <li><strong>Lead Scoring:</strong> 0-100 point system prioritizes high-intent leads (start within 3 months = +40 points)</li>
+            <li><strong>Routing Logic:</strong> Immediate assignment to specialized counselors based on program, military status, and timeline</li>
+            <li><strong>Result:</strong> Better lead quality, faster follow-up, higher conversion rates</li>
+        </ul>
+    </div>
+    
     <hr>
     
-    <!-- Visual Section Break -->
-    <div style="height: 40px; background: linear-gradient(90deg, var(--accent-red) 0%, #dc3545 100%); margin: 60px -20px 40px; display: flex; align-items: center; padding: 0 40px; border-radius: 8px;">
-        <span style="color: white; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">📊 Section 5: Success Metrics</span>
+    <!-- Visual Section Divider -->
+    <div class="section-divider">
+        <div class="icon">📊</div>
+        <div class="text">
+            <h2>Section 5: Success Metrics</h2>
+            <p class="subtitle">Measuring the impact of RFI 2.0 implementation</p>
+        </div>
     </div>
     
     <!-- Success Metrics -->
@@ -4781,6 +4895,18 @@
 
         
     </section>
+    
+    <!-- Quick Summary Box -->
+    <div class="quick-takeaway">
+        <h4>💡 Success Metrics: What to Track</h4>
+        <ul>
+            <li><strong>Completion Rate:</strong> Target 73% mobile (vs. current 58%) = +15 points</li>
+            <li><strong>Lead Quality:</strong> Track inquiry-to-app rate improvement (current 12% → target 15-18%)</li>
+            <li><strong>Time-to-Submission:</strong> Monitor average completion time per step</li>
+            <li><strong>Field Abandonment:</strong> Identify friction points for optimization</li>
+            <li><strong>ROI:</strong> Measure revenue impact from improved completion and conversion rates</li>
+        </ul>
+    </div>
     
     <hr>
     
