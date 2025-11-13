@@ -1,5 +1,41 @@
 # RFI 2.0 Project Research and Plan
 
+## 📁 File Structure
+
+### Main Pages
+- **`index.html`** - Landing page/Development portal that links to all project resources
+- **`homepage.html`** - The live RFI form (production-ready)
+  - Contains the optimized 2-step form with smart autocomplete features
+  - Integrated with program-data.js for dynamic program selection
+  - Mobile-optimized with immediate start timeline option
+- **`rfi-v2-report.html`** - Comprehensive competitive analysis & recommendations
+  - Research findings and UX best practices
+  - Competitive analysis of WGU, SNHU, Purdue, Walden
+  - Implementation guidelines and expected ROI
+
+### Supporting Files
+- **`styles.css`** - Main stylesheet for the RFI form
+- **`homepage-styles.css`** - Additional homepage-specific styles
+- **`form.js`** - Form logic, validation, and smart features
+- **`homepage.js`** - Homepage-specific JavaScript
+- **`program-data.js`** - Program catalog data
+- **`thank-you.html`** - Post-submission confirmation page
+
+### Documentation
+- **`readme.md`** - This file (project overview and research)
+- **`IMPLEMENTATION_GUIDE.md`** - Technical implementation guide
+- **`AUTOCOMPLETE_FEATURES.md`** - Smart autocomplete features documentation
+- **`PROJECT_SUMMARY.md`** - Project summary and key decisions
+- **`rfi-report.md`** - Markdown version of the analysis
+
+### Recommended Viewing Order
+1. Start at `index.html` for navigation
+2. View `homepage.html` to see the live form
+3. Read `rfi-v2-report.html` for strategy and recommendations
+4. Check `AUTOCOMPLETE_FEATURES.md` for technical features
+
+---
+
 ## 🎉 Latest Updates - UX AI Enhancements (Nov 2025)
 
 **The RFI form now includes intelligent UX AI features to help users complete the form successfully!**
