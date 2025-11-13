@@ -1471,12 +1471,12 @@
                     <h4 style="margin: 0; color: #0C234B;">Contact Information</h4>
                 </div>
                 <div style="margin-left: 44px;">
-                    <p style="margin: 5px 0; color: #53565A;"><strong>Typical Fields:</strong> First Name, Last Name, Email, Phone, State, [Selected Program Pre-filled]</p>
-                    <div style="margin-top: 10px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #AB0520;">
-                        <strong style="color: #AB0520;">❌ Critical Gap:</strong> Military status question NOT included (only in modal version)
+                    <p style="margin: 5px 0; color: #53565A;"><strong>Typical Fields:</strong> First Name, Last Name, Email, Phone, State, [Selected Program Pre-filled], Military Status (Yes/No)</p>
+                    <div style="margin-top: 10px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #0C234B;">
+                        <strong style="color: #0C234B;">✅ Included:</strong> Military status question (Yes/No) captured on both forms
                     </div>
                     <div style="margin-top: 8px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #AB0520;">
-                        <strong style="color: #AB0520;">❌ Missing:</strong> Start timeline, RN license conditional, progress indicator
+                        <strong style="color: #AB0520;">❌ Missing:</strong> Start timeline, RN license conditional, progress indicator, 4-option military format (Active/Veteran/Spouse/No)
                     </div>
                 </div>
             </div>
@@ -1513,8 +1513,8 @@
                 </tr>
                 <tr>
                     <td><strong>Military Question</strong></td>
-                    <td>❌ Not in on-page form</td>
-                    <td><span class="badge danger">❌ Inconsistent</span> Present in modal but missing here</td>
+                    <td>✅ Yes/No on both forms</td>
+                    <td><span class="badge warning">⚠️ Should Expand</span> Limited to Yes/No vs. 4-option format</td>
                 </tr>
                 <tr>
                     <td><strong>Phone in Header</strong></td>
@@ -3131,7 +3131,7 @@
                 <li><strong>Must-Have Features:</strong> Hierarchical filtering, mobile optimization, TCPA compliance (all 4 use)</li>
                 <li><strong>Competitive Edge:</strong> Multi-step forms, military questions, start timeline (2-3 use)</li>
                 <li><strong>Unique Opportunities:</strong> Conditional logic, enhanced data capture (only 1 uses)</li>
-                <li><strong>UAGC's Current State:</strong> ✅ 2-step form (on-page), ✅ Military question (modal), ✅ Phone in header | ❌ No progress indicator, ❌ No education level filter, ❌ No start timeline, ⚠️ Military only in modal popup</li>
+                <li><strong>UAGC's Current State:</strong> ✅ 2-step form (on-page), ✅ Military question (both forms), ✅ Phone in header | ❌ No progress indicator, ❌ No education level filter, ❌ No start timeline, ⚠️ Military limited to Yes/No (should expand to 4 options)</li>
             </ul>
         </div>
         
@@ -3290,7 +3290,7 @@
                     <td>❌ No</td>
                     <td>✅ Yes/No</td>
                     <td>✅ Checkbox</td>
-                    <td>✅ Yes/No (modal only)</td>
+                    <td>✅ Yes/No (both forms)</td>
                     <td>75%</td>
                     <td><strong>✅ Expand to 4 options</strong> (Active/Veteran/Spouse/No)</td>
                 </tr>
@@ -3381,8 +3381,8 @@
                     <td>❌</td>
                     <td>✅</td>
                     <td>✅</td>
-                    <td>⚠️ Yes/No (modal only)</td>
-                    <td><strong>✅ Expand to all forms + 4 options</strong></td>
+                    <td>✅ Yes/No (both forms)</td>
+                    <td><strong>✅ Expand to 4 options</strong></td>
                 </tr>
                 <tr>
                     <td><strong>Program-Specific Qualifiers</strong></td>
@@ -3829,9 +3829,9 @@
                 </tr>
                 <tr>
                     <td><strong>Military Status</strong></td>
-                    <td>⚠️ Yes/No (modal only, not on-page form)</td>
+                    <td>✅ Yes/No (both forms)</td>
                     <td>✅ 4-option radio (all forms)</td>
-                    <td>Military benefits counseling, specialized support</td>
+                    <td>Expand to 4 options for better segmentation: Active/Veteran/Spouse/No</td>
                 </tr>
                 <tr>
                     <td><strong>RN License</strong></td>
