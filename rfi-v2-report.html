@@ -1143,7 +1143,11 @@
         <h2>📋 Table of Contents</h2>
         <ol>
             <li><a href="#executive-summary">Executive Summary & Methodology</a></li>
-            <li><a href="#the-problem">The Challenge: Current UAGC RFI Performance</a></li>
+            <li><a href="#the-problem">The Challenge: Current UAGC RFI Performance</a>
+                <ol style="margin-left: 20px; font-size: 0.95rem; margin-top: 8px;">
+                    <li><a href="#uagc">Current UAGC RFI: Detailed Analysis</a></li>
+                </ol>
+            </li>
             <li><a href="#competitive-analysis">Competitive Analysis: Deep Dive</a>
                 <ol style="margin-left: 20px; font-size: 0.95rem; margin-top: 8px;">
                     <li><a href="#snhu">Southern New Hampshire University (SNHU)</a></li>
@@ -1322,6 +1326,205 @@
             <h4>📉 Why This Analysis Matters</h4>
             <p>Understanding how industry leaders structure their RFIs provides a roadmap for UAGC to close performance gaps and compete effectively for prospective students.</p>
         </div>
+        
+        <h2>Current UAGC RFI: Detailed Analysis</h2>
+        
+        <div class="card" style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); color: white; padding: 30px; margin-bottom: 30px;">
+            <h3 style="color: white; margin-top: 0;">📋 UAGC's Two RFI Approaches</h3>
+            <p style="margin-bottom: 20px;">UAGC currently employs two different RFI forms depending on entry point—each with distinct advantages and limitations.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #F9E17D; margin-top: 0;">Modal Popup (1-Step)</h4>
+                    <p style="font-size: 0.9rem;">Triggered by "Request Info" button in header</p>
+                    <ul style="font-size: 0.9rem; line-height: 1.6;">
+                        <li>✅ Fast: Single-step submission</li>
+                        <li>✅ Includes military question</li>
+                        <li>❌ All fields at once (7 fields)</li>
+                        <li>❌ No program specificity</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #F9E17D; margin-top: 0;">On-Page Form (2-Step)</h4>
+                    <p style="font-size: 0.9rem;">Embedded on homepage and throughout site</p>
+                    <ul style="font-size: 0.9rem; line-height: 1.6;">
+                        <li>✅ 2-step design reduces cognitive load</li>
+                        <li>✅ Program filtering (Area → Degree)</li>
+                        <li>❌ No progress indicator</li>
+                        <li>❌ Missing military question</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <h3 id="uagc">UAGC Modal RFI (1-Step Quick Request)</h3>
+        
+        <div class="screenshot-container">
+            <img src="screenshots/RFI/Uagc-RFI-Step1.png" alt="UAGC Modal RFI Form" style="max-width: 100%; border: 1px solid #ddd; border-radius: 8px;">
+            <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 10px;">UAGC Modal Popup RFI - Single-step design with all fields visible</p>
+        </div>
+        
+        <h4>Form Structure Analysis</h4>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Implementation</th>
+                    <th>Assessment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Design Approach</strong></td>
+                    <td>Single-step modal popup</td>
+                    <td><span class="badge warning">⚠️ Mixed</span> Fast but shows all 7 fields at once</td>
+                </tr>
+                <tr>
+                    <td><strong>Field Count</strong></td>
+                    <td>7 required fields</td>
+                    <td><span class="badge warning">⚠️ Moderate</span> More than WGU (4), less than SNHU (10-12)</td>
+                </tr>
+                <tr>
+                    <td><strong>Program Selection</strong></td>
+                    <td>Area of Interest only (no specific program)</td>
+                    <td><span class="badge danger">❌ Gap</span> Less specific than competitors' program selection</td>
+                </tr>
+                <tr>
+                    <td><strong>Military Question</strong></td>
+                    <td>✅ "Are you a member of the military?" (Yes/No)</td>
+                    <td><span class="badge success">✅ Good</span> Matches 75% of competitors</td>
+                </tr>
+                <tr>
+                    <td><strong>Contact Fields</strong></td>
+                    <td>First Name, Last Name, Email, Phone, State</td>
+                    <td><span class="badge success">✅ Standard</span> Core fields captured correctly</td>
+                </tr>
+                <tr>
+                    <td><strong>TCPA Consent</strong></td>
+                    <td>✅ Clear language with opt-out instructions</td>
+                    <td><span class="badge success">✅ Compliant</span> Meets regulatory requirements</td>
+                </tr>
+                <tr>
+                    <td><strong>Start Timeline</strong></td>
+                    <td>❌ Not asked</td>
+                    <td><span class="badge danger">❌ Missing</span> Purdue uses this for lead scoring</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;">
+            <div class="info-box green">
+                <h4>✅ What Works Well</h4>
+                <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+                    <li>Military question captures key segment</li>
+                    <li>TCPA consent is clear and compliant</li>
+                    <li>Phone number prominently displayed</li>
+                    <li>Single-step is fast for motivated users</li>
+                </ul>
+            </div>
+            <div class="info-box orange">
+                <h4>⚠️ Areas for Improvement</h4>
+                <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+                    <li>No specific program selection</li>
+                    <li>No start timeline question</li>
+                    <li>No education level capture</li>
+                    <li>7 fields at once may overwhelm mobile users</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>UAGC On-Page RFI (2-Step Process)</h3>
+        
+        <div class="screenshot-container">
+            <img src="screenshots/RFI/Uagc-RFI-Step2.png" alt="UAGC On-Page RFI Step 2" style="max-width: 100%; border: 1px solid #ddd; border-radius: 8px;">
+            <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 10px;">UAGC On-Page RFI - 2-step design with Area → Degree filtering</p>
+        </div>
+        
+        <h4>Step-by-Step Breakdown</h4>
+        
+        <div style="background: #f8f9fa; padding: 25px; border-radius: 8px; margin: 20px 0;">
+            <div style="margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div style="background: #0C234B; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">1</div>
+                    <h4 style="margin: 0; color: #0C234B;">Program Selection</h4>
+                </div>
+                <div style="margin-left: 44px;">
+                    <p style="margin: 5px 0; color: #53565A;"><strong>Fields:</strong> Area of Interest (dropdown) → Select Your Degree (filtered dropdown)</p>
+                    <p style="margin: 5px 0; color: #53565A;"><strong>Flow:</strong> Choose area first (e.g., "Business") → Degree list filters to show only business programs</p>
+                    <div style="margin-top: 10px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #0C234B;">
+                        <strong style="color: #0C234B;">✅ Strength:</strong> Hierarchical filtering works well - only 2 fields in Step 1
+                    </div>
+                    <div style="margin-top: 8px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #EF9600;">
+                        <strong style="color: #EF9600;">⚠️ Gap:</strong> Missing education level (Undergrad/Grad) as first filter
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div style="background: #0C234B; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">2</div>
+                    <h4 style="margin: 0; color: #0C234B;">Contact Information</h4>
+                </div>
+                <div style="margin-left: 44px;">
+                    <p style="margin: 5px 0; color: #53565A;"><strong>Typical Fields:</strong> First Name, Last Name, Email, Phone, State, [Selected Program Pre-filled]</p>
+                    <div style="margin-top: 10px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #AB0520;">
+                        <strong style="color: #AB0520;">❌ Critical Gap:</strong> Military status question NOT included (only in modal version)
+                    </div>
+                    <div style="margin-top: 8px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #AB0520;">
+                        <strong style="color: #AB0520;">❌ Missing:</strong> Start timeline, RN license conditional, progress indicator
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>UAGC Implementation</th>
+                    <th>vs. Best Practices</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Multi-Step Design</strong></td>
+                    <td>✅ 2 steps (Area/Degree → Contact)</td>
+                    <td><span class="badge success">✅ Matches</span> WGU and Purdue's approach</td>
+                </tr>
+                <tr>
+                    <td><strong>Progress Indicator</strong></td>
+                    <td>❌ None shown</td>
+                    <td><span class="badge danger">❌ Behind</span> 50% of competitors show "Step X of Y"</td>
+                </tr>
+                <tr>
+                    <td><strong>Education Level Filter</strong></td>
+                    <td>❌ Not included</td>
+                    <td><span class="badge danger">❌ Behind</span> 75% lead with Undergrad/Grad split</td>
+                </tr>
+                <tr>
+                    <td><strong>Program Filtering</strong></td>
+                    <td>✅ Area → Degree (2 levels)</td>
+                    <td><span class="badge success">✅ Good</span> Simpler than SNHU's 4-level system</td>
+                </tr>
+                <tr>
+                    <td><strong>Military Question</strong></td>
+                    <td>❌ Not in on-page form</td>
+                    <td><span class="badge danger">❌ Inconsistent</span> Present in modal but missing here</td>
+                </tr>
+                <tr>
+                    <td><strong>Phone in Header</strong></td>
+                    <td>✅ 866-711-1700 visible</td>
+                    <td><span class="badge success">✅ Matches</span> 75% of competitors</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box blue" style="margin-top: 30px;">
+            <h4>💡 Key Insight: Form Fragmentation</h4>
+            <p>UAGC's biggest challenge isn't a lack of features—it's <strong>inconsistency between the two RFI versions</strong>. The modal has military questions but lacks program specificity; the on-page form has program filtering but lacks military questions. <strong>Recommendation:</strong> Standardize on one enhanced 2-step approach that combines the best of both.</p>
+        </div>
+        
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #eee;">
         
         <h2>1. User Behavior Analysis</h2>
         
