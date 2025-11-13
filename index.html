@@ -181,32 +181,6 @@
             font-size: 0.9rem;
         }
         
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(16, 185, 129, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: #10b981;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-        
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #10b981;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -226,18 +200,18 @@
     <div class="container">
         <div class="header">
             <div class="logo">
-                <svg width="200" height="36" viewBox="0 0 181 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="180" height="32" viewBox="0 0 181 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M176.815 27.2242C179.074 27.2242 180.862 26.1888 180.862 23.9693C180.862 21.798 179.496 21.1898 178.18 20.7627C177.085 20.4173 176.41 20.2852 176.41 19.7588C176.41 19.3645 176.747 19.1506 177.592 19.1506C178.586 19.1506 179.58 19.4631 180.154 19.726V17.1778C179.462 16.9304 178.552 16.7172 177.338 16.7172C175.045 16.7172 173.342 17.6875 173.342 19.8909C173.342 21.6009 174.302 22.439 175.332 22.8676C176.984 23.5575 177.641 23.4758 177.641 24.1C177.641 24.4782 177.287 24.7739 176.241 24.7739C175.147 24.7739 174.235 24.3957 173.393 24.0182V26.5992C174.302 26.9942 175.366 27.2242 176.815 27.2242ZM166.817 27.2242C169.699 27.2242 171.352 26.0896 171.352 23.0976V16.8486H168.436V23.0808C168.436 24.0832 167.947 24.7411 166.817 24.7411C165.688 24.7411 165.199 24.0832 165.199 23.0808V16.8486H162.097V23.0976C162.097 26.0896 163.933 27.2242 166.817 27.2242ZM155.1 21.7008V19.2324H155.976C156.852 19.2324 157.224 19.677 157.224 20.4502C157.224 21.2555 156.836 21.7008 155.976 21.7008H155.1ZM151.997 27.0934H155.1V23.919H156.262C158.842 23.919 160.343 22.4887 160.343 20.4502C160.343 18.2957 158.842 16.8486 156.381 16.8486H151.997V27.0934ZM136.418 27.0934H139.166L139.638 22.6537C139.688 22.0937 139.756 21.1395 139.772 20.7291H139.806C139.874 21.1569 140.026 21.9637 140.178 22.5544L141.341 27.0934H144.68L145.877 22.4887C146.029 21.9126 146.146 21.222 146.214 20.7291H146.247C146.281 21.2387 146.332 21.9791 146.399 22.5712L146.904 27.0934H149.906L148.507 16.8486H144.813L143.516 22.3244C143.381 22.8836 143.263 23.5743 143.179 24.1175H143.144C143.06 23.5575 142.942 22.8997 142.808 22.3412L141.493 16.8486H137.784L136.418 27.0934ZM128.812 23.1465L129.521 20.9759C129.657 20.5655 129.757 20.1866 129.876 19.7756H129.909C130.011 20.1866 130.112 20.5481 130.264 20.9759L130.972 23.1465H128.812ZM124.312 27.0934H127.497L128.021 25.5478H131.764L132.27 27.0934H135.626L131.663 16.8486H128.291L124.312 27.0934ZM120.585 27.2242C122.119 27.2242 122.709 26.9774 123.351 26.6985V24.0504C122.742 24.4293 122.035 24.7082 120.889 24.7082C119.473 24.7082 118.546 23.87 118.546 22.0937C118.546 20.0552 119.473 19.2324 120.922 19.2324C121.952 19.2324 122.794 19.4631 123.316 19.7588V17.2107C122.676 16.98 121.933 16.7172 120.534 16.7172C116.893 16.7172 115.257 19.1835 115.257 22.0937C115.257 24.9221 116.977 27.2242 120.585 27.2242ZM102.831 27.0934H109.575V24.6754H105.933V16.8486H102.831V27.0934ZM94.6208 23.1465L95.3283 20.9759C95.4631 20.5655 95.5642 20.1866 95.6824 19.7756H95.7154C95.8179 20.1866 95.9183 20.5481 96.0695 20.9759L96.7785 23.1465H94.6208ZM90.1191 27.0934H93.3054L93.8273 25.5478H97.5699L98.076 27.0934H101.433L97.4702 16.8486H94.0975L90.1191 27.0934ZM83.8131 24.7907V22.8347H84.8747C85.5829 22.8347 86.0044 23.1633 86.0044 23.8036C86.0044 24.4454 85.5829 24.7907 84.8747 24.7907H83.8131ZM83.8131 20.8445V19.1667H84.8403C85.5829 19.1667 85.9034 19.4631 85.9034 19.9895C85.9034 20.5327 85.6001 20.8445 84.8245 20.8445H83.8131ZM80.7106 27.0934H85.3464C87.7413 27.0934 89.3599 26.0735 89.3599 24.0665C89.3599 22.8172 88.5678 22.0937 87.4539 21.8155V21.7819C88.2811 21.5526 89.0216 20.8445 89.0216 19.4799C89.0216 17.9175 87.6739 16.8486 85.2969 16.8486H80.7106V27.0934ZM73.5623 24.7411C72.3989 24.7411 71.5888 23.9357 71.5888 21.9791C71.5888 20.0224 72.3989 19.2003 73.5623 19.2003C74.7594 19.2003 75.568 20.0056 75.568 21.9637C75.568 23.919 74.7415 24.7411 73.5623 24.7411ZM73.5623 27.2242C76.9171 27.2242 78.8217 24.8564 78.8217 21.9637C78.8217 19.0681 76.9171 16.7172 73.5623 16.7172C70.2233 16.7172 68.3344 19.0849 68.3344 21.9791C68.3344 24.8739 70.2233 27.2242 73.5623 27.2242ZM60.6299 27.0934H67.3724V24.6754H63.7323V16.8486H60.6299V27.0934ZM54.2894 27.2242C55.8579 27.2242 57.1561 26.9285 58.2184 26.5831V21.2066H53.7676V23.4415H55.2005V24.7411C54.9647 24.8075 54.6944 24.8396 54.3568 24.8396C52.7396 24.8396 51.9289 23.9022 51.9289 22.0937C51.9289 20.0377 52.8909 19.2003 54.4758 19.2003C55.7224 19.2003 56.65 19.3967 57.6794 19.8091V17.2429C56.8191 16.9143 55.7568 16.7172 54.3403 16.7172C50.2601 16.7172 48.6752 19.3156 48.6752 22.0937C48.6752 24.9382 50.4959 27.2242 54.2894 27.2242Z" fill="white"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M6.48744 0L6.48388 9.91858L7.51962 9.91646L3.44153 20.6504L0 20.6469V30.5662H33.4045V20.6327L29.9395 20.6278L25.897 9.92424L26.9107 9.92918V0.00353276L6.48744 0Z" fill="white"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6962 3.82214L23.8432 22.1301C23.8432 22.1301 24.7596 24.3577 26.2464 24.3577H21.0426C21.0426 24.3577 21.3039 24.395 21.5646 23.9673C21.7134 23.7219 21.5881 23.3547 21.5881 23.3547L19.9795 19.2673H16.6962H13.4278L11.8157 23.3547C11.8157 23.3547 11.6925 23.7219 11.8413 23.9673C12.1012 24.395 12.3626 24.3577 12.3626 24.3577H7.15808C8.64416 24.3577 9.56058 22.1301 9.56058 22.1301L16.6962 3.82214Z" fill="#AB0520"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9409 3.92059H23.395V6.47964H20.7135L27.7639 24.4863H29.8485V27.1351H21.1115V24.5577H18.6582V29.6122H32.4501V22.0757L29.3528 22.082L24.3885 8.9659H25.9482V1.43433H16.9409H7.93429V8.9659H9.49399L4.52821 22.0651L1.43164 22.0757V29.6122H15.2243V24.5577H12.7703V27.1351H4.03185V24.4863H6.11786L13.1675 6.47964H10.4867V3.92059H16.9409Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M36.3989 27.5712C36.6298 27.8023 36.7449 28.0848 36.7449 28.4193C36.7449 28.7532 36.6305 29.035 36.3996 29.2667C36.168 29.4971 35.8868 29.612 35.5519 29.612C35.2164 29.612 34.9351 29.4971 34.7036 29.2667C34.474 29.035 34.3589 28.7532 34.3589 28.4193C34.3589 28.0848 34.474 27.8023 34.7049 27.5712C34.9358 27.3402 35.217 27.224 35.5519 27.224C35.8855 27.224 36.1674 27.3402 36.3989 27.5712ZM36.2308 27.7148C36.0464 27.5225 35.8188 27.427 35.5519 27.427C35.2844 27.427 35.0581 27.5225 34.8736 27.7148C34.6885 27.9065 34.597 28.1415 34.597 28.4193C34.597 28.6971 34.6885 28.9322 34.8736 29.1238C35.0581 29.3141 35.2844 29.4103 35.5519 29.4103C35.8181 29.4103 36.0451 29.3141 36.2308 29.1238C36.4146 28.9322 36.5075 28.6971 36.5075 28.4193C36.5075 28.1415 36.4146 27.9065 36.2308 27.7148ZM35.0339 27.7282H35.1412H35.5755C35.722 27.7282 35.8364 27.7622 35.9195 27.8277C36.0026 27.8931 36.0444 27.9859 36.0444 28.1021C36.0444 28.229 36.0026 28.3312 35.9195 28.4033C35.8567 28.4574 35.7769 28.4914 35.6788 28.5041L36.068 29.1091H35.9457H35.822L35.4721 28.5128H35.2458V29.1091H35.1405H35.0339V27.7282ZM35.2458 28.3298H35.5342C35.6343 28.3298 35.7069 28.3105 35.7534 28.2751C35.8005 28.239 35.8227 28.1816 35.8227 28.1035C35.8227 28.0347 35.8005 27.9853 35.7534 27.9519C35.7069 27.9198 35.6343 27.9038 35.5342 27.9038H35.2458V28.3298Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9345 17.6724H19.5654L16.9866 10.9861L14.3162 17.6724H16.9345Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.1172 31.9999H41.917V0.00134277H41.1172V31.9999Z" fill="white"/>
                 </svg>
             </div>
             <h1>RFI 2.0 Development Project</h1>
             <p class="subtitle">Redesigning the Request for Information Experience</p>
-            <div class="status-badge">
-                <span class="status-dot"></span>
-                <span>Project Complete</span>
-            </div>
         </div>
         
         <!-- Project Overview -->
@@ -321,28 +295,43 @@
         </div>
         
         <!-- Process Timeline -->
-        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 30px; margin-top: 40px; border: 1px solid rgba(255, 255, 255, 0.2);">
-            <h2 style="font-size: 1.3rem; margin-bottom: 20px; color: #ffffff; text-align: center;">Development Process</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px;">
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 1.5rem;">1</div>
-                    <div style="font-weight: 600; color: #ffffff; margin-bottom: 6px; font-size: 0.95rem;">Research</div>
-                    <div style="color: #b8d4ff; font-size: 0.85rem; line-height: 1.5;">Analyzed 4 competitor RFI forms</div>
+        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 40px 30px; margin-top: 40px; border: 1px solid rgba(255, 255, 255, 0.2);">
+            <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: #ffffff; text-align: center; font-weight: 700;">Development Process</h2>
+            <p style="text-align: center; color: #b8d4ff; font-size: 0.95rem; margin-bottom: 35px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                A systematic approach to analyzing, designing, and implementing the next generation RFI experience
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 25px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5rem; font-weight: 700; color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">1</div>
+                    <div style="font-weight: 700; color: #ffffff; margin-bottom: 10px; font-size: 1.05rem; text-align: center;">Competitive Research</div>
+                    <div style="color: #b8d4ff; font-size: 0.9rem; line-height: 1.6; text-align: center; margin-bottom: 12px;">In-depth analysis of RFI forms from WGU, SNHU, Purdue Global, and Walden University</div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px 12px; border-radius: 6px; text-align: center;">
+                        <span style="color: #10b981; font-size: 0.8rem; font-weight: 600;">📊 4 Institutions Analyzed</span>
+                    </div>
                 </div>
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 1.5rem;">2</div>
-                    <div style="font-weight: 600; color: #ffffff; margin-bottom: 6px; font-size: 0.95rem;">Strategy</div>
-                    <div style="color: #b8d4ff; font-size: 0.85rem; line-height: 1.5;">Documented best practices & recommendations</div>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 25px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5rem; font-weight: 700; color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">2</div>
+                    <div style="font-weight: 700; color: #ffffff; margin-bottom: 10px; font-size: 1.05rem; text-align: center;">Strategic Analysis</div>
+                    <div style="color: #b8d4ff; font-size: 0.9rem; line-height: 1.6; text-align: center; margin-bottom: 12px;">Identified best practices, UX patterns, and conversion optimization opportunities</div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px 12px; border-radius: 6px; text-align: center;">
+                        <span style="color: #10b981; font-size: 0.8rem; font-weight: 600;">📝 15+ Recommendations</span>
+                    </div>
                 </div>
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 1.5rem;">3</div>
-                    <div style="font-weight: 600; color: #ffffff; margin-bottom: 6px; font-size: 0.95rem;">Design</div>
-                    <div style="color: #b8d4ff; font-size: 0.85rem; line-height: 1.5;">Created condensed 2-step form flow</div>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 25px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5rem; font-weight: 700; color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">3</div>
+                    <div style="font-weight: 700; color: #ffffff; margin-bottom: 10px; font-size: 1.05rem; text-align: center;">UX Design</div>
+                    <div style="color: #b8d4ff; font-size: 0.9rem; line-height: 1.6; text-align: center; margin-bottom: 12px;">Redesigned with condensed 2-step flow, progressive disclosure, and micro-commitment strategy</div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px 12px; border-radius: 6px; text-align: center;">
+                        <span style="color: #10b981; font-size: 0.8rem; font-weight: 600;">⚡ 40% Smaller Form</span>
+                    </div>
                 </div>
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 1.5rem;">4</div>
-                    <div style="font-weight: 600; color: #ffffff; margin-bottom: 6px; font-size: 0.95rem;">Implementation</div>
-                    <div style="color: #b8d4ff; font-size: 0.85rem; line-height: 1.5;">Built working demo with smart features</div>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 25px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5rem; font-weight: 700; color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">4</div>
+                    <div style="font-weight: 700; color: #ffffff; margin-bottom: 10px; font-size: 1.05rem; text-align: center;">Technical Implementation</div>
+                    <div style="color: #b8d4ff; font-size: 0.9rem; line-height: 1.6; text-align: center; margin-bottom: 12px;">Built production-ready demo with smart autocomplete, ZIP lookup, and validation features</div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px 12px; border-radius: 6px; text-align: center;">
+                        <span style="color: #10b981; font-size: 0.8rem; font-weight: 600;">✨ 6 Smart Features</span>
+                    </div>
                 </div>
             </div>
         </div>
