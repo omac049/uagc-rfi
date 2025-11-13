@@ -1249,12 +1249,294 @@
                 display: none;
             }
         }
+
+        /* 🧭 Sticky Navigation Menu - PREMIUM UX */
+        .nav-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            background: var(--dark-blue);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            overflow-y: auto;
+            padding: 80px 30px 30px 30px;
+        }
+
+        .sticky-nav.open {
+            right: 0;
+        }
+
+        .sticky-nav h2 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin: 0 0 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sticky-nav ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sticky-nav > ol > li {
+            margin-bottom: 8px;
+        }
+
+        .sticky-nav a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-left: 3px solid transparent;
+        }
+
+        .sticky-nav a:hover {
+            background: linear-gradient(90deg, #e8f4f8 0%, #f0f7fa 100%);
+            border-left-color: var(--primary-blue);
+            padding-left: 20px;
+        }
+
+        .sticky-nav a.active {
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--info-blue) 100%);
+            color: white;
+            font-weight: 600;
+            border-left-color: var(--accent-red);
+        }
+
+        .sticky-nav ol ol {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        .sticky-nav ol ol a {
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            color: #666;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .nav-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* 📦 Visual Cards - Replace Tables */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .visual-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        .visual-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .visual-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .visual-card .card-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f7fa 100%);
+            border-radius: 10px;
+        }
+
+        .visual-card .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .visual-card .card-body {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .visual-card .card-body ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+
+        .visual-card .card-footer {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* 💡 Quick Summary Boxes */
+        .quick-takeaway {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+        }
+
+        .quick-takeaway h4 {
+            margin: 0 0 12px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quick-takeaway ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.7;
+        }
+
+        .quick-takeaway li {
+            margin-bottom: 6px;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #333;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(250, 112, 154, 0.2);
+            border-left: 5px solid #fa709a;
+        }
+
+        .insight-box h4 {
+            margin: 0 0 10px 0;
+            color: #721c24;
+            font-size: 1.1rem;
+        }
+
+        @media print {
+            .nav-toggle, .sticky-nav, .nav-overlay {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-nav {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     
     <!-- Reading Progress Bar -->
     <div class="reading-progress" id="reading-progress"></div>
+    
+    <!-- Navigation Toggle Button -->
+    <button class="nav-toggle" id="navToggle" onclick="toggleNav()" title="Open navigation">
+        ☰
+    </button>
+    
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+    
+    <!-- Sticky Navigation Menu -->
+    <nav class="sticky-nav" id="stickyNav">
+        <h2>📋 Navigation</h2>
+        <ol>
+            <li><a href="#executive-summary">Executive Summary & Methodology</a></li>
+            <li><a href="#the-problem">The Challenge: Current UAGC RFI Performance</a>
+                <ol>
+                    <li><a href="#uagc">Current UAGC RFI: Detailed Analysis</a></li>
+                </ol>
+            </li>
+            <li><a href="#competitive-analysis">Competitive Analysis: Deep Dive</a>
+                <ol>
+                    <li><a href="#snhu">Southern New Hampshire University (SNHU)</a></li>
+                    <li><a href="#wgu">Western Governors University (WGU)</a></li>
+                    <li><a href="#walden">Walden University</a></li>
+                    <li><a href="#purdue">Purdue University Global</a></li>
+                    <li><a href="#synthesis">Competitive Best Practices Synthesis</a></li>
+                </ol>
+            </li>
+            <li><a href="#feature-comparison">Feature-by-Feature Comparison Matrix</a></li>
+            <li><a href="#uagc-strategy">UAGC RFI 2.0 Strategy & Recommendations</a></li>
+            <li><a href="#data-strategy">Enhanced Data Collection Strategy</a></li>
+            <li><a href="#metrics">Success Metrics & Benchmarks</a></li>
+            <li><a href="#conclusion">Conclusion & Strategic Roadmap</a></li>
+        </ol>
+    </nav>
     
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Back to top">
@@ -1481,32 +1763,11 @@
         </div>
     </section>
     
-    <!-- Table of Contents -->
-    <nav class="toc no-print">
-        <h2>📋 Table of Contents</h2>
-        <ol>
-            <li><a href="#executive-summary">Executive Summary & Methodology</a></li>
-            <li><a href="#the-problem">The Challenge: Current UAGC RFI Performance</a>
-                <ol style="margin-left: 20px; font-size: 0.95rem; margin-top: 8px;">
-                    <li><a href="#uagc">Current UAGC RFI: Detailed Analysis</a></li>
-                </ol>
-            </li>
-            <li><a href="#competitive-analysis">Competitive Analysis: Deep Dive</a>
-                <ol style="margin-left: 20px; font-size: 0.95rem; margin-top: 8px;">
-                    <li><a href="#snhu">Southern New Hampshire University (SNHU)</a></li>
-                    <li><a href="#wgu">Western Governors University (WGU)</a></li>
-                    <li><a href="#walden">Walden University</a></li>
-                    <li><a href="#purdue">Purdue University Global</a></li>
-                    <li><a href="#synthesis">Competitive Best Practices Synthesis</a></li>
-                </ol>
-            </li>
-            <li><a href="#feature-comparison">Feature-by-Feature Comparison Matrix</a></li>
-            <li><a href="#uagc-strategy">UAGC RFI 2.0 Strategy & Recommendations</a></li>
-            <li><a href="#data-strategy">Enhanced Data Collection Strategy</a></li>
-            <li><a href="#metrics">Success Metrics & Benchmarks</a></li>
-            <li><a href="#conclusion">Conclusion & Strategic Roadmap</a></li>
-        </ol>
-    </nav>
+    <!-- Table of Contents - Now using sticky nav instead -->
+    <div class="quick-takeaway">
+        <h4>💡 Quick Navigation</h4>
+        <p>Use the <strong>☰ menu button</strong> in the top-right corner to access the full navigation at any time. The menu follows you as you scroll!</p>
+    </div>
     
     <!-- Executive Summary -->
     <section id="executive-summary">
@@ -1658,6 +1919,17 @@
         </div>
         
     </section>
+    
+    <!-- Quick Summary Box -->
+    <div class="quick-takeaway">
+        <h4>💡 Key Takeaways from Methodology</h4>
+        <ul>
+            <li><strong>Focus:</strong> 4 top-performing universities (SNHU, WGU, Walden, Purdue) with 50,000+ online students each</li>
+            <li><strong>Analysis:</strong> Form architecture, program selection logic, qualifying questions, and data collection strategies</li>
+            <li><strong>Goal:</strong> Identify proven patterns that improve completion rates and lead quality</li>
+            <li><strong>Outcome:</strong> Data-driven recommendations to upgrade UAGC's RFI form from competitive weakness to competitive strength</li>
+        </ul>
+    </div>
     
     <!-- Visual Section Divider -->
     <div class="section-divider">
@@ -2043,6 +2315,17 @@
             </div>
         </div>
     </section>
+    
+    <!-- Quick Summary Box -->
+    <div class="quick-takeaway">
+        <h4>💡 Current UAGC RFI: What We Learned</h4>
+        <ul>
+            <li><strong>✅ Strengths:</strong> Two-form approach (modal + on-page), military question included, phone in header</li>
+            <li><strong>❌ Gaps:</strong> No progress indicator, no education level filter, no start timeline question, military format could be expanded (4-option vs. Yes/No)</li>
+            <li><strong>Performance:</strong> 58% mobile completion (vs. 68-73% competitors), 12% inquiry-to-application (vs. 15-18% industry avg)</li>
+            <li><strong>Opportunity:</strong> 15-point completion rate improvement possible with proven industry patterns</li>
+        </ul>
+    </div>
     
     <hr>
     
@@ -3527,6 +3810,18 @@
         </div>
     </section>
     
+    <!-- Quick Summary Box -->
+    <div class="quick-takeaway">
+        <h4>💡 Competitive Analysis: Key Findings</h4>
+        <ul>
+            <li><strong>Multi-Step Forms:</strong> 50% use 2+ steps (SNHU 2-step, WGU 3-step) - reduces cognitive load and improves completion</li>
+            <li><strong>Military Question:</strong> 75% include military status (SNHU, Walden, Purdue) - critical for targeting benefits and scholarships</li>
+            <li><strong>Program Filtering:</strong> 100% use hierarchical filtering (Level → Area → Program) - simplifies selection from 100+ programs</li>
+            <li><strong>Start Timeline:</strong> 50% ask "When do you plan to start?" - improves lead scoring and follow-up timing</li>
+            <li><strong>Result:</strong> Competitors achieve 68-73% mobile completion vs. UAGC's 58% - 15-point improvement opportunity</li>
+        </ul>
+    </div>
+    
     <hr>
     
     <!-- Visual Section Divider -->
@@ -4803,17 +5098,83 @@
             progressBar.style.width = scrolled + '%';
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll for anchor links & close nav on click
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href !== '#' && document.querySelector(href)) {
                     e.preventDefault();
+                    
+                    // Close nav if open
+                    const nav = document.getElementById('stickyNav');
+                    if (nav && nav.classList.contains('open')) {
+                        toggleNav();
+                    }
+                    
+                    // Smooth scroll to section
                     document.querySelector(href).scrollIntoView({
                         behavior: 'smooth'
                     });
                 }
             });
+        });
+
+        // 🧭 Navigation Menu Functions
+        
+        function toggleNav() {
+            const nav = document.getElementById('stickyNav');
+            const overlay = document.getElementById('navOverlay');
+            const toggle = document.getElementById('navToggle');
+            
+            nav.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            
+            // Update toggle button icon
+            if (nav.classList.contains('open')) {
+                toggle.innerHTML = '✕';
+            } else {
+                toggle.innerHTML = '☰';
+            }
+        }
+
+        // Highlight active section in navigation
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.sticky-nav a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', updateActiveNav);
+        
+        // Initial call
+        updateActiveNav();
+
+        // Close nav with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const nav = document.getElementById('stickyNav');
+                if (nav && nav.classList.contains('open')) {
+                    toggleNav();
+                }
+            }
         });
     </script>
     
