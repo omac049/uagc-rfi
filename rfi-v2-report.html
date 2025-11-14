@@ -2384,9 +2384,9 @@
                     <h4 style="margin: 0; color: #0C234B;">Contact Information</h4>
                 </div>
                 <div style="margin-left: 44px;">
-                    <p style="margin: 5px 0; color: #53565A;"><strong>Typical Fields:</strong> First Name, Last Name, Email, Phone, State, [Selected Program Pre-filled], Military Status (Yes/No)</p>
+                    <p style="margin: 5px 0; color: #53565A;"><strong>Typical Fields:</strong> First Name, Last Name, Email, Phone, ZIP Code (auto-fills state), [Selected Program Pre-filled], Military Status (Yes/No)</p>
                     <div style="margin-top: 10px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #0C234B;">
-                        <strong style="color: #0C234B;">✅ Included:</strong> Military status question (Yes/No) captured in the RFI form
+                        <strong style="color: #0C234B;">✅ Included:</strong> Military status question (Yes/No) captured in the RFI form, ZIP code with auto-populated state
                     </div>
                     <div style="margin-top: 8px; padding: 12px; background: white; border-radius: 6px; border-left: 3px solid #AB0520;">
                         <strong style="color: #AB0520;">❌ Missing:</strong> Start timeline, RN license conditional, progress indicator, 4-option military format (Active/Veteran/Spouse/No)
@@ -3040,15 +3040,15 @@
                 </tr>
                 <tr>
                     <td>State</td>
-                    <td>Dropdown</td>
+                    <td>Auto-populated (from ZIP)</td>
                     <td>✅ Yes</td>
                     <td>Regulatory compliance, regional routing</td>
                 </tr>
                 <tr>
                     <td>ZIP Code</td>
-                    <td>Text (5 digits)</td>
+                    <td>Text (5 digits, auto-fills state)</td>
                     <td>✅ Yes</td>
-                    <td>Demographic targeting</td>
+                    <td>Demographic targeting, validates location, better UX</td>
                 </tr>
                 <tr>
                     <td>Military Status</td>
@@ -3286,7 +3286,7 @@
                         <div style="font-weight: 700; color: var(--dark-gray); margin-bottom: 8px; font-size: 1rem;">Step 3: Additional Contact Info & Consent (Assumed)</div>
                         <div style="font-size: 0.9rem; color: #666; line-height: 1.5;">
                             • Phone number<br>
-                            • State/ZIP<br>
+                            • State/ZIP (separate fields)<br>
                             • TCPA consent checkbox<br>
                             • Submit button
                         </div>
@@ -3713,7 +3713,7 @@
                     </li>
                     <li style="margin-bottom: 0; display: flex; align-items: start; gap: 8px;">
                         <span style="color: var(--warning-orange); font-weight: 800; margin-top: 2px;">•</span>
-                        <div><strong style="color: var(--dark-gray);">Limited address data</strong> <span style="font-size: 0.9rem; color: #555;">— No street/city/ZIP (only phone/email/state assumed)</span></div>
+                        <div><strong style="color: var(--dark-gray);">Limited address data</strong> <span style="font-size: 0.9rem; color: #555;">— No ZIP code collection (UAGC advantage: ZIP + auto-populated state)</span></div>
                     </li>
                 </ul>
             </div>
@@ -4679,7 +4679,7 @@
                         <div style="margin-bottom: 10px;">👤 <strong>Name:</strong> First, Last</div>
                         <div style="margin-bottom: 10px;">📧 <strong>Email</strong></div>
                         <div style="margin-bottom: 10px;">📱 <strong>Phone</strong></div>
-                        <div style="margin-bottom: 10px;">📍 <strong>State</strong> (dropdown)</div>
+                        <div style="margin-bottom: 10px;">📍 <strong>ZIP Code</strong> (auto-fills state)</div>
                         <div style="margin-bottom: 10px;">🎖️ <strong>Military Status</strong></div>
                         <div style="color: #98A4AE; font-size: 0.9rem;">⏱️ <em>Optional: Start Timeline</em></div>
                     </div>
@@ -5174,13 +5174,13 @@
                         </div>
                         <div>
                             <div style="font-size: 0.75rem; color: #999; text-transform: uppercase; margin-bottom: 5px;">RFI 2.0</div>
-                            <div class="badge success">✅ Maintain</div>
+                            <div class="badge success">✅ ZIP auto-fill</div>
                         </div>
                     </div>
-                    <strong>State dropdown is sufficient</strong>
+                    <strong>ZIP Code + auto-populated state (better UX)</strong>
                 </div>
                 <div class="card-footer">
-                    <strong>Impact:</strong> Meets regulatory/routing needs without friction
+                    <strong>Impact:</strong> Faster entry, validates location, enables geo-targeting
                 </div>
             </div>
             
