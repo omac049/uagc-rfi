@@ -2906,139 +2906,18 @@
             </table>
         </div>
         
-        <!-- What GA4 Tells Us (and What It Doesn't) -->
-        <div style="background: linear-gradient(135deg, #f3f9ff 0%, #ffffff 100%); border: 2px solid #007D8A; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
-            <h4 style="color: #007D8A; margin-top: 0; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
-                <span style="background: linear-gradient(135deg, #007D8A 0%, #00a0b0 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🔍</span>
-                What GA4 Tells Us (and What It Doesn't)
-            </h4>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 20px;">
-                <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #28a745;">
-                    <div style="font-weight: 700; color: #28a745; margin-bottom: 12px; font-size: 1.05rem;">✅ What We Know</div>
-                    <ul style="margin: 0; padding-left: 20px; line-height: 1.9; color: #333; font-size: 0.95rem;">
-                        <li><strong>THAT errors occur</strong> (9,697 events)</li>
-                        <li><strong>WHO experiences them</strong> (3,910 users)</li>
-                        <li><strong>WHICH devices</strong> see more errors</li>
-                        <li><strong>HOW OFTEN</strong> users encounter errors (2.5x avg)</li>
-                        <li><strong>MOBILE has 44% more errors</strong> than desktop</li>
-                    </ul>
-                </div>
-                
-                <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #AB0520;">
-                    <div style="font-weight: 700; color: #AB0520; margin-bottom: 12px; font-size: 1.05rem;">❌ What We Don't Know</div>
-                    <ul style="margin: 0; padding-left: 20px; line-height: 1.9; color: #333; font-size: 0.95rem;">
-                        <li><strong>WHICH fields</strong> trigger errors</li>
-                        <li><strong>WHAT error messages</strong> appear</li>
-                        <li><strong>WHY errors happen</strong> (validation? format? required?)</li>
-                        <li><strong>WHEN in the form</strong> errors occur (Step 1 vs 2?)</li>
-                        <li><strong>IF users recover</strong> from errors or abandon</li>
-                    </ul>
+        <!-- Key Insight & Action -->
+        <div style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); color: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 16px rgba(12,35,75,0.3); margin-bottom: 30px;">
+            <div style="display: flex; align-items: start; gap: 15px;">
+                <div style="background: linear-gradient(135deg, #F9E17D 0%, #EF9600 100%); color: #0C234B; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 12px rgba(249,225,125,0.4); flex-shrink: 0;">💡</div>
+                <div>
+                    <h4 style="color: white; margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 700;">Tracking Limitation & Recommendation</h4>
+                    <p style="margin: 0; line-height: 1.7; color: rgba(255,255,255,0.95); font-size: 0.95rem;">
+                        <strong>Current GA4 tracking shows THAT errors occur but not WHY.</strong> We know 9,697 errors happened, but not which fields (email? phone? ZIP?), what messages appeared, or if users recovered. 
+                        <strong style="color: #F9E17D;">Implement field-level error tracking</strong> to identify specific friction points and reduce errors by an estimated 40-50% (recovering <strong style="color: #F9E17D;">1,500-2,000 monthly submissions</strong>).
+                    </p>
                 </div>
             </div>
-        </div>
-        
-        <!-- Likely Error Types (Educated Assumptions) -->
-        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 30px;">
-            <h4 style="color: #0C234B; margin-top: 0; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
-                <span style="background: linear-gradient(135deg, #EF9600 0%, #f7a41d 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">💡</span>
-                Likely Error Types (Based on Common RFI Issues)
-            </h4>
-            
-            <p style="color: #666; margin-bottom: 20px; font-size: 0.95rem;">While GA4 doesn't capture specific error messages, based on industry patterns and form analysis, these are the most probable error sources:</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
-                <!-- Phone Number Errors -->
-                <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%); border: 2px solid #AB0520; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                        <span style="font-size: 1.8rem;">📞</span>
-                        <strong style="color: #AB0520; font-size: 1.05rem;">Phone Format Errors</strong>
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; line-height: 1.6;">
-                        <strong>Likelihood: Very High</strong><br>
-                        Mobile keyboards cause format issues (spaces, dashes, country codes). Pre-formatting helps but doesn't prevent all errors.
-                    </div>
-                </div>
-                
-                <!-- Email Validation -->
-                <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffffff 100%); border: 2px solid #EF9600; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                        <span style="font-size: 1.8rem;">📧</span>
-                        <strong style="color: #EF9600; font-size: 1.05rem;">Email Validation</strong>
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; line-height: 1.6;">
-                        <strong>Likelihood: High</strong><br>
-                        Typos, missing "@", invalid domains. Mobile autocorrect can help or hurt. Users often skip the ".com"
-                    </div>
-                </div>
-                
-                <!-- Required Field Errors -->
-                <div style="background: linear-gradient(135deg, #f3f9ff 0%, #ffffff 100%); border: 2px solid #007D8A; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                        <span style="font-size: 1.8rem;">⚠️</span>
-                        <strong style="color: #007D8A; font-size: 1.05rem;">Required Field Errors</strong>
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; line-height: 1.6;">
-                        <strong>Likelihood: Medium</strong><br>
-                        Users try to submit without filling all required fields. Better inline validation would catch this earlier.
-                    </div>
-                </div>
-                
-                <!-- ZIP Code Errors -->
-                <div style="background: linear-gradient(135deg, #fff9f3 0%, #ffffff 100%); border: 2px solid #EF9600; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                        <span style="font-size: 1.8rem;">📍</span>
-                        <strong style="color: #c77700; font-size: 1.05rem;">ZIP Code Validation</strong>
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; line-height: 1.6;">
-                        <strong>Likelihood: Medium</strong><br>
-                        Invalid ZIP codes (wrong length, non-existent, typos). Auto-fill state feature would reduce this.
-                    </div>
-                </div>
-                
-                <!-- Mobile UX Issues -->
-                <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%); border: 2px solid #AB0520; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                        <span style="font-size: 1.8rem;">📱</span>
-                        <strong style="color: #AB0520; font-size: 1.05rem;">Mobile Keyboard Issues</strong>
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; line-height: 1.6;">
-                        <strong>Likelihood: High (Mobile Only)</strong><br>
-                        Keyboard covering submit button, wrong keyboard type (numeric vs text), tap target too small.
-                    </div>
-                </div>
-                
-                <!-- Dropdown Selection -->
-                <div style="background: linear-gradient(135deg, #d4edda 0%, #ffffff 100%); border: 2px solid #28a745; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                        <span style="font-size: 1.8rem;">📚</span>
-                        <strong style="color: #28a745; font-size: 1.05rem;">Program Selection</strong>
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; line-height: 1.6;">
-                        <strong>Likelihood: Low-Medium</strong><br>
-                        Users confused by program names, select wrong category, or can't find their program in the list.
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Recommendation Callout -->
-        <div style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); color: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 16px rgba(12,35,75,0.3);">
-            <h4 style="color: white; margin: 0 0 15px 0; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
-                <span style="background: linear-gradient(135deg, #F9E17D 0%, #EF9600 100%); color: #0C234B; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🎯</span>
-                Recommendation: Implement Enhanced Error Tracking
-            </h4>
-            <p style="margin: 0 0 15px 0; line-height: 1.7; color: rgba(255,255,255,0.95);">To understand and fix these errors effectively, enhance GA4 tracking to capture:</p>
-            <ul style="margin: 0; line-height: 1.9; color: rgba(255,255,255,0.95);">
-                <li><strong>Field-level errors:</strong> Which specific field triggered the error (email, phone, ZIP, etc.)</li>
-                <li><strong>Error type:</strong> Validation, format, required field, or system error</li>
-                <li><strong>Error message text:</strong> The actual error message shown to the user</li>
-                <li><strong>Form step:</strong> Whether error occurred on Step 1 or Step 2</li>
-                <li><strong>Recovery status:</strong> Did user fix the error and continue, or abandon?</li>
-            </ul>
-            <p style="margin: 15px 0 0 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px; border-left: 4px solid #F9E17D; line-height: 1.6; color: rgba(255,255,255,0.95);">
-                <strong style="color: #F9E17D;">💡 Impact:</strong> With detailed error tracking, you could reduce the 9,697 monthly error events by 40-50%, recovering an estimated <strong style="color: #F9E17D;">1,500-2,000 additional monthly submissions</strong>.
-            </p>
         </div>
         
         <h3>Data Collection Gaps vs. Competitors</h3>
