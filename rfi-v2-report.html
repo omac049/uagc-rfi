@@ -252,7 +252,7 @@
         }
         
         li strong {
-            color: var(--arizona-blue);
+            color: var(--arizona-red);
         }
         
         /* Stat Cards */
@@ -2724,24 +2724,115 @@
             </ul>
         </div>
         
-        <div class="info-box blue">
-            <h4>📊 Benchmarking Against Industry Leaders</h4>
-            <p>This section provides a comprehensive analysis of how four leading online universities structure their Request for Information (RFI) forms. Each analysis includes visual documentation, detailed feature breakdowns, and strategic insights.</p>
+        <!-- Visual Comparison Summary Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0 50px 0;">
+            <!-- SNHU Card -->
+            <div style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 2px solid #007D8A; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,125,138,0.15); transition: all 0.3s; cursor: pointer;" onclick="document.getElementById('snhu').open = true; document.getElementById('snhu').scrollIntoView({behavior: 'smooth', block: 'start'});" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,125,138,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,125,138,0.15)';">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #007D8A; font-size: 1.3rem;">SNHU</h3>
+                    <span style="background: #007D8A; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">165K+ Students</span>
+                </div>
+                <p style="color: #666; font-size: 0.9rem; margin: 0 0 15px 0; line-height: 1.6;">Market leader in online education</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                    <span style="background: #e8f7f8; color: #007D8A; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Single-page</span>
+                    <span style="background: #e8f7f8; color: #007D8A; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Hierarchical</span>
+                    <span style="background: #e8f7f8; color: #007D8A; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Military Q</span>
+                </div>
+                <div style="border-top: 1px solid #e0e0e0; padding-top: 12px;">
+                    <strong style="color: #28a745; font-size: 0.85rem;">✨ Best Practice:</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #666;">3-tier filtering (Level → Area → Program)</p>
+                </div>
+            </div>
+
+            <!-- WGU Card -->
+            <div style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 2px solid #0C234B; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(12,35,75,0.15); transition: all 0.3s; cursor: pointer;" onclick="document.getElementById('wgu').open = true; document.getElementById('wgu').scrollIntoView({behavior: 'smooth', block: 'start'});" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(12,35,75,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(12,35,75,0.15)';">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #0C234B; font-size: 1.3rem;">WGU</h3>
+                    <span style="background: #0C234B; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">150K+ Students</span>
+                </div>
+                <p style="color: #666; font-size: 0.9rem; margin: 0 0 15px 0; line-height: 1.6;">Competency-based pioneer</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                    <span style="background: #e8ebf0; color: #0C234B; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">2-Step</span>
+                    <span style="background: #e8ebf0; color: #0C234B; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Minimal Step 1</span>
+                    <span style="background: #e8ebf0; color: #0C234B; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">No Military</span>
+                </div>
+                <div style="border-top: 1px solid #e0e0e0; padding-top: 12px;">
+                    <strong style="color: #28a745; font-size: 0.85rem;">✨ Best Practice:</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #666;">Only 4 fields in Step 1 (ultra-minimal)</p>
+                </div>
+            </div>
+
+            <!-- Walden Card -->
+            <div style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 2px solid #AB0520; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(171,5,32,0.15); transition: all 0.3s; cursor: pointer;" onclick="document.getElementById('walden').open = true; document.getElementById('walden').scrollIntoView({behavior: 'smooth', block: 'start'});" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(171,5,32,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(171,5,32,0.15)';">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #AB0520; font-size: 1.3rem;">Walden</h3>
+                    <span style="background: #AB0520; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">50K+ Students</span>
+                </div>
+                <p style="color: #666; font-size: 0.9rem; margin: 0 0 15px 0; line-height: 1.6;">Healthcare & education focus</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                    <span style="background: #fdeaec; color: #AB0520; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Single-page</span>
+                    <span style="background: #fdeaec; color: #AB0520; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Conditional Logic</span>
+                    <span style="background: #fdeaec; color: #AB0520; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Military Q</span>
+                </div>
+                <div style="border-top: 1px solid #e0e0e0; padding-top: 12px;">
+                    <strong style="color: #28a745; font-size: 0.85rem;">✨ Best Practice:</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #666;">RN license conditional (nursing programs only)</p>
+                </div>
+            </div>
+
+            <!-- Purdue Card -->
+            <div style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 2px solid #EF9600; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(239,150,0,0.15); transition: all 0.3s; cursor: pointer;" onclick="document.getElementById('purdue').open = true; document.getElementById('purdue').scrollIntoView({behavior: 'smooth', block: 'start'});" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(239,150,0,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(239,150,0,0.15)';">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #EF9600; font-size: 1.3rem;">Purdue Global</h3>
+                    <span style="background: #EF9600; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">45K+ Students</span>
+                </div>
+                <p style="color: #666; font-size: 0.9rem; margin: 0 0 15px 0; line-height: 1.6;">Traditional prestige + online</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                    <span style="background: #fff8e6; color: #EF9600; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">2-Step</span>
+                    <span style="background: #fff8e6; color: #EF9600; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Timeline Q</span>
+                    <span style="background: #fff8e6; color: #EF9600; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Military Q</span>
+                </div>
+                <div style="border-top: 1px solid #e0e0e0; padding-top: 12px;">
+                    <strong style="color: #28a745; font-size: 0.85rem;">✨ Best Practice:</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #666;">"When do you plan to start?" question</p>
+                </div>
+            </div>
         </div>
-        
-        <h2 style="margin-top: 50px;">Analysis Overview</h2>
-        
-        <div class="card">
-            <p><strong>What We're Analyzing:</strong></p>
-            <ul>
-                <li><strong>Form Architecture:</strong> Single vs. multi-step design, visual hierarchy, layout choices</li>
-                <li><strong>Program Discovery:</strong> How users find and select programs (filtering, categorization, search)</li>
-                <li><strong>Data Fields:</strong> What information is collected, when, and how (required vs. optional)</li>
-                <li><strong>Qualifying Questions:</strong> Military status, licensure, timeline, motivation</li>
-                <li><strong>User Experience:</strong> Mobile optimization, trust signals, value proposition, CTAs</li>
-                <li><strong>Conversion Optimization:</strong> Progress indicators, social proof, exit intent, alternative paths</li>
-            </ul>
-        </div>
+
+        <!-- Collapsible: What We're Analyzing -->
+        <details style="background: white; border: 2px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+            <summary style="cursor: pointer; font-weight: 700; font-size: 1.1rem; color: #0C234B; display: flex; align-items: center; gap: 10px;">
+                📊 What We're Analyzing (Click to expand)
+            </summary>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e8e8e8;">
+                <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 0; padding-left: 0; list-style: none;">
+                    <li style="padding: 15px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #0C234B;">
+                        <strong style="color: #0C234B;">Form Architecture:</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Single vs. multi-step design, visual hierarchy, layout choices</p>
+                    </li>
+                    <li style="padding: 15px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #007D8A;">
+                        <strong style="color: #007D8A;">Program Discovery:</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">How users find and select programs (filtering, categorization, search)</p>
+                    </li>
+                    <li style="padding: 15px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #AB0520;">
+                        <strong style="color: #AB0520;">Data Fields:</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">What information is collected, when, and how (required vs. optional)</p>
+                    </li>
+                    <li style="padding: 15px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #EF9600;">
+                        <strong style="color: #EF9600;">Qualifying Questions:</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Military status, licensure, timeline, motivation</p>
+                    </li>
+                    <li style="padding: 15px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #0C234B;">
+                        <strong style="color: #0C234B;">User Experience:</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Mobile optimization, trust signals, value proposition, CTAs</p>
+                    </li>
+                    <li style="padding: 15px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #28a745;">
+                        <strong style="color: #28a745;">Conversion Optimization:</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Progress indicators, social proof, exit intent, alternative paths</p>
+                    </li>
+                </ul>
+            </div>
+        </details>
         
         <hr style="margin: 60px 0; border: none; border-top: 3px solid var(--medium-gray);">
         
