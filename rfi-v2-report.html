@@ -2243,14 +2243,86 @@
     
     <!-- The Problem -->
     <section id="the-problem">
-        <h1>The Challenge: Current UAGC RFI Performance</h1>
+        <h1>Where Students Struggle: Real Behaviors from 44,283 Form Attempts</h1>
         
-        <div class="info-box orange">
-            <h4>📉 Why This Analysis Matters</h4>
-            <p>Understanding how industry leaders structure their RFIs provides a roadmap for UAGC to close performance gaps and compete effectively for prospective students.</p>
+        <!-- Friction Heatmap -->
+        <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%); padding: 35px; border-radius: 12px; border-left: 6px solid #AB0520; margin-bottom: 30px;">
+            <h2 style="margin-top: 0;">🔥 Student Friction Heatmap: Where Do We Lose People?</h2>
+            <p style="font-size: 1.05rem; margin-bottom: 25px;">Here's what actually happens when students try to request information from UAGC:</p>
+            
+            <div style="position: relative; margin: 30px 0;">
+                <!-- Arrival -->
+                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
+                    <div style="width: 150px; font-weight: 600; color: #0C234B;">44,283 Students<br><span style="font-size: 0.85rem; font-weight: 400; color: #666;">Start the RFI</span></div>
+                    <div style="flex: 1; height: 60px; background: linear-gradient(90deg, #28a745 0%, #28a745 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; box-shadow: 0 2px 8px rgba(40,167,69,0.3);">
+                        🚀 ARRIVAL: Full Interest
+                    </div>
+                    <div style="width: 100px; text-align: right; font-weight: 600; color: #28a745;">100%</div>
+                </div>
+                
+                <!-- Step 1 -->
+                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
+                    <div style="width: 150px; font-weight: 600; color: #0C234B;">31,580 Students<br><span style="font-size: 0.85rem; font-weight: 400; color: #666;">Complete Step 1</span></div>
+                    <div style="flex: 1; height: 60px; background: linear-gradient(90deg, #EF9600 0%, #EF9600 71.3%); border-radius: 8px; display: flex; align-items: center; padding-left: 15px; color: white; font-weight: 600; box-shadow: 0 2px 8px rgba(239,150,0,0.3);">
+                        🟡 STEP 1: Program Selection
+                    </div>
+                    <div style="width: 100px; text-align: right;">
+                        <div style="font-weight: 600; color: #EF9600;">71.3%</div>
+                        <div style="font-size: 0.8rem; color: #AB0520; font-weight: 600;">-28.7% lost</div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
+                    <div style="width: 150px; font-weight: 600; color: #0C234B;">18,665 Students<br><span style="font-size: 0.85rem; font-weight: 400; color: #666;">Submit Form</span></div>
+                    <div style="flex: 1; height: 60px; background: linear-gradient(90deg, #AB0520 0%, #AB0520 42.1%); border-radius: 8px; display: flex; align-items: center; padding-left: 15px; color: white; font-weight: 600; box-shadow: 0 2px 8px rgba(171,5,32,0.3);">
+                        🔥 STEP 2: Contact Info
+                    </div>
+                    <div style="width: 100px; text-align: right;">
+                        <div style="font-weight: 600; color: #28a745;">42.1%</div>
+                        <div style="font-size: 0.8rem; color: #AB0520; font-weight: 600;">-40.9% lost!</div>
+                    </div>
+                </div>
+                
+                <!-- Error Zone -->
+                <div style="margin-top: 25px; padding: 20px; background: #fff3cd; border-radius: 8px; border-left: 4px solid #EF9600;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div>
+                            <div style="font-size: 1.5rem; font-weight: 800; color: #856404;">9,653</div>
+                            <div style="color: #856404; font-weight: 600;">Error Events</div>
+                            <div style="font-size: 0.85rem; color: #666;">Nearly 10,000 students hit technical problems</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 1.5rem; font-weight: 800; color: #856404;">25.3%</div>
+                            <div style="color: #856404; font-weight: 600;">Mobile Error Rate</div>
+                            <div style="font-size: 0.85rem; color: #666;">1 in 4 mobile users see error messages</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 1.5rem; font-weight: 800; color: #856404;">18,782</div>
+                            <div style="color: #856404; font-weight: 600;">Abandonment Events</div>
+                            <div style="font-size: 0.85rem; color: #666;">Students who explicitly gave up</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 25px; padding: 20px; background: white; border-radius: 8px; border: 2px solid #AB0520;">
+                <h4 style="color: #AB0520; margin-top: 0;">💔 The Human Translation</h4>
+                <ul style="margin: 0; line-height: 1.8; color: #0C234B;">
+                    <li><strong>25,618 students per month</strong> start but don't submit—that's a packed stadium of people interested in UAGC</li>
+                    <li><strong>Desktop Dave</strong> is our biggest struggle: Only 29.7% of desktop users complete (vs. 52.7% mobile)</li>
+                    <li><strong>Step 2 is the breaking point:</strong> Students get through program selection but quit when asked for contact info</li>
+                    <li><strong>Errors frustrate Mobile Maria:</strong> She's ready to commit but validation errors block her path</li>
+                </ul>
+            </div>
         </div>
         
-        <h2>Current UAGC RFI: Detailed Analysis</h2>
+        <div class="info-box blue">
+            <h4>🎯 Why Understanding Student Behavior Matters</h4>
+            <p>Every abandoned form represents a real person who wanted to better their life through education. <strong>By analyzing where 44,283 students struggle,</strong> we can remove friction points and help more people take that critical first step toward enrollment.</p>
+        </div>
+        
+        <h2>What Students Actually See: UAGC's Current RFI</h2>
         
         <div class="card" style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); color: white; padding: 30px; margin-bottom: 30px;">
             <h3 style="color: white; margin-top: 0;">📋 UAGC's Current RFI Approach</h3>
