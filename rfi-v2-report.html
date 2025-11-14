@@ -2259,10 +2259,11 @@
         <h3>Drop-Off Rates</h3>
         
         <div class="info-box red">
-            <h4>Industry Benchmark vs. UAGC</h4>
-            <p><strong>Industry:</strong> 65.99% of users who start a form complete it</p>
-            <p><strong>UAGC Current:</strong> ~50% completion rate</p>
-            <p><strong>Gap:</strong> 15 percentage points below benchmark</p>
+            <h4>📊 Real UAGC Data (Last 30 Days - GA4)</h4>
+            <p><strong>RFI Starts:</strong> 44,283 events / 33,562 unique users</p>
+            <p><strong>RFI Completions:</strong> 18,665 submits / 8,608 unique users</p>
+            <p><strong>Overall Completion Rate:</strong> 42.1%</p>
+            <p><strong>Abandonment Rate:</strong> 42.4% (18,782 abandon events)</p>
         </div>
         
         <table>
@@ -2270,29 +2271,29 @@
                 <tr>
                     <th>Drop-Off Point</th>
                     <th>Abandonment Rate</th>
-                    <th>Primary Reason</th>
+                    <th>Impact</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Program Selection</td>
-                    <td>23%</td>
-                    <td>Can't find program or overwhelmed by options</td>
+                    <td><strong>Step 1 → Step 2</strong> (Program Selection)</td>
+                    <td>28.7%</td>
+                    <td>12,703 events lost - program filtering challenge</td>
                 </tr>
                 <tr>
-                    <td>Personal Information</td>
-                    <td>18%</td>
-                    <td>Too many fields, privacy concerns</td>
+                    <td><strong>Step 2 → Submit</strong> (Contact Info)</td>
+                    <td>40.9%</td>
+                    <td>12,915 events lost - highest abandonment point</td>
                 </tr>
                 <tr>
-                    <td>Final Submit</td>
-                    <td>9%</td>
-                    <td>TCPA consent confusion, form errors</td>
+                    <td><strong>Form Errors</strong></td>
+                    <td>21.8%</td>
+                    <td>9,653 error events - validation/UX issues</td>
                 </tr>
             </tbody>
         </table>
         
-        <h3>Device-Specific Issues</h3>
+        <h3>Device-Specific Performance (Real GA4 Data)</h3>
         
         <table>
             <thead>
@@ -2305,125 +2306,186 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Completion Rate</td>
-                    <td>43%</td>
-                    <td>57%</td>
-                    <td><span class="badge danger">-14 pts</span></td>
+                    <td><strong>RFI Completion Rate</strong></td>
+                    <td><strong>52.7%</strong></td>
+                    <td>29.7%</td>
+                    <td><span class="badge success">+23 pts (Mobile WINS!)</span></td>
                 </tr>
                 <tr>
-                    <td>Time on Form</td>
-                    <td>4:45</td>
-                    <td>3:40</td>
-                    <td><span class="badge danger">+65 sec</span></td>
+                    <td>RFI Starts</td>
+                    <td>23,752 events</td>
+                    <td>19,963 events</td>
+                    <td>+3,789 (19% more)</td>
+                </tr>
+                <tr>
+                    <td>RFI Submits</td>
+                    <td>12,517</td>
+                    <td>5,927</td>
+                    <td>+6,590 (111% more!)</td>
                 </tr>
                 <tr>
                     <td>Error Rate</td>
-                    <td>8%</td>
-                    <td>4%</td>
-                    <td><span class="badge danger">+4 pts</span></td>
+                    <td>25.3%</td>
+                    <td>17.6%</td>
+                    <td><span class="badge danger">+7.7 pts</span></td>
                 </tr>
                 <tr>
-                    <td>Abandonment</td>
-                    <td>57%</td>
-                    <td>43%</td>
-                    <td><span class="badge danger">+14 pts</span></td>
+                    <td>Session Duration</td>
+                    <td>7.6 min</td>
+                    <td>14.7 min</td>
+                    <td>-7.1 min (faster!)</td>
+                </tr>
+                <tr>
+                    <td>Traffic Share</td>
+                    <td>55.3%</td>
+                    <td>44.3%</td>
+                    <td>+11 pts</td>
                 </tr>
             </tbody>
         </table>
         
-        <div class="info-box orange">
-            <h4>🔍 Key Finding</h4>
-            <p>Mobile users struggle significantly more, indicating poor mobile UX is our biggest opportunity for improvement.</p>
+        <div class="info-box" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white;">
+            <h4 style="color: white;">🎉 SURPRISING INSIGHT: Mobile is Our Strongest Channel!</h4>
+            <p style="color: white;"><strong>Mobile users complete RFIs 77% MORE than desktop users</strong> (52.7% vs 29.7%) despite shorter session times. This challenges the assumption that mobile is the problem.</p>
+            <p style="color: white;"><strong>The Real Opportunity:</strong> Fix the 25.3% mobile error rate (vs 17.6% desktop). If we reduce errors to desktop levels, mobile could reach 60%+ completion!</p>
         </div>
         
-        <h3>User Feedback (Pain Points)</h3>
+        <h3>Performance Funnel (GA4 Data)</h3>
         
-        <p>From user testing sessions (n=25):</p>
+        <div style="background: #f8f9fa; padding: 25px; border-radius: 8px; margin: 20px 0;">
+            <h4 style="color: #0C234B; margin-top: 0;">Complete RFI Journey</h4>
+            <table style="width: 100%; background: white;">
+                <thead>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Events</th>
+                        <th>Unique Users</th>
+                        <th>Drop-Off Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🚀 Start RFI</strong></td>
+                        <td>44,283</td>
+                        <td>33,562</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>→ Complete Step 1</td>
+                        <td>31,580</td>
+                        <td>21,738</td>
+                        <td><span class="badge danger">-28.7%</span></td>
+                    </tr>
+                    <tr>
+                        <td>→ Submit Form</td>
+                        <td>18,665</td>
+                        <td>8,608</td>
+                        <td><span class="badge danger">-40.9%</span></td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>✅ Success Page</strong></td>
+                        <td>-</td>
+                        <td>84,612</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin: 15px 0 0 0; color: #53565A; font-size: 0.9rem;"><strong>Note:</strong> Success page users (84,612) exceeds submit events (8,608 users) due to multiple page visits, confirmations, and email link clicks back to thank you page.</p>
+        </div>
         
-        <blockquote>
-            "I can't tell if this is a legitimate university or not."
-            <cite>- Sarah, 34</cite>
-        </blockquote>
+        <h2>2. Error & Quality Analysis</h2>
         
-        <blockquote>
-            "There's so much text, I don't know where to start."
-            <cite>- Michael, 28</cite>
-        </blockquote>
+        <h3>Form Errors (Real GA4 Data)</h3>
         
-        <blockquote>
-            "The programs are buried. I just want to see what you offer."
-            <cite>- Jennifer, 42</cite>
-        </blockquote>
-        
-        <blockquote>
-            "On my phone, I had to zoom in to click anything."
-            <cite>- David, 31</cite>
-        </blockquote>
-        
-        <h2>2. Data Quality Issues</h2>
-        
-        <h3>Incomplete Data Collection</h3>
+        <div style="background: #fff3cd; border-left: 4px solid #EF9600; padding: 20px; margin: 20px 0; border-radius: 4px;">
+            <h4 style="color: #856404; margin-top: 0;">⚠️ 9,653 Error Events in Last 30 Days</h4>
+            <p style="color: #856404; margin: 0;"><strong>3,947 unique users</strong> experienced errors during RFI completion. This represents a <strong>21.8% error rate</strong> across all RFI attempts.</p>
+        </div>
         
         <table>
             <thead>
                 <tr>
-                    <th>Issue</th>
-                    <th>Rate</th>
+                    <th>Device</th>
+                    <th>Error Events</th>
+                    <th>Affected Users</th>
+                    <th>Error Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mobile</strong></td>
+                    <td>6,021</td>
+                    <td>2,191</td>
+                    <td><span class="badge danger">25.3%</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Desktop</strong></td>
+                    <td>3,512</td>
+                    <td>1,699</td>
+                    <td>17.6%</td>
+                </tr>
+                <tr>
+                    <td><strong>Tablet</strong></td>
+                    <td>120</td>
+                    <td>57</td>
+                    <td>21.2%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Data Collection Gaps vs. Competitors</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Data Field</th>
+                    <th>UAGC Status</th>
+                    <th>Competitor Adoption</th>
                     <th>Impact</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Missing phone numbers</td>
-                    <td>12%</td>
-                    <td>Can't reach leads immediately</td>
+                    <td>Military Status</td>
+                    <td>✅ Yes/No captured</td>
+                    <td>75% use 4-option format</td>
+                    <td>Limited segmentation (Active/Veteran/Spouse/No)</td>
                 </tr>
                 <tr>
-                    <td>Invalid email formats</td>
-                    <td>8%</td>
-                    <td>Email bounces, lost leads</td>
+                    <td>Start Timeline</td>
+                    <td>❌ Not captured</td>
+                    <td>38% capture this</td>
+                    <td>Missing urgency indicator for follow-up priority</td>
                 </tr>
                 <tr>
-                    <td>Select "Other" program</td>
-                    <td>15%</td>
-                    <td>Vague interest, poor routing</td>
+                    <td>Education Level</td>
+                    <td>❌ No pre-filter</td>
+                    <td>75% lead with Undergrad/Grad</td>
+                    <td>Program overwhelm in Step 1</td>
                 </tr>
                 <tr>
-                    <td>Military status unknown</td>
-                    <td>100%</td>
-                    <td>Missing segmentation opportunity</td>
-                </tr>
-                <tr>
-                    <td>RN license status unknown</td>
-                    <td>100%</td>
-                    <td>Qualification gap for nursing</td>
+                    <td>RN License (for Nursing)</td>
+                    <td>❌ Not conditional</td>
+                    <td>WGU uses conditional logic</td>
+                    <td>Qualification gap for nursing programs</td>
                 </tr>
             </tbody>
         </table>
         
-        <h3>Lead Quality Concerns</h3>
-        
-        <div class="stat-cards">
-            <div class="stat-card">
-                <div class="stat-value">12%</div>
-                <div class="stat-label">Inquiry-to-Application</div>
-                <div class="stat-change negative">Industry avg: 15-18%</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">25%</div>
-                <div class="stat-label">Application-to-Enrollment</div>
-                <div class="stat-change negative">Could improve with better data</div>
-            </div>
+        <div class="info-box blue">
+            <h4>💡 Key Insight: Error Reduction = Biggest Quick Win</h4>
+            <p>If we reduce mobile errors from 25.3% to desktop's 17.6% level, we could recover <strong>~1,800 additional RFI submissions per month</strong> based on current traffic.</p>
         </div>
     </section>
     
     <!-- Quick Summary Box -->
     <div class="quick-takeaway">
-        <h4>💡 Current UAGC RFI Assessment</h4>
+        <h4>📊 Real UAGC RFI Performance Summary (GA4 - Last 30 Days)</h4>
         <ul>
-            <li><strong>Strengths:</strong> 2-step on-page form, military question, phone in header</li>
-            <li><strong>Gaps:</strong> No progress indicator, no education filter, limited military options (Yes/No vs. 4-option)</li>
-            <li><strong>Performance:</strong> 58% mobile completion vs. 68-73% competitors = 15-point gap opportunity</li>
+            <li><strong>Completion Rate:</strong> 42.1% overall (18,665 submits / 44,283 starts)</li>
+            <li><strong>🎉 Mobile Wins:</strong> 52.7% completion vs. 29.7% desktop (+23 pts!)</li>
+            <li><strong>⚠️ Error Problem:</strong> 21.8% error rate, 25.3% on mobile (9,653 events)</li>
+            <li><strong>💡 Biggest Opportunity:</strong> Reduce Step 2 drop-off (40.9%) and mobile errors to unlock 1,800+ monthly conversions</li>
         </ul>
     </div>
     
