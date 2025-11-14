@@ -4291,30 +4291,54 @@
             </ul>
         </div>
         
-        <div class="info-box blue">
-            <h4>📊 Cross-Competitor Feature Analysis</h4>
-            <p>This comprehensive matrix compares how each competitor implements key RFI features, revealing patterns and gaps that inform UAGC's strategic direction.</p>
-        </div>
-        
         <h2>Comprehensive Feature Matrix</h2>
         
-        <div class="card">
-            <p>This matrix synthesizes all competitive intelligence gathered, showing which features are industry-standard, which are emerging best practices, and where UAGC has opportunities to differentiate.</p>
+        <!-- Visual Stats Header -->
+        <div style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); padding: 40px; border-radius: 12px; margin-bottom: 40px; color: white;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: white; margin: 0 0 10px 0; font-size: 1.8rem;">Cross-Competitor Feature Analysis</h3>
+                <p style="margin: 0; opacity: 0.9; font-size: 1.05rem;">Comprehensive comparison of RFI features across 4 industry leaders</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">4</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Competitors Analyzed</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">25+</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Features Compared</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">5</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Category Groups</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">12</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Strategic Recommendations</div>
+                </div>
+            </div>
         </div>
         
-        <h3>Form Architecture Comparison</h3>
-        
+        <!-- Category 1: Form Architecture -->
+        <details open style="background: white; border: 2px solid #0C234B; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <summary style="cursor: pointer; font-weight: 700; font-size: 1.3rem; color: #0C234B; display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <span style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🏗️</span>
+                Form Architecture Comparison
+                <span style="margin-left: auto; font-size: 0.85rem; color: #666; font-weight: 400;">(4 features analyzed)</span>
+            </summary>
+            
         <table>
             <thead>
                 <tr>
                     <th>Feature</th>
-                    <th>SNHU</th>
-                    <th>WGU</th>
-                    <th>Walden</th>
-                    <th>Purdue</th>
-                    <th>Current UAGC</th>
-                    <th>Industry Pattern</th>
-                    <th>UAGC 2.0 Goal</th>
+                    <th style="background: #e8f7f8; color: #007D8A;">SNHU</th>
+                    <th style="background: #e8ebf0; color: #0C234B;">WGU</th>
+                    <th style="background: #fdeaec; color: #AB0520;">Walden</th>
+                    <th style="background: #fff8e6; color: #EF9600;">Purdue</th>
+                    <th style="background: #f8f9fa; color: #53565A;">Current UAGC</th>
+                    <th style="background: #e8f4f8;">Industry Pattern</th>
+                    <th style="background: #d4edda; color: #155724;"><strong>UAGC 2.0 Goal</strong></th>
                 </tr>
             </thead>
             <tbody>
@@ -4360,19 +4384,26 @@
                 </tr>
             </tbody>
         </table>
+        </details>
         
-        <h3>Program Selection Logic Comparison</h3>
+        <!-- Category 2: Program Selection Logic -->
+        <details open style="background: white; border: 2px solid #007D8A; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <summary style="cursor: pointer; font-weight: 700; font-size: 1.3rem; color: #007D8A; display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <span style="background: linear-gradient(135deg, #007D8A 0%, #00a0b0 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🎓</span>
+                Program Selection Logic Comparison
+                <span style="margin-left: auto; font-size: 0.85rem; color: #666; font-weight: 400;">(5 features analyzed)</span>
+            </summary>
         
         <table>
             <thead>
                 <tr>
                     <th>Feature</th>
-                    <th>SNHU</th>
-                    <th>WGU</th>
-                    <th>Walden</th>
-                    <th>Purdue</th>
-                    <th>Current UAGC</th>
-                    <th>UAGC 2.0 Goal</th>
+                    <th style="background: #e8f7f8; color: #007D8A;">SNHU</th>
+                    <th style="background: #e8ebf0; color: #0C234B;">WGU</th>
+                    <th style="background: #fdeaec; color: #AB0520;">Walden</th>
+                    <th style="background: #fff8e6; color: #EF9600;">Purdue</th>
+                    <th style="background: #f8f9fa; color: #53565A;">Current UAGC</th>
+                    <th style="background: #d4edda; color: #155724;"><strong>UAGC 2.0 Goal</strong></th>
                 </tr>
             </thead>
             <tbody>
@@ -4423,20 +4454,27 @@
                 </tr>
             </tbody>
         </table>
+        </details>
         
-        <h3>Qualifying Questions Comparison</h3>
+        <!-- Category 3: Qualifying Questions -->
+        <details open style="background: white; border: 2px solid #AB0520; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <summary style="cursor: pointer; font-weight: 700; font-size: 1.3rem; color: #AB0520; display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <span style="background: linear-gradient(135deg, #AB0520 0%, #dc3545 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">❓</span>
+                Qualifying Questions Comparison
+                <span style="margin-left: auto; font-size: 0.85rem; color: #666; font-weight: 400;">(5 questions analyzed)</span>
+            </summary>
         
         <table>
             <thead>
                 <tr>
                     <th>Question</th>
-                    <th>SNHU</th>
-                    <th>WGU</th>
-                    <th>Walden</th>
-                    <th>Purdue</th>
-                    <th>Current UAGC</th>
-                    <th>Adoption Rate</th>
-                    <th>UAGC 2.0 Goal</th>
+                    <th style="background: #e8f7f8; color: #007D8A;">SNHU</th>
+                    <th style="background: #e8ebf0; color: #0C234B;">WGU</th>
+                    <th style="background: #fdeaec; color: #AB0520;">Walden</th>
+                    <th style="background: #fff8e6; color: #EF9600;">Purdue</th>
+                    <th style="background: #f8f9fa; color: #53565A;">Current UAGC</th>
+                    <th style="background: #e8f4f8;">Adoption Rate</th>
+                    <th style="background: #d4edda; color: #155724;"><strong>UAGC 2.0 Goal</strong></th>
                 </tr>
             </thead>
             <tbody>
@@ -4492,24 +4530,34 @@
                 </tr>
             </tbody>
         </table>
+        </details>
         
-        <div class="info-box green">
-            <h4>✅ UAGC Competitive Advantage Opportunity</h4>
-            <p>By combining the best features from all four competitors—WGU's minimal Step 1, SNHU's hierarchical filtering, Walden's conditional logic, and Purdue's start timeline—UAGC can create an industry-leading RFI that outperforms all competitors on both conversion rate and lead quality.</p>
+        <!-- Key Insight Callout -->
+        <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 5px solid #28a745; padding: 25px 30px; margin: 30px 0; border-radius: 0 12px 12px 0; box-shadow: 0 2px 8px rgba(40,167,69,0.15);">
+            <h4 style="color: #155724; margin: 0 0 10px 0; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">✅</span> UAGC Competitive Advantage Opportunity
+            </h4>
+            <p style="color: #155724; margin: 0; line-height: 1.7; font-size: 1.05rem;">By combining the best features from all four competitors—WGU's minimal Step 1, SNHU's hierarchical filtering, Walden's conditional logic, and Purdue's start timeline—UAGC can create an industry-leading RFI that outperforms all competitors on both conversion rate and lead quality.</p>
         </div>
         
-        <h3>Data Collection Comparison</h3>
+        <!-- Category 4: Data Collection -->
+        <details open style="background: white; border: 2px solid #EF9600; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <summary style="cursor: pointer; font-weight: 700; font-size: 1.3rem; color: #EF9600; display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <span style="background: linear-gradient(135deg, #EF9600 0%, #ff9800 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">📊</span>
+                Data Collection Comparison
+                <span style="margin-left: auto; font-size: 0.85rem; color: #666; font-weight: 400;">(5 data points)</span>
+            </summary>
         
         <table>
             <thead>
                 <tr>
                     <th>Data Point</th>
-                    <th>SNHU</th>
-                    <th>WGU</th>
-                    <th>Walden</th>
-                    <th>Purdue</th>
-                    <th>Current UAGC</th>
-                    <th>Recommended UAGC 2.0</th>
+                    <th style="background: #e8f7f8; color: #007D8A;">SNHU</th>
+                    <th style="background: #e8ebf0; color: #0C234B;">WGU</th>
+                    <th style="background: #fdeaec; color: #AB0520;">Walden</th>
+                    <th style="background: #fff8e6; color: #EF9600;">Purdue</th>
+                    <th style="background: #f8f9fa; color: #53565A;">Current UAGC</th>
+                    <th style="background: #d4edda; color: #155724;"><strong>Recommended UAGC 2.0</strong></th>
                 </tr>
             </thead>
             <tbody>
@@ -4560,18 +4608,25 @@
                 </tr>
             </tbody>
         </table>
+        </details>
         
-        <h3>Consent & Compliance Comparison</h3>
+        <!-- Category 5: Consent & Compliance -->
+        <details open style="background: white; border: 2px solid #28a745; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <summary style="cursor: pointer; font-weight: 700; font-size: 1.3rem; color: #28a745; display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <span style="background: linear-gradient(135deg, #28a745 0%, #218838 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">✓</span>
+                Consent & Compliance Comparison
+                <span style="margin-left: auto; font-size: 0.85rem; color: #666; font-weight: 400;">(3 compliance elements)</span>
+            </summary>
         
         <table>
             <thead>
                 <tr>
                     <th>Element</th>
-                    <th>SNHU</th>
-                    <th>WGU</th>
-                    <th>Walden</th>
-                    <th>Purdue</th>
-                    <th>Best Practice</th>
+                    <th style="background: #e8f7f8; color: #007D8A;">SNHU</th>
+                    <th style="background: #e8ebf0; color: #0C234B;">WGU</th>
+                    <th style="background: #fdeaec; color: #AB0520;">Walden</th>
+                    <th style="background: #fff8e6; color: #EF9600;">Purdue</th>
+                    <th style="background: #d4edda; color: #155724;"><strong>Best Practice</strong></th>
                 </tr>
             </thead>
             <tbody>
@@ -4601,6 +4656,7 @@
                 </tr>
             </tbody>
         </table>
+        </details>
     </section>
     
     <hr>
