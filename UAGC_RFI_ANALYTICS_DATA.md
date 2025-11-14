@@ -1,6 +1,6 @@
 # UAGC RFI Analytics Data
 ## Source: GA4 Real Data (Last 30 Days)
-**Data Pull Date:** November 14, 2024
+**Data Pull Date:** November 14, 2025
 
 ---
 
@@ -185,7 +185,7 @@ Contrary to typical assumptions, **mobile users complete RFIs 77% MORE than desk
 
 ## Data Source & Methodology
 - **Tool:** Google Analytics 4 (GA4)
-- **Date Range:** Last 30 days (October 15 - November 14, 2024)
+- **Date Range:** Last 30 days (October 15 - November 14, 2025)
 - **Events Tracked:** Form interactions, submissions, errors, abandons
 - **Devices:** Desktop, Mobile, Tablet, Smart TV
 - **Metrics:** Event counts, unique users, session duration, engagement rate, bounce rate
