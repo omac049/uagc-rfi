@@ -4749,7 +4749,7 @@
                     <th style="background: #fdeaec; color: #AB0520;">Walden</th>
                     <th style="background: #fff8e6; color: #EF9600;">Purdue</th>
                     <th style="background: #f8f9fa; color: #53565A;">Current UAGC</th>
-                    <th style="background: #e8f4f8;">Adoption Rate</th>
+                    <th style="background: #ccc;">Adoption Rate</th>
                     <th style="background: #d4edda; color: #155724;"><strong>UAGC 2.0 Goal</strong></th>
                 </tr>
             </thead>
@@ -5107,37 +5107,139 @@
         
         <h2>Qualifying Questions Strategy</h2>
         
-        <div class="card">
-            <h3>Must-Have Questions (Based on Competitive Analysis)</h3>
+        <!-- Strategy Overview Header -->
+        <div style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); color: white; padding: 40px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 6px 20px rgba(12,35,75,0.25);">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <div style="background: linear-gradient(135deg, #AB0520 0%, #dc3545 100%); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 12px rgba(171,5,32,0.4);">❓</div>
+                <div>
+                    <h3 style="color: white; margin: 0; font-size: 1.8rem; font-weight: 800;">Must-Have Questions</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin: 5px 0 0 0; font-size: 1.05rem;">Based on Competitive Analysis</p>
+                </div>
+            </div>
             
-            <h4>1. Military Status (75% of competitors ask)</h4>
-            <p><strong>Format:</strong> 4 radio options</p>
-            <ul>
-                <li>Active Duty U.S. Military</li>
-                <li>Veteran</li>
-                <li>Military Spouse or Dependent</li>
-                <li>No</li>
-            </ul>
-            <p><strong>Value:</strong> Enables military benefits counseling, specialized support, higher conversion for veteran students</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 25px;">
+                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2rem; font-weight: 800; color: #F9E17D; margin-bottom: 5px;">3</div>
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.9);">Strategic Questions</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2rem; font-weight: 800; color: #F9E17D; margin-bottom: 5px;">75%</div>
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.9);">Avg Adoption Rate</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2rem; font-weight: 800; color: #F9E17D; margin-bottom: 5px;">2</div>
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.9);">UAGC Needs to Add</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Question Cards Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 40px;">
             
-            <h4 style="margin-top: 25px;">2. Start Timeline (Only Purdue asks—opportunity to differentiate)</h4>
-            <p><strong>Format:</strong> Dropdown</p>
-            <ul>
-                <li>Within 3 months</li>
-                <li>3-6 months</li>
-                <li>6-12 months</li>
-                <li>Just exploring options</li>
-            </ul>
-            <p><strong>Value:</strong> Lead scoring, counselor prioritization, enrollment forecasting, nurture campaign segmentation</p>
+            <!-- Card 1: Military Status -->
+            <div style="background: white; border: 2px solid #0C234B; border-radius: 16px; padding: 30px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;">
+                <!-- Priority Badge -->
+                <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(40,167,69,0.3);">MUST HAVE</div>
+                
+                <!-- Icon & Title -->
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 12px rgba(12,35,75,0.3); flex-shrink: 0;">🎖️</div>
+                    <div>
+                        <h3 style="margin: 0; color: #0C234B; font-size: 1.4rem; font-weight: 800;">Military Status</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 5px;">
+                            <span style="background: #e8f7f8; color: #007D8A; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">75% Adoption</span>
+                            <span style="background: #fff8e6; color: #EF9600; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Need to Expand</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Format -->
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #0C234B;">
+                    <div style="font-weight: 700; color: #0C234B; margin-bottom: 10px; font-size: 0.95rem;">📝 Format: 4 Radio Options</div>
+                    <div style="display: grid; gap: 8px;">
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #dee2e6;">🔵 Active Duty U.S. Military</div>
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #dee2e6;">🔵 Veteran</div>
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #dee2e6;">🔵 Military Spouse or Dependent</div>
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #dee2e6;">🔵 No</div>
+                    </div>
+                </div>
+                
+                <!-- Value Proposition -->
+                <div style="background: linear-gradient(135deg, #d4edda 0%, #ffffff 100%); padding: 18px; border-radius: 10px; border-left: 4px solid #28a745;">
+                    <div style="font-weight: 700; color: #155724; margin-bottom: 8px; font-size: 0.95rem;">💡 Strategic Value</div>
+                    <p style="margin: 0; color: #155724; font-size: 0.9rem; line-height: 1.6;">Enables military benefits counseling, specialized support, and higher conversion for veteran students</p>
+                </div>
+            </div>
             
-            <h4 style="margin-top: 25px;">3. RN License (Walden's innovation—highly valuable)</h4>
-            <p><strong>Format:</strong> Radio buttons (conditional—appears only for nursing programs)</p>
-            <ul>
-                <li>Yes, I'm a licensed RN</li>
-                <li>No, but I will be soon</li>
-                <li>No</li>
-            </ul>
-            <p><strong>Value:</strong> Determines BSN/MSN eligibility, improves nursing program routing, prevents unqualified applications</p>
+            <!-- Card 2: Start Timeline -->
+            <div style="background: white; border: 2px solid #EF9600; border-radius: 16px; padding: 30px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;">
+                <!-- Priority Badge -->
+                <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #EF9600 0%, #f7a41d 100%); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(239,150,0,0.3);">COMPETITIVE EDGE</div>
+                
+                <!-- Icon & Title -->
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #EF9600 0%, #f7a41d 100%); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 12px rgba(239,150,0,0.3); flex-shrink: 0;">📅</div>
+                    <div>
+                        <h3 style="margin: 0; color: #EF9600; font-size: 1.4rem; font-weight: 800;">Start Timeline</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 5px;">
+                            <span style="background: #fff8e6; color: #EF9600; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">25% Adoption</span>
+                            <span style="background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Need to Add</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Format -->
+                <div style="background: #fff9f3; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #EF9600;">
+                    <div style="font-weight: 700; color: #EF9600; margin-bottom: 10px; font-size: 0.95rem;">📝 Format: Dropdown Menu</div>
+                    <div style="display: grid; gap: 8px;">
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #f7a41d;">⏰ Within 3 months</div>
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #f7a41d;">⏰ 3-6 months</div>
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #f7a41d;">⏰ 6-12 months</div>
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #f7a41d;">💭 Just exploring options</div>
+                    </div>
+                </div>
+                
+                <!-- Value Proposition -->
+                <div style="background: linear-gradient(135deg, #fff8e6 0%, #ffffff 100%); padding: 18px; border-radius: 10px; border-left: 4px solid #EF9600;">
+                    <div style="font-weight: 700; color: #c77700; margin-bottom: 8px; font-size: 0.95rem;">💡 Strategic Value</div>
+                    <p style="margin: 0; color: #856404; font-size: 0.9rem; line-height: 1.6;">Lead scoring, counselor prioritization, enrollment forecasting, and nurture campaign segmentation</p>
+                </div>
+            </div>
+            
+            <!-- Card 3: RN License -->
+            <div style="background: white; border: 2px solid #AB0520; border-radius: 16px; padding: 30px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;">
+                <!-- Priority Badge -->
+                <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(40,167,69,0.3);">HAVE IT ✅</div>
+                
+                <!-- Icon & Title -->
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #AB0520 0%, #dc3545 100%); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 12px rgba(171,5,32,0.3); flex-shrink: 0;">🩺</div>
+                    <div>
+                        <h3 style="margin: 0; color: #AB0520; font-size: 1.4rem; font-weight: 800;">RN License</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 5px;">
+                            <span style="background: #fdeaec; color: #AB0520; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">25% Adoption</span>
+                            <span style="background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Conditional</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Format -->
+                <div style="background: #fff5f5; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #AB0520;">
+                    <div style="font-weight: 700; color: #AB0520; margin-bottom: 10px; font-size: 0.95rem;">📝 Format: Radio (Nursing Only)</div>
+                    <div style="display: grid; gap: 8px;">
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #dc3545;">🔵 Yes, I'm a licensed RN</div>
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #dc3545;">🔵 No, but I will be soon</div>
+                        <div style="background: white; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid #dc3545;">🔵 No</div>
+                    </div>
+                </div>
+                
+                <!-- Value Proposition -->
+                <div style="background: linear-gradient(135deg, #fdeaec 0%, #ffffff 100%); padding: 18px; border-radius: 10px; border-left: 4px solid #AB0520;">
+                    <div style="font-weight: 700; color: #721c24; margin-bottom: 8px; font-size: 0.95rem;">💡 Strategic Value</div>
+                    <p style="margin: 0; color: #721c24; font-size: 0.9rem; line-height: 1.6;">Determines BSN/MSN eligibility, improves nursing program routing, prevents unqualified applications</p>
+                </div>
+            </div>
+            
         </div>
         
         <h2>Mobile Optimization Priorities</h2>
