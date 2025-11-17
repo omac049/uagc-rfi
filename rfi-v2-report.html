@@ -2480,27 +2480,66 @@
     <section id="the-problem">
         <h1>Where Students Struggle: Real Behaviors from 44,283 Form Attempts</h1>
         
-        <!-- Friction Heatmap -->
-        <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%); padding: 35px; border-radius: 12px; border-left: 6px solid #AB0520; margin-bottom: 30px;">
-                <h4 style="color: #F9E17D; margin-top: 0;">On-Page RFI (2-Step Design)</h4>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.9rem; line-height: 1.6;">
-                    <div>
-                        <strong style="color: #F9E17D;">✅ Strengths:</strong>
-                        <ul style="margin: 8px 0 0 20px;">
-                            <li>2-step design reduces cognitive load</li>
-                            <li>Program filtering (Area → Degree)</li>
-                            <li>Includes military question (Yes/No)</li>
-                            <li>Phone number in header</li>
-                        </ul>
+        <!-- UAGC Current RFI Assessment -->
+        <div style="background: white; padding: 35px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); margin-bottom: 40px;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                <div style="background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 12px rgba(12,35,75,0.3);">📋</div>
+                <div>
+                    <h4 style="color: #0C234B; margin: 0; font-size: 1.6rem; font-weight: 800;">UAGC's Current RFI</h4>
+                    <p style="color: #666; margin: 5px 0 0 0; font-size: 1.05rem;">On-Page RFI (2-Step Design)</p>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                <!-- Strengths Column -->
+                <div style="background: linear-gradient(135deg, #d4edda 0%, #ffffff 100%); border: 2px solid #28a745; border-radius: 12px; padding: 25px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+                        <div style="background: #28a745; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">✅</div>
+                        <h5 style="margin: 0; color: #28a745; font-size: 1.2rem; font-weight: 800;">Strengths</h5>
                     </div>
-                    <div>
-                        <strong style="color: #F9E17D;">❌ Opportunities:</strong>
-                        <ul style="margin: 8px 0 0 20px;">
-                            <li>No progress indicator</li>
-                            <li>No education level filter</li>
-                            <li>Limited military options (expand to 4)</li>
-                            <li>No start timeline capture</li>
-                        </ul>
+                    <div style="display: grid; gap: 12px;">
+                        <div style="display: flex; align-items: start; gap: 10px; background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #28a745;">
+                            <span style="color: #28a745; font-size: 1.2rem; flex-shrink: 0;">🎯</span>
+                            <span style="font-size: 0.95rem; color: #333; line-height: 1.5;">2-step design reduces cognitive load</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 10px; background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #28a745;">
+                            <span style="color: #28a745; font-size: 1.2rem; flex-shrink: 0;">🔍</span>
+                            <span style="font-size: 0.95rem; color: #333; line-height: 1.5;">Program filtering (Area → Degree)</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 10px; background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #28a745;">
+                            <span style="color: #28a745; font-size: 1.2rem; flex-shrink: 0;">🎖️</span>
+                            <span style="font-size: 0.95rem; color: #333; line-height: 1.5;">Includes military question (Yes/No)</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 10px; background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #28a745;">
+                            <span style="color: #28a745; font-size: 1.2rem; flex-shrink: 0;">📞</span>
+                            <span style="font-size: 0.95rem; color: #333; line-height: 1.5;">Phone number in header</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Opportunities Column -->
+                <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffffff 100%); border: 2px solid #EF9600; border-radius: 12px; padding: 25px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+                        <div style="background: #EF9600; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">⚡</div>
+                        <h5 style="margin: 0; color: #EF9600; font-size: 1.2rem; font-weight: 800;">Opportunities</h5>
+                    </div>
+                    <div style="display: grid; gap: 12px;">
+                        <div style="display: flex; align-items: start; gap: 10px; background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #EF9600;">
+                            <span style="color: #EF9600; font-size: 1.2rem; flex-shrink: 0;">📊</span>
+                            <span style="font-size: 0.95rem; color: #333; line-height: 1.5;">No progress indicator</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 10px; background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #EF9600;">
+                            <span style="color: #EF9600; font-size: 1.2rem; flex-shrink: 0;">🎓</span>
+                            <span style="font-size: 0.95rem; color: #333; line-height: 1.5;">No education level filter</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 10px; background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #EF9600;">
+                            <span style="color: #EF9600; font-size: 1.2rem; flex-shrink: 0;">🎖️</span>
+                            <span style="font-size: 0.95rem; color: #333; line-height: 1.5;">Limited military options (expand to 4)</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 10px; background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #EF9600;">
+                            <span style="color: #EF9600; font-size: 1.2rem; flex-shrink: 0;">📅</span>
+                            <span style="font-size: 0.95rem; color: #333; line-height: 1.5;">No start timeline capture</span>
+                        </div>
                     </div>
                 </div>
             </div>
