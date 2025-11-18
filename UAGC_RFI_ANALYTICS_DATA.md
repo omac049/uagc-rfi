@@ -104,11 +104,11 @@ This suggests mobile form design is actually working well, but there's opportuni
 |--------------|-------------|-------------|
 | `/apply-now` | 229,142 | 84.5% |
 | `/` (homepage) | 44,198 | 50.8% |
-| `/success/request-info-v5` (Thank You) | 84,612 | 51.6% |
+| `/request-information/thank-you` (Thank You) | 84,612 | 51.6% |
 | `/military` | 16,470 | 76.6% |
 
 ### RFI Success Page
-- **84,612 users** reached `/success/request-info-v5` (thank you page)
+- **84,612 users** reached `/request-information/thank-you` (thank you page)
 - This aligns with **18,665 RFI submit events** (suggests multiple visits/confirmations)
 
 ---
