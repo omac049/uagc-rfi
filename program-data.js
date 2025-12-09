@@ -5,6 +5,11 @@
  */
 
 const PROGRAM_DATA = {
+    'military-partnerships': [
+        // CCAF Partnership Programs
+        { name: 'CCAF Completion – General Education Mobile (GEM)', programId: 'a0Axxxxxxxxxxxxxxx', level: 'undergraduate' }
+    ],
+    
     'business': [
         // Associate Programs
         { name: 'AA in Business', programId: 'a0Axxxxxxxxxxxxxxx', level: 'undergraduate' },

@@ -40,6 +40,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="homepage-styles.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ux-improvements.css">
     
     <!-- Meta Tags for SEO -->
     <meta name="description" content="Earn your online degree from University of Arizona Global Campus. Flexible programs for working adults in business, healthcare, education, IT, and more.">
@@ -142,10 +143,14 @@
             <div class="rfi-container">
                 <!-- Progress Indicator -->
                 <div class="progress-container" aria-label="Form progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill" id="progressFill" style="width: 50%;"></div>
                     </div>
-                    <p class="progress-text" id="progressText">Step 1 of 2</p>
+                    <p class="progress-text" id="progressText">
+                        <span aria-hidden="true">Step</span>
+                        <span class="sr-only">Step</span>
+                        <strong>1</strong> of <strong>2</strong>
+                    </p>
                 </div>
 
                 <!-- Smart Tip Container -->
@@ -156,6 +161,10 @@
                     
                     <!-- Step 1: Program Selection -->
                     <div class="form-step active" id="step1" data-step="1">
+                        <div class="step-header">
+                            <h3 class="step-title">Select Your Program</h3>
+                            <p class="step-description">Choose your education level and the specific degree program you're interested in learning more about.</p>
+                        </div>
                         
                         <!-- Two dropdowns side-by-side -->
                         <div class="form-row">
@@ -176,7 +185,7 @@
                                     <option value="undergraduate">Undergraduate</option>
                                     <option value="graduate">Graduate</option>
                                 </select>
-                                <span class="form-help" id="educationLevelHelp">Choose your degree level</span>
+                                <span class="form-help" id="educationLevelHelp">Includes degrees and course-only programs (e.g., CCAF/GEM)</span>
                                 <span class="form-error" id="educationLevelError" role="alert"></span>
                             </div>
 
@@ -228,14 +237,23 @@
 
                     <!-- Step 2: Personal Information -->
                     <div class="form-step" id="step2" data-step="2" style="max-width: 100%;">
-                        <p class="step-meta" style="color: #007d8a; font-size: 0.9rem; margin: 0 0 16px 0; font-weight: 600;">
-                            <span id="progressText">Step 2 of 2</span>
-                        </p>
+                        <div class="step-header">
+                            <h3 class="step-title">Contact Information</h3>
+                            <p class="step-description">We'll use this information to connect you with an admissions counselor who can answer your questions about your program of interest.</p>
+                        </div>
 
                         <!-- Core Contact Info - Compact Layout -->
-                        <div class="form-row" style="gap: 15px; margin-bottom: 15px;">
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label for="firstName" class="form-label required" style="margin-bottom: 6px;">First Name</label>
+                        <div class="field-group">
+                            <div class="field-group-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Personal Information
+                            </div>
+                            <div class="form-row" style="gap: 15px; margin-bottom: 0;">
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="firstName" class="form-label required">First Name</label>
                                 <input 
                                     type="text" 
                                     id="firstName" 
@@ -256,8 +274,8 @@
                                 </span>
                             </div>
 
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label for="lastName" class="form-label required" style="margin-bottom: 6px;">Last Name</label>
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="lastName" class="form-label required">Last Name</label>
                                 <input 
                                     type="text" 
                                     id="lastName" 
@@ -275,12 +293,20 @@
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle;">
                                         <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                     </svg>
-                                </span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="email" class="form-label required" style="margin-bottom: 6px;">Email Address</label>
+                        <div class="field-group">
+                            <div class="field-group-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Contact Details
+                            </div>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label for="email" class="form-label required">Email Address</label>
                             <input 
                                 type="email" 
                                 id="email" 
@@ -301,12 +327,12 @@
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle;">
                                     <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                 </svg>
-                            </span>
-                        </div>
+                                </span>
+                            </div>
 
-                        <div class="form-row" style="gap: 15px; margin-bottom: 15px;">
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label for="phone" class="form-label required" style="margin-bottom: 6px;">Phone</label>
+                            <div class="form-row" style="gap: 15px; margin-bottom: 0;">
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="phone" class="form-label required">Phone Number</label>
                                 <input 
                                     type="tel" 
                                     id="phone" 
@@ -327,8 +353,8 @@
                                 </span>
                             </div>
 
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label for="zipCode" class="form-label required" style="margin-bottom: 6px;">ZIP Code</label>
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="zipCode" class="form-label required">ZIP Code</label>
                                 <input 
                                     type="text" 
                                     id="zipCode" 
@@ -347,8 +373,9 @@
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin-right: 3px;">
                                         <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                     </svg>
-                                    <span class="zip-location"></span>
-                                </span>
+                                        <span class="zip-location"></span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
 

@@ -523,6 +523,18 @@ body {
     display: none;
 }
 
+/* Show help text for Education Level field - hidden by default, shown via JS */
+.rfi-section-primary #educationLevelHelp {
+    display: none;
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+.rfi-section-primary #educationLevelHelp.visible {
+    display: block;
+}
+
 .rfi-section-primary .rfi-info,
 .rfi-section-primary .rfi-benefits,
 .rfi-section-primary .rfi-contact {

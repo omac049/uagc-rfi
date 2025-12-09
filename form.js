@@ -1012,6 +1012,16 @@ function formatPhoneNumber(e) {
  */
 function handleEducationLevelChange() {
     const selectedLevel = educationLevel.value;
+    const educationLevelHelp = document.getElementById('educationLevelHelp');
+    
+    // Show/hide help text based on selection
+    if (educationLevelHelp) {
+        if (selectedLevel === 'undergraduate') {
+            educationLevelHelp.classList.add('visible');
+        } else {
+            educationLevelHelp.classList.remove('visible');
+        }
+    }
     
     if (!selectedLevel) {
         degreeProgram.disabled = true;
