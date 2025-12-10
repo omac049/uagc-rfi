@@ -526,13 +526,23 @@ body {
 /* Show help text for Education Level field - hidden by default, shown via JS */
 .rfi-section-primary #educationLevelHelp {
     display: none;
-    font-size: 0.8rem;
-    color: #6b7280;
-    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #374151;
+    margin-top: 10px;
+    padding: 10px 12px;
+    background-color: #f0f9ff;
+    border-left: 4px solid #0C234B;
+    border-radius: 0 4px 4px 0;
 }
 
 .rfi-section-primary #educationLevelHelp.visible {
     display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .rfi-section-primary .rfi-info,
