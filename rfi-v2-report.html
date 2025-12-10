@@ -5348,60 +5348,103 @@
                 </table>
             </div>
             
-            <!-- Top Page Locations -->
-            <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-bottom: 25px;">
-                <h3 style="color: #0C234B; margin: 0 0 20px 0; font-size: 1.3rem; border-bottom: 2px solid #0C234B; padding-bottom: 10px;">📄 Top Page Locations (page_location)</h3>
-                <table style="width: 100%; border-collapse: collapse;">
-                    <thead>
-                        <tr style="background: #0C234B; color: white;">
-                            <th style="padding: 12px; text-align: left;">Page</th>
-                            <th style="padding: 12px; text-align: right;">Events</th>
-                            <th style="padding: 12px; text-align: right;">Users</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="background: #e8f4f8;">
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;"><strong>cloud.mail.uagc.edu/apply-now</strong> (Email Campaign)</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;"><strong style="color: #28a745;">1,508,025</strong></td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">233,667</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;"><strong>uagc.edu/</strong> (Homepage)</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">412,227</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">41,747</td>
-                        </tr>
-                        <tr style="background: #f8f9fa;">
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">PerkSpot Corporate Partnership Page</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">274,269</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">31,798</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">admission.uagc.edu/s/enrollment-agreement</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">128,884</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">4,431</td>
-                        </tr>
-                        <tr style="background: #f8f9fa;">
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">Blog: PhD vs Doctorate Article</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">73,338</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">11,287</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">/online-degrees (All Programs)</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">56,539</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">6,240</td>
-                        </tr>
-                        <tr style="background: #f8f9fa;">
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">/online-degrees/masters</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">48,581</td>
-                            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">4,693</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">/online-degrees/business</td>
-                            <td style="padding: 12px; text-align: right;">43,026</td>
-                            <td style="padding: 12px; text-align: right;">4,059</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Page Location & Form Destination Side by Side -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; margin-bottom: 25px;">
+                
+                <!-- Top Page Locations -->
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 10px;">
+                    <h3 style="color: #0C234B; margin: 0 0 20px 0; font-size: 1.2rem; border-bottom: 2px solid #0C234B; padding-bottom: 10px;">📄 Top Page Locations (page_location)</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #0C234B; color: white;">
+                                <th style="padding: 10px; text-align: left;">Page</th>
+                                <th style="padding: 10px; text-align: right;">Events</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #e8f4f8;">
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;"><strong>Email Campaign (apply-now)</strong></td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;"><strong style="color: #28a745;">1,508,025</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">Homepage (uagc.edu/)</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">412,227</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">PerkSpot Partnership</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">274,269</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">Enrollment Agreement</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">128,884</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">Blog: PhD vs Doctorate</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">73,338</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">/online-degrees</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">56,539</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">/online-degrees/masters</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">48,581</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;">/online-degrees/business</td>
+                                <td style="padding: 10px; text-align: right;">43,026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Form Destination -->
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 10px;">
+                    <h3 style="color: #621244; margin: 0 0 20px 0; font-size: 1.2rem; border-bottom: 2px solid #621244; padding-bottom: 10px;">🎯 Form Destination (form_destination)</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #621244; color: white;">
+                                <th style="padding: 10px; text-align: left;">Destination</th>
+                                <th style="padding: 10px; text-align: right;">Events</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #f9f0f5;">
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;"><strong>uagc.edu/ (Homepage)</strong></td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;"><strong style="color: #28a745;">7,802</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">TFA Forms API</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">6,782</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">PerkSpot Partnership</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">5,091</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">/apply-now</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">4,141</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">/request-information-thank-you</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">3,586</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">/online-degrees</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">2,668</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">/online-degrees/masters</td>
+                                <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">2,449</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;">/online-degrees/bachelors</td>
+                                <td style="padding: 10px; text-align: right;">2,027</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
             
             <!-- CTA Click Text Analysis -->
