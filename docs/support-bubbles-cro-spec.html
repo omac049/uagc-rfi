@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Bubbles CRO Test Specification - UAGC RFI Forms</title>
+    
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="anthropic-ai" content="noai, noimageai">
+    <meta name="openai" content="noai, noimageai">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="private">
+    <meta name="confidential" content="true">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --arizona-red: #AB0520;
+            --arizona-blue: #0C234B;
+            --highlight-orange: #EF9600;
+            --highlight-sky: #81D3EB;
+            --highlight-blue: #0076A8;
+            --highlight-purple: #621244;
+            --light-gray: #D0D0CE;
+            --dark-gray: #53565A;
+            --river: #007D8A;
+            --silver: #98A4AE;
+            --yellow: #F9E17D;
+            --white: #FFFFFF;
+            --success-green: #28a745;
+            --primary-blue: #0C234B;
+            --accent-red: #AB0520;
+            --warning-orange: #EF9600;
+            --medium-gray: #D0D0CE;
+            --info-blue: #0076A8;
+        }
+        
+        @import url('https://use.typekit.net/fzf7wsh.css');
+        
+        body {
+            font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica Neue, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 25px;
+            font-size: 15px;
+            letter-spacing: 0.01em;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary-blue);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--arizona-blue);
+            border-bottom: 3px solid var(--arizona-red);
+            padding-bottom: 16px;
+            margin-bottom: 30px;
+            margin-top: 45px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-red), var(--warning-orange));
+            border-radius: 2px;
+            animation: expandWidth 0.6s ease both;
+        }
+        
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 2px solid var(--medium-gray);
+            padding-bottom: 12px;
+            margin-top: 40px;
+            margin-bottom: 24px;
+        }
+        
+        h3 { font-size: 1.35rem; color: var(--dark-gray); }
+        h4 { font-size: 1.1rem; color: var(--highlight-blue); }
+        
+        p { margin-bottom: 16px; line-height: 1.7; max-width: 75ch; }
+        ul, ol { margin-bottom: 20px; padding-left: 28px; line-height: 1.7; }
+        li { margin-bottom: 10px; }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 40px 0;
+            background: white;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, var(--arizona-blue) 0%, #1a3a6b 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 1.02rem;
+            line-height: 1.6;
+        }
+        
+        tbody tr:nth-child(even) { background: #fafbfc; }
+        tbody tr:hover {
+            background: linear-gradient(90deg, #f0f8ff 0%, #e6f3ff 100%);
+            transform: translateX(4px);
+            box-shadow: -4px 0 0 var(--arizona-red);
+        }
+        
+        pre, code {
+            background: #f6f8fa;
+            border-left: 4px solid var(--accent-red);
+            border-radius: 6px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        code { padding: 3px 8px; font-family: 'Courier New', monospace; color: #d73a49; }
+        pre code { background: none; padding: 0; color: inherit; }
+        
+        .info-box {
+            padding: 25px 30px;
+            margin: 35px 0;
+            border-radius: 12px;
+            border-left: 6px solid;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .info-box.blue {
+            background: linear-gradient(135deg, #e7f3ff 0%, #d6ebff 100%);
+            border-color: var(--highlight-blue);
+        }
+        
+        .info-box.green {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-color: var(--success-green);
+        }
+        
+        .info-box.orange {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffecb3 100%);
+            border-color: var(--highlight-orange);
+        }
+        
+        .info-box.red {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            border-color: var(--arizona-red);
+        }
+        
+        .info-box h4 { margin-top: 0; margin-bottom: 15px; color: var(--arizona-blue); }
+        .info-box p { margin-bottom: 12px; max-width: 100%; }
+        
+        .card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 35px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        blockquote {
+            border-left: 6px solid var(--arizona-red);
+            padding: 25px 30px;
+            margin: 40px 0;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e8e8e8 100%);
+            font-style: italic;
+            color: var(--dark-gray);
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .quick-takeaway {
+            background: var(--primary-blue);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .quick-takeaway h4 { margin: 0 0 12px 0; color: white; }
+        .quick-takeaway ul { margin: 0; padding-left: 20px; }
+        
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 60px 0 40px 0;
+            padding: 20px 0;
+            border-top: 3px solid var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+            background: linear-gradient(90deg, rgba(12,35,75,0.03) 0%, rgba(12,35,75,0.08) 50%, rgba(12,35,75,0.03) 100%);
+        }
+        
+        .section-divider .icon {
+            font-size: 2.5rem;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section-divider .text { flex: 1; }
+        .section-divider h2 { margin: 0; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .section-divider .subtitle { margin: 5px 0 0 0; color: #666; font-size: 0.9rem; }
+        
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 2px solid var(--medium-gray);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--arizona-red);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        
+        .stat-card .stat-label { font-size: 1.1rem; color: var(--dark-gray); font-weight: 600; }
+        .stat-card .stat-change {
+            font-size: 0.95rem;
+            margin-top: 12px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .stat-change.positive {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+        }
+        
+        .stat-change.negative {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .badge.success { background: #d4edda; color: #155724; }
+        .badge.warning { background: #fff3cd; color: #856404; }
+        .badge.danger { background: #f8d7da; color: #721c24; }
+        .badge.info { background: #d1ecf1; color: #0c5460; }
+        
+        .toc {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--accent-red);
+        }
+        
+        .toc h2 { color: var(--primary-blue); margin-bottom: 20px; }
+        .toc ol { list-style-position: inside; }
+        .toc a { color: var(--primary-blue); text-decoration: none; }
+        .toc a:hover { color: var(--accent-red); text-decoration: underline; }
+        
+        details {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin: 20px 0;
+            background: white;
+        }
+        
+        details[open] { border-color: var(--primary-blue); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        details summary {
+            cursor: pointer;
+            padding: 20px 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .visual-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .visual-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+        
+        .visual-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .visual-card .card-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f7fa 100%);
+            border-radius: 10px;
+        }
+        
+        .visual-card .card-title { font-size: 1.1rem; font-weight: 700; color: var(--primary-blue); margin: 0; }
+        .visual-card .card-body { color: #333; line-height: 1.6; }
+        
+        .quick-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .quick-summary h3 { margin: 0 0 15px 0; color: white; }
+        
+        .checkbox-list {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        .checkbox-list li::before {
+            content: "☐ ";
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-red) 100%);
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible { opacity: 1; transform: translateY(0); }
+        .back-to-top:hover { background: #0a1d3a; transform: translateY(-3px); }
+        
+        .nav-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+            padding: 80px 30px 30px;
+        }
+        
+        .sticky-nav.open { right: 0; }
+        
+        .sticky-nav h2 {
+            font-size: 1.4rem;
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+        
+        .sticky-nav ol { list-style: none; padding: 0; margin: 0; }
+        .sticky-nav li { margin-bottom: 12px; }
+        .sticky-nav a {
+            display: block;
+            padding: 14px 18px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 600;
+            border-left: 4px solid transparent;
+            background: #f8f9fa;
+        }
+        
+        .sticky-nav a:hover {
+            background: linear-gradient(90deg, #e8f4f8 0%, #f0f7fa 100%);
+            border-left-color: var(--primary-blue);
+        }
+        
+        .sticky-nav a.active {
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--info-blue) 100%);
+            color: white;
+            border-left-color: var(--accent-red);
+        }
+        
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-overlay.visible { opacity: 1; visibility: visible; }
+        
+        .report-footer {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 60px;
+            text-align: center;
+            border-top: 5px solid var(--primary-blue);
+        }
+        
+        ::selection { background: var(--accent-red); color: white; }
+        
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            .stat-cards { grid-template-columns: 1fr; }
+            .sticky-nav { width: 100%; right: -100%; }
+            .hero-grid { grid-template-columns: 1fr !important; }
+            .hero-right { order: -1; padding: 20px !important; }
+        }
+        
+        @media print {
+            .nav-toggle, .sticky-nav, .nav-overlay, .back-to-top, .reading-progress { display: none !important; }
+        }
+        
+        /* Hero tip demo styles */
+        .tip-demo-info {
+            border-left: 4px solid #007D8A;
+            background: #EFF8F9;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .tip-demo-success {
+            border-left: 4px solid #10B981;
+            background: #ECFDF5;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .tip-demo-warning {
+            border-left: 4px solid #F59E0B;
+            background: #FEF3C7;
+            padding: 16px 20px;
+            border-radius: 8px;
+        }
+        
+        .tip-demo-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; }
+        .tip-demo-msg { font-size: 0.85rem; line-height: 1.4; margin: 0; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="reading-progress" id="reading-progress"></div>
+    
+    <button class="nav-toggle" id="navToggle" onclick="toggleNav()" title="Open navigation">☰</button>
+    <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+    
+    <nav class="sticky-nav" id="stickyNav">
+        <h2>📋 Navigation</h2>
+        <ol>
+            <li><a href="#executive-summary">1. Executive Summary</a></li>
+            <li><a href="#component-overview">2. Component Overview</a></li>
+            <li><a href="#smart-tip-container">3. Smart Tip Container</a></li>
+            <li><a href="#floating-help-button">4. Floating Help Button</a></li>
+            <li><a href="#help-modal">5. Help Modal</a></li>
+            <li><a href="#field-assistance">6. Field-Level Assistance</a></li>
+            <li><a href="#trigger-conditions">7. Trigger Conditions</a></li>
+            <li><a href="#css-implementation">8. CSS Implementation</a></li>
+            <li><a href="#js-implementation">9. JavaScript Implementation</a></li>
+            <li><a href="#analytics-tracking">10. Analytics & Tracking</a></li>
+            <li><a href="#qa-checklist">11. QA Checklist</a></li>
+            <li><a href="#appendix">Appendix</a></li>
+        </ol>
+    </nav>
+    
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
+    
+    <!-- HERO SECTION -->
+    <div style="position: relative; margin: 0 -30px 40px -30px; overflow: hidden;">
+        <div class="hero-grid" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; min-height: 450px; background: linear-gradient(135deg, #0C234B 0%, #1A3A6B 100%);">
+            <div style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 40px 50px 40px 60px;">
+                <div style="margin-bottom: 20px;">
+                    <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(171, 5, 32, 0.15); color: var(--arizona-red); padding: 6px 16px; border-radius: 50px; border: 2px solid rgba(171, 5, 32, 0.3); font-size: 0.7rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;">CRO Test Spec</span>
+                </div>
+                <h1 style="color: white; font-size: 2.8rem; font-weight: 800; margin: 0 0 18px 0; line-height: 1.1; border: none; padding: 0;">
+                    Support Bubbles<br>
+                    <span style="background: linear-gradient(135deg, #AB0520 0%, #EF9600 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">CRO Test Specification</span>
+                </h1>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin: 0 0 30px 0;">Contextual Help System for RFI Form Optimization</p>
+                <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+                    <div>
+                        <div style="color: #666; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 3px;">Document Version</div>
+                        <div style="color: white; font-size: 1.1rem; font-weight: 800;">1.0</div>
+                    </div>
+                    <div style="border-left: 2px solid rgba(255,255,255,0.2);"></div>
+                    <div>
+                        <div style="color: #666; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 3px;">Last Updated</div>
+                        <div style="color: white; font-size: 1.1rem; font-weight: 800;">March 5, 2026</div>
+                    </div>
+                    <div style="border-left: 2px solid rgba(255,255,255,0.2);"></div>
+                    <div>
+                        <div style="color: #666; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 3px;">Primary Metric</div>
+                        <div style="color: white; font-size: 1.1rem; font-weight: 800;">Form Completion Rate</div>
+                    </div>
+                    <div style="border-left: 2px solid rgba(255,255,255,0.2);"></div>
+                    <div>
+                        <div style="color: #666; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 3px;">Target Lift</div>
+                        <div style="color: white; font-size: 1.1rem; font-weight: 800;">5-15%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right" style="position: relative; padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 12px; background: rgba(255,255,255,0.08); border-radius: 12px; margin: 20px;">
+                <div style="color: rgba(255,255,255,0.95); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Live Demo Preview</div>
+                <div class="tip-demo-info">
+                    <div class="tip-demo-title">🎓 Choosing Your Education Level</div>
+                    <p class="tip-demo-msg">Select undergraduate for associate's or bachelor's degrees, or graduate for master's or doctoral programs.</p>
+                </div>
+                <div class="tip-demo-success">
+                    <div class="tip-demo-title">✨ Progress Update</div>
+                    <p class="tip-demo-msg">Excellent! You're halfway there. Just need your contact info.</p>
+                </div>
+                <div class="tip-demo-warning">
+                    <div class="tip-demo-title">🆘 Need Help?</div>
+                    <p class="tip-demo-msg">Not sure which degree is right for you? Our admissions counselors can help!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#executive-summary">Executive Summary</a></li>
+            <li><a href="#component-overview">Component Overview</a></li>
+            <li><a href="#smart-tip-container">Smart Tip Container</a></li>
+            <li><a href="#floating-help-button">Floating Help Button</a></li>
+            <li><a href="#help-modal">Help Modal</a></li>
+            <li><a href="#field-assistance">Field-Level Assistance</a></li>
+            <li><a href="#trigger-conditions">Trigger Conditions</a></li>
+            <li><a href="#css-implementation">CSS Implementation</a></li>
+            <li><a href="#js-implementation">JavaScript Implementation</a></li>
+            <li><a href="#optimizely-integration">Optimizely Integration</a></li>
+            <li><a href="#analytics-tracking">Analytics & Tracking</a></li>
+            <li><a href="#qa-checklist">QA Checklist</a></li>
+            <li><a href="#appendix">Appendix</a></li>
+        </ol>
+    </div>
+    
+    <!-- SECTION 1 - EXECUTIVE SUMMARY -->
+    <section id="executive-summary">
+        <div class="quick-takeaway">
+            <h4>Key Takeaways</h4>
+            <ul>
+                <li>Support bubbles are a 4-component contextual help system</li>
+                <li>Goal: reduce form abandonment by 5-15%</li>
+                <li>Primary metric: form completion rate</li>
+                <li>3-variation A/B test via Optimizely</li>
+            </ul>
+        </div>
+        
+        <div class="info-box blue">
+            <h4>What Are Support Bubbles?</h4>
+            <p>Support bubbles are a contextual help system designed to guide users through form completion, reduce form abandonment, provide just-in-time assistance, and encourage users who are struggling.</p>
+        </div>
+        
+        <div class="stat-cards">
+            <div class="stat-card">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Components</div>
+                <div class="stat-change"><span class="badge info">Full System</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">13</div>
+                <div class="stat-label">Trigger Events</div>
+                <div class="stat-change"><span class="badge info">Contextual Help</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">5-15%</div>
+                <div class="stat-label">Target Lift</div>
+                <div class="stat-change"><span class="badge success">Completion Rate</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2-4 Wks</div>
+                <div class="stat-label">Test Duration</div>
+                <div class="stat-change"><span class="badge warning">95% Significance</span></div>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr><th>Component</th><th>Purpose</th><th>Visibility</th><th>Priority</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Smart Tip Container</td><td>Primary contextual messages</td><td>Appears on triggers</td><td>P0 - Critical</td></tr>
+                <tr><td>Floating Help Button</td><td>Persistent help access</td><td>Always visible</td><td>P0 - Critical</td></tr>
+                <tr><td>Help Modal</td><td>Detailed assistance</td><td>On-demand</td><td>P1 - Important</td></tr>
+                <tr><td>Field Tooltips</td><td>Quick field hints</td><td>On hover/click</td><td>P2 - Nice to have</td></tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- SECTION 2 - COMPONENT OVERVIEW -->
+    <section id="component-overview">
+        <div class="section-divider">
+            <span class="icon">🏗️</span>
+            <div class="text">
+                <h2>Component Architecture</h2>
+                <div class="subtitle">How the support bubble system is structured</div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <pre><code>┌─────────────────────────────────────────────────────────┐
+│  RFI Form Container (.rfi-container)                     │
+│  ┌───────────────────────────────────────────────────┐  │
+│  │  Smart Tip Container (#smartTipContainer)          │  │
+│  │  Contextual messages: info / success / warning     │  │
+│  └───────────────────────────────────────────────────┘  │
+│  ┌───────────────────────────────────────────────────┐  │
+│  │  Form Fields with Tooltips                         │  │
+│  │  .tooltip-trigger + .tooltip-content               │  │
+│  └───────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+
+┌──────────────────┐
+│  Floating Help   │  ← Fixed position, bottom-right
+│  Button (.smart- │
+│  help-button)    │
+└──────────────────┘
+
+┌─────────────────────────────────────────────────────────┐
+│  Help Modal (.help-modal-overlay > .help-modal)          │
+│  Full-screen overlay with step-specific content          │
+└─────────────────────────────────────────────────────────┘</code></pre>
+        </div>
+        
+        <div class="info-box orange">
+            <h4>⚠️ Engagement Gate</h4>
+            <p>Help messages ONLY appear AFTER the user has engaged with the form (first focus or click on any form field). This prevents intrusive pop-ups on page load and ensures a non-disruptive experience.</p>
+        </div>
+    </section>
+    
+    <!-- SECTION 3 - SMART TIP CONTAINER -->
+    <section id="smart-tip-container">
+        <div class="section-divider">
+            <span class="icon">💬</span>
+            <div class="text">
+                <h2>Smart Tip Container</h2>
+                <div class="subtitle">The primary vehicle for contextual messages</div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>HTML Structure</h3>
+            <pre><code>&lt;div id="smartTipContainer" class="smart-tip-container [type]" style="display: none;"&gt;
+    &lt;div class="smart-tip-content"&gt;
+        &lt;div class="smart-tip-icon"&gt;[emoji]&lt;/div&gt;
+        &lt;div class="smart-tip-text"&gt;
+            &lt;strong class="smart-tip-title"&gt;[Title]&lt;/strong&gt;
+            &lt;p class="smart-tip-message"&gt;[Message]&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;button class="smart-tip-close"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        
+        <h3>Live Demo – All 3 Variants</h3>
+        <div class="card" style="max-width: 600px;">
+            <div class="tip-demo-info">
+                <div class="tip-demo-title">🎓 Choosing Your Education Level</div>
+                <p class="tip-demo-msg">Select undergraduate for associate's or bachelor's degrees, or graduate for master's or doctoral programs.</p>
+            </div>
+            <div class="tip-demo-success">
+                <div class="tip-demo-title">✨ Progress Update</div>
+                <p class="tip-demo-msg">Excellent! You're halfway there. Just need your contact info.</p>
+            </div>
+            <div class="tip-demo-warning">
+                <div class="tip-demo-title">🆘 Need Help?</div>
+                <p class="tip-demo-msg">Not sure which degree is right for you? Our admissions counselors can help!</p>
+            </div>
+        </div>
+        
+        <table>
+            <thead><tr><th>Rule</th><th>Value</th><th>Notes</th></tr></thead>
+            <tbody>
+                <tr><td>Auto-dismiss (info/success)</td><td>10 seconds</td><td>Timer starts on display</td></tr>
+                <tr><td>Auto-dismiss (warning)</td><td>Never</td><td>User must close manually</td></tr>
+                <tr><td>Animation in</td><td>slideInDown 0.3s</td><td>Slides down from above</td></tr>
+                <tr><td>Animation out</td><td>Immediate</td><td>No exit animation</td></tr>
+                <tr><td>Max visible</td><td>1 at a time</td><td>New tips replace existing</td></tr>
+                <tr><td>Placement</td><td>Inside .rfi-container</td><td>Above form content</td></tr>
+                <tr><td>Z-index</td><td>Default</td><td>No overlay behavior</td></tr>
+            </tbody>
+        </table>
+        
+        <details>
+            <summary>📝 Complete Message Content Templates</summary>
+            <div class="card-grid" style="padding: 25px;">
+                <div class="visual-card">
+                    <div class="card-header">
+                        <span class="card-icon">👋</span>
+                        <h4 class="card-title">Welcome Messages</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Welcome:</strong> "Welcome! We'll help you every step of the way. 😊"</p>
+                        <p><em>type: info, timing: 1s after engagement</em></p>
+                    </div>
+                </div>
+                <div class="visual-card">
+                    <div class="card-header">
+                        <span class="card-icon">🎓</span>
+                        <h4 class="card-title">Field Help Messages</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>educationLevel:</strong> Select undergraduate for associate's or bachelor's degrees... (🎓)</p>
+                        <p><strong>degreeProgram:</strong> Choose the specific degree... (📚)</p>
+                        <p><strong>firstName:</strong> Enter your legal first name... (👤)</p>
+                        <p><strong>email:</strong> We'll send program information... (📧)</p>
+                        <p><strong>phone:</strong> An admissions counselor will contact... (📱)</p>
+                        <p><strong>state:</strong> This helps us provide relevant program availability... (📍)</p>
+                    </div>
+                </div>
+                <div class="visual-card">
+                    <div class="card-header">
+                        <span class="card-icon">🆘</span>
+                        <h4 class="card-title">Struggling User Messages</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>educationLevel:</strong> Not sure which level? Choose undergraduate if you're starting...</p>
+                        <p><strong>degreeProgram:</strong> Not sure which degree is right? Our counselors can help!</p>
+                        <p><strong>email:</strong> Need an email? Consider creating a free Gmail, Outlook, or Yahoo account.</p>
+                        <p><strong>phone:</strong> Enter your phone: (555) 123-4567.</p>
+                    </div>
+                </div>
+                <div class="visual-card">
+                    <div class="card-header">
+                        <span class="card-icon">🎉</span>
+                        <h4 class="card-title">Encouragement Messages</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>area_selected:</strong> "Great choice! 🎯 Now let's find your perfect program."</p>
+                        <p><strong>program_selected:</strong> "Excellent! 👏 You're halfway there."</p>
+                        <p><strong>step_completed:</strong> "Almost done! 🚀 Last step - your contact information."</p>
+                    </div>
+                </div>
+                <div class="visual-card">
+                    <div class="card-header">
+                        <span class="card-icon">⚠️</span>
+                        <h4 class="card-title">Error & Warning Messages</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Validation:</strong> Please complete all required fields... (warning)</p>
+                        <p><strong>Invalid characters:</strong> Names should only contain letters... (warning)</p>
+                        <p><strong>Abandonment:</strong> Still here? Need any help? (warning)</p>
+                        <p><strong>Restored:</strong> We restored your previous progress! (success)</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </section>
+    
+    <!-- SECTION 4 - FLOATING HELP BUTTON -->
+    <section id="floating-help-button">
+        <div class="section-divider">
+            <span class="icon">🔵</span>
+            <div class="text">
+                <h2>Floating Help Button</h2>
+                <div class="subtitle">Persistent help access point</div>
+            </div>
+        </div>
+        
+        <p><strong>Live Demo:</strong></p>
+        <div style="display: inline-flex; width: 56px; height: 56px; background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); border-radius: 50%; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(12,35,75,0.3); margin: 20px 0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9C9.33 8.33 9.79 7.77 10.4 7.41C11 7.05 11.73 6.92 12.43 7.04C13.13 7.16 13.76 7.52 14.22 8.06C14.68 8.61 14.92 9.29 14.92 10C14.92 12 11.92 13 11.92 13" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 17H12.01" stroke-linecap="round"/>
+            </svg>
+        </div>
+        
+        <table>
+            <thead><tr><th>Property</th><th>Desktop</th><th>Mobile</th></tr></thead>
+            <tbody>
+                <tr><td>Position</td><td>Fixed</td><td>Fixed</td></tr>
+                <tr><td>Bottom</td><td>32px</td><td>16px</td></tr>
+                <tr><td>Right</td><td>32px</td><td>16px</td></tr>
+                <tr><td>Size</td><td>56px × 56px</td><td>48px × 48px</td></tr>
+                <tr><td>Z-index</td><td>1000</td><td>1000</td></tr>
+                <tr><td>Background</td><td>Blue gradient</td><td>Blue gradient</td></tr>
+                <tr><td>Icon</td><td>Question mark SVG</td><td>Question mark SVG</td></tr>
+            </tbody>
+        </table>
+        
+        <table>
+            <thead><tr><th>State</th><th>Appearance</th></tr></thead>
+            <tbody>
+                <tr><td>Default</td><td>Blue gradient (#0C234B → #1a3a6b), white icon</td></tr>
+                <tr><td>Hover</td><td>Scale 1.1, enhanced shadow (0 6px 20px)</td></tr>
+                <tr><td>Active/Click</td><td>Scale 0.95</td></tr>
+                <tr><td>With Badge</td><td>Red (#AB0520) notification dot with "!" pulsing animation</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box blue">
+            <h4>Badge Notification System</h4>
+            <p>The red notification badge appears when: user has been inactive for 60+ seconds, user has form data entered but hasn't completed. Badge pulses with a CSS animation to draw attention.</p>
+        </div>
+    </section>
+    
+    <!-- SECTION 5 - HELP MODAL -->
+    <section id="help-modal">
+        <div class="section-divider">
+            <span class="icon">📋</span>
+            <div class="text">
+                <h2>Help Modal</h2>
+                <div class="subtitle">Comprehensive step-specific assistance</div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>HTML Structure</h3>
+            <pre><code>&lt;div class="help-modal-overlay"&gt;
+  &lt;div class="help-modal"&gt;
+    &lt;div class="help-modal-header"&gt;...&lt;/div&gt;
+    &lt;div class="help-modal-body"&gt;...&lt;/div&gt;
+    &lt;div class="help-modal-footer"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        
+        <table>
+            <thead><tr><th>Behavior</th><th>Implementation</th></tr></thead>
+            <tbody>
+                <tr><td>Open trigger</td><td>Click floating help button</td></tr>
+                <tr><td>Close triggers</td><td>Click overlay, click × button, press Escape</td></tr>
+                <tr><td>Animation in</td><td>scaleIn 0.3s + fadeIn 0.2s</td></tr>
+                <tr><td>Body scroll</td><td>Lock when open (recommended)</td></tr>
+                <tr><td>Focus trap</td><td>Recommended for accessibility</td></tr>
+                <tr><td>Max width</td><td>600px</td></tr>
+                <tr><td>Max height</td><td>90vh (95vh mobile)</td></tr>
+                <tr><td>Z-index</td><td>2000</td></tr>
+            </tbody>
+        </table>
+        
+        <details>
+            <summary>📖 Step-Specific Help Content</summary>
+            <div class="card-grid" style="padding: 25px;">
+                <div class="visual-card">
+                    <div class="card-header">
+                        <span class="card-icon">📋</span>
+                        <h4 class="card-title">Step 1: Program Selection</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Career goals</strong> – Choose the field you want to study.</p>
+                        <p><strong>Popular programs:</strong> Business (MBA, Accounting), Healthcare (RN to BSN), Education, Technology (IT, Cybersecurity)</p>
+                    </div>
+                </div>
+                <div class="visual-card">
+                    <div class="card-header">
+                        <span class="card-icon">📋</span>
+                        <h4 class="card-title">Step 2: Contact Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>What happens next:</strong> Email with program details, admissions counselor call within 1-2 business days.</p>
+                        <p><strong>Privacy assurance:</strong> Information secure, only used by UAGC for educational opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </section>
+    
+    <!-- SECTION 6 - FIELD-LEVEL ASSISTANCE -->
+    <section id="field-assistance">
+        <div class="section-divider">
+            <span class="icon">ℹ️</span>
+            <div class="text">
+                <h2>Field-Level Assistance</h2>
+                <div class="subtitle">Inline tooltips and field help icons</div>
+            </div>
+        </div>
+        
+        <table>
+            <thead><tr><th>Platform</th><th>Trigger</th><th>Close</th></tr></thead>
+            <tbody>
+                <tr><td>Desktop (769px+)</td><td>Hover OR click</td><td>Mouse leave (100ms delay), click outside, Escape</td></tr>
+                <tr><td>Mobile (&lt;769px)</td><td>Click/tap only</td><td>Click outside, Escape, tap close button</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box green">
+            <h4>Accessibility Considerations</h4>
+            <ul>
+                <li>ARIA attributes: aria-expanded, aria-hidden, aria-describedby</li>
+                <li>Focus-visible states with 3px solid outline</li>
+                <li>Keyboard navigation: Escape to close</li>
+                <li>Screen reader announcements via role="alert"</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- SECTION 7 - TRIGGER CONDITIONS -->
+    <section id="trigger-conditions">
+        <div class="section-divider">
+            <span class="icon">⚡</span>
+            <div class="text">
+                <h2>Trigger Conditions Reference</h2>
+                <div class="subtitle">Complete matrix of all triggers with timing</div>
+            </div>
+        </div>
+        
+        <table>
+            <thead><tr><th>Trigger Event</th><th>Component</th><th>Type</th><th>Timing</th><th>Condition</th></tr></thead>
+            <tbody>
+                <tr><td>First field interaction</td><td>Smart Tip</td><td>info</td><td>1s delay</td><td>userEngaged becomes true</td></tr>
+                <tr><td>Focus on field</td><td>Smart Tip</td><td>info</td><td>Immediate</td><td>userEngaged === true</td></tr>
+                <tr><td>&gt;2 attempts on field</td><td>Smart Tip</td><td>warning</td><td>Immediate</td><td>fieldAttempts[id] &gt; 2</td></tr>
+                <tr><td>&gt;30s on empty field</td><td>Smart Tip</td><td>warning</td><td>On blur</td><td>interactionTime &gt; 30000 && value === ''</td></tr>
+                <tr><td>Education level selected</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>After valid selection</td></tr>
+                <tr><td>Program selected</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>After valid selection</td></tr>
+                <tr><td>Step 1 completed</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>On step transition</td></tr>
+                <tr><td>60s inactivity</td><td>Smart Tip + Badge</td><td>warning</td><td>After timeout</td><td>Has form data, not submitted</td></tr>
+                <tr><td>Form data restored</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>On page load with saved data</td></tr>
+                <tr><td>Validation error</td><td>Smart Tip</td><td>warning</td><td>On validation</td><td>!isValid && userEngaged</td></tr>
+                <tr><td>Invalid name characters</td><td>Smart Tip</td><td>warning</td><td>On input</td><td>Regex match</td></tr>
+                <tr><td>Click help button</td><td>Help Modal</td><td>-</td><td>Immediate</td><td>Always available</td></tr>
+                <tr><td>Hover/click tooltip</td><td>Tooltip</td><td>-</td><td>Immediate</td><td>Always available</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="card">
+            <h4>Timing Constants</h4>
+            <pre><code>const TIMING = {
+    welcomeMessageDelay: 1000,
+    smartTipAutoDismiss: 10000,
+    inactivityThreshold: 60000,
+    fieldStruggleTime: 30000,
+    tooltipCloseDelay: 100,
+    autoSaveInterval: 10000,
+    savedDataExpiry: 7 * 24 * 60 * 60 * 1000
+};</code></pre>
+        </div>
+    </section>
+    
+    <!-- SECTION 8 - CSS IMPLEMENTATION -->
+    <section id="css-implementation">
+        <div class="section-divider">
+            <span class="icon">🎨</span>
+            <div class="text">
+                <h2>CSS Implementation</h2>
+                <div class="subtitle">Complete stylesheet for all components</div>
+            </div>
+        </div>
+        
+        <details>
+            <summary>1. CSS Variables</summary>
+            <pre><code>:root {
+  --arizona-red: #AB0520;
+  --arizona-blue: #0C234B;
+  --river: #007D8A;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --border-radius-lg: 12px;
+  /* ... */
+}</code></pre>
+        </details>
+        
+        <details>
+            <summary>2. Smart Tip Container CSS</summary>
+            <pre><code>.smart-tip-container {
+  position: relative;
+  width: 100%;
+  background-color: #EFF8F9;
+  border-radius: 12px;
+  border-left: 4px solid var(--river);
+  animation: slideInDown 0.3s ease-out;
+}
+.smart-tip-container.success { border-left-color: #10B981; }
+.smart-tip-container.warning { border-left-color: #F59E0B; }</code></pre>
+        </details>
+        
+        <details>
+            <summary>3. Floating Help Button CSS</summary>
+            <pre><code>.smart-help-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%);
+  border-radius: 50%;
+  z-index: 1000;
+}</code></pre>
+        </details>
+        
+        <details>
+            <summary>4. Help Modal CSS</summary>
+            <pre><code>.help-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.help-modal {
+  max-width: 600px;
+  max-height: 90vh;
+  background: white;
+  border-radius: 12px;
+}</code></pre>
+        </details>
+        
+        <details>
+            <summary>5. Tooltip CSS</summary>
+            <pre><code>.tooltip-trigger {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.tooltip-content {
+  position: absolute;
+  z-index: 1000;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}</code></pre>
+        </details>
+    </section>
+    
+    <!-- SECTION 9 - JAVASCRIPT IMPLEMENTATION -->
+    <section id="js-implementation">
+        <div class="section-divider">
+            <span class="icon">⚙️</span>
+            <div class="text">
+                <h2>JavaScript Implementation</h2>
+                <div class="subtitle">Core functions and initialization logic</div>
+            </div>
+        </div>
+        
+        <details>
+            <summary>1. showSmartTip() - Display Tips</summary>
+            <pre><code>function showSmartTip(message, title = 'Tip', icon = '💡', type = 'info') {
+  const tipContainer = document.getElementById('smartTipContainer');
+  if (!tipContainer || !userEngaged) return;
+  tipContainer.className = `smart-tip-container ${type}`;
+  tipContainer.innerHTML = `...`;
+  tipContainer.style.display = 'block';
+  if (type !== 'warning') {
+    setTimeout(() => tipContainer.style.display = 'none', 10000);
+  }
+}</code></pre>
+        </details>
+        
+        <details>
+            <summary>2. showContextualHelp() - Help Modal</summary>
+            <pre><code>function showContextualHelp() {
+  const helpContent = getContextualHelpContent();
+  const modal = document.createElement('div');
+  modal.innerHTML = `&lt;div class="help-modal-overlay"&gt;...&lt;/div&gt;`;
+  document.body.appendChild(modal);
+  trackEvent('help_modal_opened', { step: currentStep });
+}</code></pre>
+        </details>
+        
+        <details>
+            <summary>3. setupEngagementDetection() - User Tracking</summary>
+            <pre><code>function setupEngagementDetection() {
+  const formFields = form.querySelectorAll('input, select, textarea');
+  const handleFirstInteraction = () => {
+    if (!userEngaged) {
+      userEngaged = true;
+      setTimeout(() => showSmartTip('Welcome!...', '👋 Welcome!', '👋', 'info'), 1000);
+      setupActivityTracking();
+    }
+  };
+  formFields.forEach(f => {
+    f.addEventListener('focus', handleFirstInteraction, { once: true });
+    f.addEventListener('click', handleFirstInteraction, { once: true });
+  });
+}</code></pre>
+        </details>
+        
+        <details>
+            <summary>4. setupActivityTracking() - Abandonment</summary>
+            <pre><code>function setupActivityTracking() {
+  let inactivityTimer;
+  const resetTimer = () => {
+    clearTimeout(inactivityTimer);
+    inactivityTimer = setTimeout(offerAbandonmentHelp, 60000);
+  };
+  document.addEventListener('mousemove', resetTimer);
+  document.addEventListener('keypress', resetTimer);
+  resetTimer();
+}</code></pre>
+        </details>
+        
+        <details>
+            <summary>5. initTooltips() - Tooltip System</summary>
+            <pre><code>function initTooltips() {
+  document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => { ... });
+    if (window.matchMedia('(min-width: 769px)').matches) {
+      trigger.addEventListener('mouseenter', () => { ... });
+      trigger.addEventListener('mouseleave', () => { ... });
+    }
+  });
+}</code></pre>
+        </details>
+    </section>
+    
+    <!-- SECTION 10 - ANALYTICS & TRACKING -->
+    <section id="analytics-tracking">
+        <div class="section-divider">
+            <span class="icon">📊</span>
+            <div class="text">
+                <h2>Analytics & Tracking</h2>
+                <div class="subtitle">Event schema and key metrics</div>
+            </div>
+        </div>
+        
+        <table>
+            <thead><tr><th>Metric</th><th>Type</th><th>Definition</th></tr></thead>
+            <tbody>
+                <tr><td>Form Completion Rate</td><td>Primary</td><td>Submissions / Unique Visitors</td></tr>
+                <tr><td>Time to Complete</td><td>Secondary</td><td>Avg seconds from load to submit</td></tr>
+                <tr><td>Step 1 Drop-off</td><td>Secondary</td><td>% who don't advance to Step 2</td></tr>
+                <tr><td>Help Interaction Rate</td><td>Secondary</td><td>% who interact with help system</td></tr>
+                <tr><td>Field Error Rate</td><td>Secondary</td><td>Errors per submission attempt</td></tr>
+                <tr><td>Abandonment Rate</td><td>Secondary</td><td>% who leave with partial data</td></tr>
+            </tbody>
+        </table>
+        
+        <details>
+            <summary>📋 Complete Event Tracking Schema</summary>
+            <table>
+                <thead><tr><th>Event Name</th><th>Data Fields</th><th>When Fired</th></tr></thead>
+                <tbody>
+                    <tr><td>form_viewed</td><td>step, variation</td><td>Page load</td></tr>
+                    <tr><td>form_engaged</td><td>timeToEngage</td><td>First interaction</td></tr>
+                    <tr><td>welcome_message_shown</td><td>-</td><td>After engagement</td></tr>
+                    <tr><td>field_help_shown</td><td>field, helpType</td><td>Focus on field</td></tr>
+                    <tr><td>struggling_help_shown</td><td>field, attempts</td><td>&gt;2 attempts</td></tr>
+                    <tr><td>abandonment_help_offered</td><td>step, timeOnPage</td><td>60s inactivity</td></tr>
+                    <tr><td>help_modal_opened</td><td>step</td><td>Click help button</td></tr>
+                    <tr><td>tooltip_opened</td><td>tooltipId</td><td>Hover/click tooltip</td></tr>
+                    <tr><td>smart_tip_closed</td><td>tipType, autoOrManual</td><td>Tip dismissed</td></tr>
+                    <tr><td>step_completed</td><td>step, educationLevel, program</td><td>Step transition</td></tr>
+                    <tr><td>form_submitted</td><td>timeToComplete, helpInteractions</td><td>Successful submit</td></tr>
+                    <tr><td>validation_error_shown</td><td>field, errorType</td><td>Validation failure</td></tr>
+                </tbody>
+            </table>
+        </details>
+    </section>
+    
+    <!-- SECTION 11 - QA CHECKLIST -->
+    <section id="qa-checklist">
+        <div class="section-divider">
+            <span class="icon">✅</span>
+            <div class="text">
+                <h2>QA Checklist</h2>
+                <div class="subtitle">Quality assurance verification items</div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>QA Checklist</h3>
+            <ul class="checkbox-list">
+                <li>Smart tip container appears on all defined triggers</li>
+                <li>Smart tip auto-dismisses after 10 seconds (info/success types)</li>
+                <li>Warning tips persist until manually closed by user</li>
+                <li>Floating help button visible and clickable on all pages</li>
+                <li>Help badge appears after 60 seconds of inactivity</li>
+                <li>Help modal opens/closes correctly (overlay, × button, Escape)</li>
+                <li>Help modal content switches based on current form step</li>
+                <li>Tooltips work on hover (desktop) and click (mobile)</li>
+                <li>All events fire correctly to GA4</li>
+                <li>Mobile responsive design works (test 320px-768px)</li>
+                <li>Accessibility: all focus states, ARIA labels present</li>
+                <li>No JavaScript errors in browser console</li>
+                <li>Performance: no visible lag, jank, or layout shift</li>
+                <li>Print stylesheet hides all support bubble elements</li>
+                <li>Form still submits correctly with support bubbles active</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- APPENDIX -->
+    <section id="appendix" style="background: #f8f9fa; padding: 40px; margin: 0 -25px; border-radius: 12px;">
+        <h2>Appendix</h2>
+        
+        <table>
+            <thead><tr><th>File</th><th>Purpose</th></tr></thead>
+            <tbody>
+                <tr><td>homepage.html</td><td>Reference implementation HTML</td></tr>
+                <tr><td>form.js</td><td>Reference implementation JavaScript (1,852 lines)</td></tr>
+                <tr><td>styles.css</td><td>Reference implementation CSS</td></tr>
+                <tr><td>program-data.js</td><td>Program data for degree dropdowns</td></tr>
+            </tbody>
+        </table>
+        
+        <table style="margin-top: 30px;">
+            <thead><tr><th>Color</th><th>Hex</th><th>CSS Variable</th><th>Usage</th></tr></thead>
+            <tbody>
+                <tr><td>Arizona Blue</td><td>#0C234B</td><td>--arizona-blue</td><td>Primary, headers, buttons</td></tr>
+                <tr><td>Arizona Red</td><td>#AB0520</td><td>--arizona-red</td><td>Accents, badges, alerts</td></tr>
+                <tr><td>River</td><td>#007D8A</td><td>--river</td><td>Info tips</td></tr>
+                <tr><td>Success Green</td><td>#10B981</td><td>-</td><td>Success tips</td></tr>
+                <tr><td>Warning Amber</td><td>#F59E0B</td><td>-</td><td>Warning tips</td></tr>
+                <tr><td>Highlight Blue</td><td>#0076A8</td><td>--highlight-blue</td><td>Links, info icons</td></tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <footer class="report-footer">
+        <p><strong>Support Bubbles CRO Test Specification</strong></p>
+        <p>March 2026 • DX Team</p>
+        <p><em>INTERNAL USE ONLY</em></p>
+    </footer>
+    
+    <script>
+        (function() {
+            const progressBar = document.getElementById('reading-progress');
+            const backToTop = document.getElementById('backToTop');
+            
+            function updateProgress() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                progressBar.style.width = height > 0 ? (winScroll / height) * 100 + '%' : '0%';
+                
+                if (winScroll > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+            
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            
+            window.scrollToTop = scrollToTop;
+            
+            window.addEventListener('scroll', updateProgress);
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            function toggleNav() {
+                document.getElementById('stickyNav').classList.toggle('open');
+                document.getElementById('navOverlay').classList.toggle('visible');
+            }
+            
+            window.toggleNav = toggleNav;
+            
+            function updateActiveNav() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.sticky-nav a');
+                let current = '';
+                
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 150) current = section.getAttribute('id');
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveNav);
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.getElementById('stickyNav').classList.remove('open');
+                    document.getElementById('navOverlay').classList.remove('visible');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
