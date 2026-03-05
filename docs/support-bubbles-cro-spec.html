@@ -579,6 +579,156 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Flow Steps */
+        .flow-step-group {
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            padding: 30px 35px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .flow-step-group:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .flow-step-group-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+        .flow-step-group-header .step-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), #1a3a6b);
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .flow-step-group-header h3 {
+            margin: 0;
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+        }
+        .flow-step-group-header .step-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+        .flow-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 0 0 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .flow-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .flow-item .flow-action {
+            flex: 1;
+        }
+        .flow-item .flow-trigger {
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .flow-item .flow-trigger .action-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #e8f4f8;
+            color: var(--info-blue);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .flow-item .flow-result {
+            margin-top: 8px;
+        }
+        .flow-bubble {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 6px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .flow-bubble.info {
+            background: #EFF8F9;
+            border-left: 4px solid #007D8A;
+        }
+        .flow-bubble.success {
+            background: #ECFDF5;
+            border-left: 4px solid #10B981;
+        }
+        .flow-bubble.warning {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+        }
+        .flow-bubble .bubble-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .flow-bubble .bubble-content strong {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 2px;
+            color: var(--primary-blue);
+        }
+        .flow-bubble .bubble-content span {
+            color: var(--dark-gray);
+            font-size: 0.85rem;
+        }
+        .flow-arrow {
+            color: var(--accent-red);
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin: 4px 0 2px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .flow-arrow::before {
+            content: '→';
+            font-size: 1rem;
+        }
+        .flow-note {
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 4px;
+        }
+        .flow-connector {
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--accent-red));
+            margin: 0 20px;
+            flex-shrink: 0;
+            border-radius: 2px;
+            min-height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -591,16 +741,15 @@
         <h2>📋 Navigation</h2>
         <ol>
             <li><a href="#executive-summary">1. Executive Summary</a></li>
-            <li><a href="#component-overview">2. Component Overview</a></li>
-            <li><a href="#smart-tip-container">3. Smart Tip Container</a></li>
-            <li><a href="#floating-help-button">4. Floating Help Button</a></li>
-            <li><a href="#help-modal">5. Help Modal</a></li>
-            <li><a href="#field-assistance">6. Field-Level Assistance</a></li>
-            <li><a href="#trigger-conditions">7. Trigger Conditions</a></li>
-            <li><a href="#css-implementation">8. CSS Implementation</a></li>
-            <li><a href="#js-implementation">9. JavaScript Implementation</a></li>
-            <li><a href="#analytics-tracking">10. Analytics & Tracking</a></li>
-            <li><a href="#qa-checklist">11. QA Checklist</a></li>
+            <li><a href="#bubble-flow">2. Support Bubble Flow</a></li>
+            <li><a href="#component-overview">3. Component Overview</a></li>
+            <li><a href="#smart-tip-container">4. Smart Tip Container</a></li>
+            <li><a href="#floating-help-button">5. Floating Help Button</a></li>
+            <li><a href="#help-modal">6. Help Modal</a></li>
+            <li><a href="#field-assistance">7. Field-Level Assistance</a></li>
+            <li><a href="#trigger-conditions">8. Trigger Conditions</a></li>
+            <li><a href="#analytics-tracking">9. Analytics & Tracking</a></li>
+            <li><a href="#qa-checklist">10. QA Checklist</a></li>
             <li><a href="#appendix">Appendix</a></li>
         </ol>
     </nav>
@@ -664,15 +813,13 @@
         <h2>Table of Contents</h2>
         <ol>
             <li><a href="#executive-summary">Executive Summary</a></li>
+            <li><a href="#bubble-flow"><strong>Support Bubble Flow</strong></a></li>
             <li><a href="#component-overview">Component Overview</a></li>
             <li><a href="#smart-tip-container">Smart Tip Container</a></li>
             <li><a href="#floating-help-button">Floating Help Button</a></li>
             <li><a href="#help-modal">Help Modal</a></li>
             <li><a href="#field-assistance">Field-Level Assistance</a></li>
             <li><a href="#trigger-conditions">Trigger Conditions</a></li>
-            <li><a href="#css-implementation">CSS Implementation</a></li>
-            <li><a href="#js-implementation">JavaScript Implementation</a></li>
-            <li><a href="#optimizely-integration">Optimizely Integration</a></li>
             <li><a href="#analytics-tracking">Analytics & Tracking</a></li>
             <li><a href="#qa-checklist">QA Checklist</a></li>
             <li><a href="#appendix">Appendix</a></li>
@@ -732,7 +879,403 @@
         </table>
     </section>
     
-    <!-- SECTION 2 - COMPONENT OVERVIEW -->
+    <!-- SECTION 2 - SUPPORT BUBBLE FLOW -->
+    <section id="bubble-flow">
+        <div class="section-divider">
+            <span class="icon">🗺️</span>
+            <div class="text">
+                <h2>Support Bubble Flow</h2>
+                <div class="subtitle">Exactly what appears, when, and why &mdash; step by step</div>
+            </div>
+        </div>
+        
+        <div class="quick-takeaway">
+            <h4>👀 How to Read This Section</h4>
+            <ul>
+                <li><strong>User action</strong> = what the user does (click, focus, select, idle)</li>
+                <li><strong>→ Bubble response</strong> = the exact smart tip that appears, with type and content</li>
+                <li>Bubbles are color-coded: <span style="color:#007D8A;">■ info</span> &nbsp; <span style="color:#10B981;">■ success</span> &nbsp; <span style="color:#F59E0B;">■ warning</span></li>
+            </ul>
+        </div>
+        
+        <!-- STEP 1 FLOW -->
+        <div class="flow-step-group">
+            <div class="flow-step-group-header">
+                <span class="step-num">1</span>
+                <div>
+                    <h3>Step 1 &mdash; Program Selection</h3>
+                    <div class="step-desc">Education Level → Degree Program → Next</div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks or focuses anywhere inside the RFI form
+                        <span class="action-badge">First Interaction</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show Welcome bubble (1 second delay)</div>
+                        <div class="flow-bubble info">
+                            <span class="bubble-icon">👋</span>
+                            <div class="bubble-content">
+                                <strong>Welcome!</strong>
+                                <span>Welcome! We'll help you every step of the way. 😊</span>
+                            </div>
+                        </div>
+                        <div class="flow-note">Auto-dismisses after 10 seconds. Only fires once per session.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks / focuses the Education Level dropdown
+                        <span class="action-badge">Focus</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show field help bubble</div>
+                        <div class="flow-bubble info">
+                            <span class="bubble-icon">🎓</span>
+                            <div class="bubble-content">
+                                <strong>Choosing Your Education Level</strong>
+                                <span>Select undergraduate for associate's or bachelor's degrees, or graduate for master's or doctoral programs.</span>
+                            </div>
+                        </div>
+                        <div class="flow-note">Auto-dismisses after 10 seconds.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User selects an Education Level
+                        <span class="action-badge">Change</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show encouragement bubble</div>
+                        <div class="flow-bubble success">
+                            <span class="bubble-icon">✨</span>
+                            <div class="bubble-content">
+                                <strong>Progress Update</strong>
+                                <span>Great! Now select your <em>{undergraduate/graduate}</em> program.</span>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">Select Your Degree dropdown becomes enabled</div>
+                        <div class="flow-note">Auto-dismisses after 10 seconds. Degree list filters to match education level.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks / focuses the Select Your Degree dropdown
+                        <span class="action-badge">Focus</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show field help bubble</div>
+                        <div class="flow-bubble info">
+                            <span class="bubble-icon">📚</span>
+                            <div class="bubble-content">
+                                <strong>Select Your Degree Program</strong>
+                                <span>Choose the specific degree that matches your educational goals. Each program is designed for working adults and offers flexible online learning.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User selects a Degree Program
+                        <span class="action-badge">Change</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show encouragement bubble</div>
+                        <div class="flow-bubble success">
+                            <span class="bubble-icon">✨</span>
+                            <div class="bubble-content">
+                                <strong>Progress Update</strong>
+                                <span>Excellent! 👏 You're halfway there. Just need your contact info.</span>
+                            </div>
+                        </div>
+                        <div class="flow-note">If nursing program selected, RN License question also appears.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks Next with missing required fields
+                        <span class="action-badge">Validation</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show validation warning bubble</div>
+                        <div class="flow-bubble warning">
+                            <span class="bubble-icon">⚠️</span>
+                            <div class="bubble-content">
+                                <strong>Required Fields Missing</strong>
+                                <span>Please complete all required fields before continuing. Look for the red error messages below.</span>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">Scroll to first field error</div>
+                        <div class="flow-note">Warning persists until user manually closes it.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks Next with valid fields
+                        <span class="action-badge">Navigate</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Transition to Step 2 + show encouragement bubble</div>
+                        <div class="flow-bubble success">
+                            <span class="bubble-icon">🚀</span>
+                            <div class="bubble-content">
+                                <strong>Progress Update</strong>
+                                <span>Almost done! 🚀 Last step — your contact information.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- STEP 2 FLOW -->
+        <div class="flow-step-group">
+            <div class="flow-step-group-header">
+                <span class="step-num">2</span>
+                <div>
+                    <h3>Step 2 &mdash; Contact Information</h3>
+                    <div class="step-desc">Name → Email → Phone → ZIP → Consent → Submit</div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks / focuses the First Name field
+                        <span class="action-badge">Focus</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show field help bubble</div>
+                        <div class="flow-bubble info">
+                            <span class="bubble-icon">👤</span>
+                            <div class="bubble-content">
+                                <strong>Your First Name</strong>
+                                <span>Enter your legal first name as it appears on official documents.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User types numbers or special characters in a name field
+                        <span class="action-badge">Input</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show character warning bubble</div>
+                        <div class="flow-bubble warning">
+                            <span class="bubble-icon">⚠️</span>
+                            <div class="bubble-content">
+                                <strong>Invalid Characters</strong>
+                                <span>Names should only contain letters, spaces, hyphens, and apostrophes.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks / focuses the Email field
+                        <span class="action-badge">Focus</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show field help bubble</div>
+                        <div class="flow-bubble info">
+                            <span class="bubble-icon">📧</span>
+                            <div class="bubble-content">
+                                <strong>Email Address</strong>
+                                <span>We'll send program information and admission details to this email. Make sure it's an address you check regularly.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks / focuses the Phone field
+                        <span class="action-badge">Focus</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show field help bubble</div>
+                        <div class="flow-bubble info">
+                            <span class="bubble-icon">📱</span>
+                            <div class="bubble-content">
+                                <strong>Phone Number</strong>
+                                <span>An admissions counselor will contact you at this number to answer questions and guide you through the enrollment process.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks Submit with missing required fields
+                        <span class="action-badge">Validation</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show validation warning bubble</div>
+                        <div class="flow-bubble warning">
+                            <span class="bubble-icon">⚠️</span>
+                            <div class="bubble-content">
+                                <strong>Required Fields Missing</strong>
+                                <span>Please complete all required fields before continuing. Look for the red error messages below.</span>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">Scroll to first field error</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User submits form successfully
+                        <span class="action-badge">Submit</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Clear saved form draft from localStorage</div>
+                        <div class="flow-arrow">Redirect to thank-you page</div>
+                        <div class="flow-note">No support bubble shown — success state handled by the thank-you page.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PASSIVE / AMBIENT BEHAVIORS -->
+        <div class="flow-step-group">
+            <div class="flow-step-group-header">
+                <span class="step-num" style="background: linear-gradient(135deg, var(--accent-red), var(--warning-orange));">⟳</span>
+                <div>
+                    <h3>Ambient &amp; Passive Behaviors</h3>
+                    <div class="step-desc">Triggers that fire based on time, struggle, or return visits</div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User focuses a field and re-focuses it more than 2 times
+                        <span class="action-badge">Struggle</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show struggling-user help bubble</div>
+                        <div class="flow-bubble warning">
+                            <span class="bubble-icon">🆘</span>
+                            <div class="bubble-content">
+                                <strong>Need Help?</strong>
+                                <span>Field-specific help message (e.g., "Not sure which degree is right for you? Our admissions counselors can help! For now, choose the one that sounds most interesting.")</span>
+                            </div>
+                        </div>
+                        <div class="flow-note">Tracked per-field. Fires once per field per session.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User spends more than 30 seconds on a field and leaves it empty
+                        <span class="action-badge">Idle on Field</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show struggling-user help bubble</div>
+                        <div class="flow-bubble warning">
+                            <span class="bubble-icon">🆘</span>
+                            <div class="bubble-content">
+                                <strong>Need Help?</strong>
+                                <span>Field-specific struggling message for the field the user was on.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User is inactive for 60 seconds (no mouse, keyboard, or click)
+                        <span class="action-badge">Inactivity</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Show abandonment help bubble + floating help badge</div>
+                        <div class="flow-bubble warning">
+                            <span class="bubble-icon">🆘</span>
+                            <div class="bubble-content">
+                                <strong>Need Assistance?</strong>
+                                <span>Still here? Need any help completing the form? Click the help button (?) if you have questions!</span>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">Red notification badge appears on floating help button</div>
+                        <div class="flow-note">Only fires if user has already entered some form data. Warning persists until closed.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User returns to a form with previously saved data (within 7 days)
+                        <span class="action-badge">Return Visit</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Restore form fields from localStorage + show restoration bubble</div>
+                        <div class="flow-bubble success">
+                            <span class="bubble-icon">💾</span>
+                            <div class="bubble-content">
+                                <strong>Progress Restored</strong>
+                                <span>We restored your previous progress! You can continue where you left off.</span>
+                            </div>
+                        </div>
+                        <div class="flow-note">Data auto-saves every 10 seconds. Expires after 7 days.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-action">
+                    <div class="flow-trigger">
+                        User clicks the floating help button (?) at any time
+                        <span class="action-badge">Click</span>
+                    </div>
+                    <div class="flow-result">
+                        <div class="flow-arrow">Open Help Modal with step-specific content</div>
+                        <div class="flow-note">Step 1: shows program selection guidance + popular programs. Step 2: shows contact info explanation + "what happens next" + privacy assurance.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION 3 - COMPONENT OVERVIEW -->
     <section id="component-overview">
         <div class="section-divider">
             <span class="icon">🏗️</span>
@@ -742,30 +1285,15 @@
             </div>
         </div>
         
-        <div class="card">
-            <pre><code>┌─────────────────────────────────────────────────────────┐
-│  RFI Form Container (.rfi-container)                     │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │  Smart Tip Container (#smartTipContainer)          │  │
-│  │  Contextual messages: info / success / warning     │  │
-│  └───────────────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │  Form Fields with Tooltips                         │  │
-│  │  .tooltip-trigger + .tooltip-content               │  │
-│  └───────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────┘
-
-┌──────────────────┐
-│  Floating Help   │  ← Fixed position, bottom-right
-│  Button (.smart- │
-│  help-button)    │
-└──────────────────┘
-
-┌─────────────────────────────────────────────────────────┐
-│  Help Modal (.help-modal-overlay > .help-modal)          │
-│  Full-screen overlay with step-specific content          │
-└─────────────────────────────────────────────────────────┘</code></pre>
-        </div>
+        <table>
+            <thead><tr><th>Component</th><th>Location</th><th>Relationship</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Smart Tip Container</strong></td><td>Inside the RFI form, above the form fields</td><td>Displays contextual messages (info / success / warning) inline</td></tr>
+                <tr><td><strong>Form Fields with Tooltips</strong></td><td>Beside each field label</td><td>Small (?) icons that expand on hover/click to show field-specific help</td></tr>
+                <tr><td><strong>Floating Help Button</strong></td><td>Fixed, bottom-right corner of the viewport</td><td>Always visible; opens the Help Modal on click</td></tr>
+                <tr><td><strong>Help Modal</strong></td><td>Full-screen overlay (centered)</td><td>Step-specific comprehensive help content; triggered by the floating button</td></tr>
+            </tbody>
+        </table>
         
         <div class="info-box orange">
             <h4>⚠️ Engagement Gate</h4>
@@ -773,7 +1301,7 @@
         </div>
     </section>
     
-    <!-- SECTION 3 - SMART TIP CONTAINER -->
+    <!-- SECTION 4 - SMART TIP CONTAINER -->
     <section id="smart-tip-container">
         <div class="section-divider">
             <span class="icon">💬</span>
@@ -783,21 +1311,7 @@
             </div>
         </div>
         
-        <div class="card">
-            <h3>HTML Structure</h3>
-            <pre><code>&lt;div id="smartTipContainer" class="smart-tip-container [type]" style="display: none;"&gt;
-    &lt;div class="smart-tip-content"&gt;
-        &lt;div class="smart-tip-icon"&gt;[emoji]&lt;/div&gt;
-        &lt;div class="smart-tip-text"&gt;
-            &lt;strong class="smart-tip-title"&gt;[Title]&lt;/strong&gt;
-            &lt;p class="smart-tip-message"&gt;[Message]&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;button class="smart-tip-close"&gt;✕&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        </div>
-        
-        <h3>Live Demo – All 3 Variants</h3>
+        <h3>Visual Reference – All 3 Variants</h3>
         <div class="card" style="max-width: 600px;">
             <div class="tip-demo-info">
                 <div class="tip-demo-title">🎓 Choosing Your Education Level</div>
@@ -892,7 +1406,7 @@
         </details>
     </section>
     
-    <!-- SECTION 4 - FLOATING HELP BUTTON -->
+    <!-- SECTION 5 - FLOATING HELP BUTTON -->
     <section id="floating-help-button">
         <div class="section-divider">
             <span class="icon">🔵</span>
@@ -940,7 +1454,7 @@
         </div>
     </section>
     
-    <!-- SECTION 5 - HELP MODAL -->
+    <!-- SECTION 6 - HELP MODAL -->
     <section id="help-modal">
         <div class="section-divider">
             <span class="icon">📋</span>
@@ -948,17 +1462,6 @@
                 <h2>Help Modal</h2>
                 <div class="subtitle">Comprehensive step-specific assistance</div>
             </div>
-        </div>
-        
-        <div class="card">
-            <h3>HTML Structure</h3>
-            <pre><code>&lt;div class="help-modal-overlay"&gt;
-  &lt;div class="help-modal"&gt;
-    &lt;div class="help-modal-header"&gt;...&lt;/div&gt;
-    &lt;div class="help-modal-body"&gt;...&lt;/div&gt;
-    &lt;div class="help-modal-footer"&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
         </div>
         
         <table>
@@ -1002,7 +1505,7 @@
         </details>
     </section>
     
-    <!-- SECTION 6 - FIELD-LEVEL ASSISTANCE -->
+    <!-- SECTION 7 - FIELD-LEVEL ASSISTANCE -->
     <section id="field-assistance">
         <div class="section-divider">
             <span class="icon">ℹ️</span>
@@ -1031,7 +1534,7 @@
         </div>
     </section>
     
-    <!-- SECTION 7 - TRIGGER CONDITIONS -->
+    <!-- SECTION 8 - TRIGGER CONDITIONS -->
     <section id="trigger-conditions">
         <div class="section-divider">
             <span class="icon">⚡</span>
@@ -1044,208 +1547,38 @@
         <table>
             <thead><tr><th>Trigger Event</th><th>Component</th><th>Type</th><th>Timing</th><th>Condition</th></tr></thead>
             <tbody>
-                <tr><td>First field interaction</td><td>Smart Tip</td><td>info</td><td>1s delay</td><td>userEngaged becomes true</td></tr>
-                <tr><td>Focus on field</td><td>Smart Tip</td><td>info</td><td>Immediate</td><td>userEngaged === true</td></tr>
-                <tr><td>&gt;2 attempts on field</td><td>Smart Tip</td><td>warning</td><td>Immediate</td><td>fieldAttempts[id] &gt; 2</td></tr>
-                <tr><td>&gt;30s on empty field</td><td>Smart Tip</td><td>warning</td><td>On blur</td><td>interactionTime &gt; 30000 && value === ''</td></tr>
+                <tr><td>First field interaction</td><td>Smart Tip</td><td>info</td><td>1s delay</td><td>User engaged with the form for the first time</td></tr>
+                <tr><td>Focus on field</td><td>Smart Tip</td><td>info</td><td>Immediate</td><td>User has already engaged with the form</td></tr>
+                <tr><td>&gt;2 attempts on field</td><td>Smart Tip</td><td>warning</td><td>Immediate</td><td>User has focused the same field more than 2 times</td></tr>
+                <tr><td>&gt;30s on empty field</td><td>Smart Tip</td><td>warning</td><td>On blur</td><td>User spent 30+ seconds on a field and left it empty</td></tr>
                 <tr><td>Education level selected</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>After valid selection</td></tr>
                 <tr><td>Program selected</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>After valid selection</td></tr>
                 <tr><td>Step 1 completed</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>On step transition</td></tr>
                 <tr><td>60s inactivity</td><td>Smart Tip + Badge</td><td>warning</td><td>After timeout</td><td>Has form data, not submitted</td></tr>
                 <tr><td>Form data restored</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>On page load with saved data</td></tr>
-                <tr><td>Validation error</td><td>Smart Tip</td><td>warning</td><td>On validation</td><td>!isValid && userEngaged</td></tr>
+                <tr><td>Validation error</td><td>Smart Tip</td><td>warning</td><td>On validation</td><td>Form is invalid and user has engaged</td></tr>
                 <tr><td>Invalid name characters</td><td>Smart Tip</td><td>warning</td><td>On input</td><td>Regex match</td></tr>
                 <tr><td>Click help button</td><td>Help Modal</td><td>-</td><td>Immediate</td><td>Always available</td></tr>
                 <tr><td>Hover/click tooltip</td><td>Tooltip</td><td>-</td><td>Immediate</td><td>Always available</td></tr>
             </tbody>
         </table>
         
-        <div class="card">
-            <h4>Timing Constants</h4>
-            <pre><code>const TIMING = {
-    welcomeMessageDelay: 1000,
-    smartTipAutoDismiss: 10000,
-    inactivityThreshold: 60000,
-    fieldStruggleTime: 30000,
-    tooltipCloseDelay: 100,
-    autoSaveInterval: 10000,
-    savedDataExpiry: 7 * 24 * 60 * 60 * 1000
-};</code></pre>
-        </div>
+        <table>
+            <thead><tr><th>Constant</th><th>Value</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>Welcome message delay</td><td>1 second</td><td>Pause before first welcome bubble after engagement</td></tr>
+                <tr><td>Smart tip auto-dismiss</td><td>10 seconds</td><td>How long info/success bubbles stay visible</td></tr>
+                <tr><td>Inactivity threshold</td><td>60 seconds</td><td>Time before abandonment help fires</td></tr>
+                <tr><td>Field struggle time</td><td>30 seconds</td><td>Time on a field before it's considered a struggle</td></tr>
+                <tr><td>Tooltip close delay</td><td>100 ms</td><td>Brief delay before tooltip hides on mouse leave</td></tr>
+                <tr><td>Auto-save interval</td><td>10 seconds</td><td>How often form data is saved to localStorage</td></tr>
+                <tr><td>Saved data expiry</td><td>7 days</td><td>How long saved form data persists</td></tr>
+            </tbody>
+        </table>
     </section>
     
-    <!-- SECTION 8 - CSS IMPLEMENTATION -->
-    <section id="css-implementation">
-        <div class="section-divider">
-            <span class="icon">🎨</span>
-            <div class="text">
-                <h2>CSS Implementation</h2>
-                <div class="subtitle">Complete stylesheet for all components</div>
-            </div>
-        </div>
-        
-        <details>
-            <summary>1. CSS Variables</summary>
-            <pre><code>:root {
-  --arizona-red: #AB0520;
-  --arizona-blue: #0C234B;
-  --river: #007D8A;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --border-radius-lg: 12px;
-  /* ... */
-}</code></pre>
-        </details>
-        
-        <details>
-            <summary>2. Smart Tip Container CSS</summary>
-            <pre><code>.smart-tip-container {
-  position: relative;
-  width: 100%;
-  background-color: #EFF8F9;
-  border-radius: 12px;
-  border-left: 4px solid var(--river);
-  animation: slideInDown 0.3s ease-out;
-}
-.smart-tip-container.success { border-left-color: #10B981; }
-.smart-tip-container.warning { border-left-color: #F59E0B; }</code></pre>
-        </details>
-        
-        <details>
-            <summary>3. Floating Help Button CSS</summary>
-            <pre><code>.smart-help-button {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%);
-  border-radius: 50%;
-  z-index: 1000;
-}</code></pre>
-        </details>
-        
-        <details>
-            <summary>4. Help Modal CSS</summary>
-            <pre><code>.help-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-}
-.help-modal {
-  max-width: 600px;
-  max-height: 90vh;
-  background: white;
-  border-radius: 12px;
-}</code></pre>
-        </details>
-        
-        <details>
-            <summary>5. Tooltip CSS</summary>
-            <pre><code>.tooltip-trigger {
-  display: inline-flex;
-  width: 18px;
-  height: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.tooltip-content {
-  position: absolute;
-  z-index: 1000;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}</code></pre>
-        </details>
-    </section>
     
-    <!-- SECTION 9 - JAVASCRIPT IMPLEMENTATION -->
-    <section id="js-implementation">
-        <div class="section-divider">
-            <span class="icon">⚙️</span>
-            <div class="text">
-                <h2>JavaScript Implementation</h2>
-                <div class="subtitle">Core functions and initialization logic</div>
-            </div>
-        </div>
-        
-        <details>
-            <summary>1. showSmartTip() - Display Tips</summary>
-            <pre><code>function showSmartTip(message, title = 'Tip', icon = '💡', type = 'info') {
-  const tipContainer = document.getElementById('smartTipContainer');
-  if (!tipContainer || !userEngaged) return;
-  tipContainer.className = `smart-tip-container ${type}`;
-  tipContainer.innerHTML = `...`;
-  tipContainer.style.display = 'block';
-  if (type !== 'warning') {
-    setTimeout(() => tipContainer.style.display = 'none', 10000);
-  }
-}</code></pre>
-        </details>
-        
-        <details>
-            <summary>2. showContextualHelp() - Help Modal</summary>
-            <pre><code>function showContextualHelp() {
-  const helpContent = getContextualHelpContent();
-  const modal = document.createElement('div');
-  modal.innerHTML = `&lt;div class="help-modal-overlay"&gt;...&lt;/div&gt;`;
-  document.body.appendChild(modal);
-  trackEvent('help_modal_opened', { step: currentStep });
-}</code></pre>
-        </details>
-        
-        <details>
-            <summary>3. setupEngagementDetection() - User Tracking</summary>
-            <pre><code>function setupEngagementDetection() {
-  const formFields = form.querySelectorAll('input, select, textarea');
-  const handleFirstInteraction = () => {
-    if (!userEngaged) {
-      userEngaged = true;
-      setTimeout(() => showSmartTip('Welcome!...', '👋 Welcome!', '👋', 'info'), 1000);
-      setupActivityTracking();
-    }
-  };
-  formFields.forEach(f => {
-    f.addEventListener('focus', handleFirstInteraction, { once: true });
-    f.addEventListener('click', handleFirstInteraction, { once: true });
-  });
-}</code></pre>
-        </details>
-        
-        <details>
-            <summary>4. setupActivityTracking() - Abandonment</summary>
-            <pre><code>function setupActivityTracking() {
-  let inactivityTimer;
-  const resetTimer = () => {
-    clearTimeout(inactivityTimer);
-    inactivityTimer = setTimeout(offerAbandonmentHelp, 60000);
-  };
-  document.addEventListener('mousemove', resetTimer);
-  document.addEventListener('keypress', resetTimer);
-  resetTimer();
-}</code></pre>
-        </details>
-        
-        <details>
-            <summary>5. initTooltips() - Tooltip System</summary>
-            <pre><code>function initTooltips() {
-  document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
-    trigger.addEventListener('click', (e) => { ... });
-    if (window.matchMedia('(min-width: 769px)').matches) {
-      trigger.addEventListener('mouseenter', () => { ... });
-      trigger.addEventListener('mouseleave', () => { ... });
-    }
-  });
-}</code></pre>
-        </details>
-    </section>
-    
-    <!-- SECTION 10 - ANALYTICS & TRACKING -->
+    <!-- SECTION 9 - ANALYTICS & TRACKING -->
     <section id="analytics-tracking">
         <div class="section-divider">
             <span class="icon">📊</span>
@@ -1289,7 +1622,7 @@
         </details>
     </section>
     
-    <!-- SECTION 11 - QA CHECKLIST -->
+    <!-- SECTION 10 - QA CHECKLIST -->
     <section id="qa-checklist">
         <div class="section-divider">
             <span class="icon">✅</span>
