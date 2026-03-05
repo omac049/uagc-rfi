@@ -6,6 +6,8 @@
     --arizona-blue: #0C234B;
     --arizona-red: #AB0520;
     --river: #007D8A;
+    --cta-gold: #E8A93E;
+    --cta-gold-hover: #D4952F;
     --color-success: #10B981;
     --color-bg: #FFFFFF;
     --color-text: #1F2937;
@@ -514,9 +516,9 @@ body {
 }
 
 .contact-method:hover {
-    border-color: var(--river);
-    background: var(--river);
-    color: white;
+    border-color: var(--cta-gold);
+    background: var(--cta-gold);
+    color: var(--arizona-blue);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }

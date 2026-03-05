@@ -36,6 +36,28 @@ The University of Arizona Global Campus logo is the official institutional mark 
 | **Arizona Red** | `#AB0520` | rgb(171, 5, 32) | Signature accent, always used for "A" triangle |
 | **White** | `#FFFFFF` | rgb(255, 255, 255) | Text on dark backgrounds, logo elements |
 
+### Extended Brand Colors
+
+| Color Name | Hex Code | RGB | Usage |
+|------------|----------|-----|--------|
+| **CTA Gold** | `#E8A93E` | rgb(232, 169, 62) | Primary CTA buttons, "Request Info" buttons |
+| **CTA Gold Hover** | `#D4952F` | rgb(212, 149, 47) | CTA button hover states |
+| **Highlight Orange** | `#EF9600` | rgb(239, 150, 0) | Accent highlights |
+| **Highlight Sky** | `#81D3EB` | rgb(129, 211, 235) | Secondary accent |
+| **Highlight Blue** | `#0076A8` | rgb(0, 118, 168) | Links, info elements |
+| **River** | `#007D8A` | rgb(0, 125, 138) | Success states, teal accent |
+
+### Current Website Design Patterns
+
+- **Header:** White background with centered logo, golden "Request Info" button top-right
+- **Sub-navigation:** Dark navy bar with white text links
+- **Hero:** Full-width imagery
+- **CTAs:** Golden/amber (#E8A93E) rounded pill buttons with dark navy text
+- **Section backgrounds:** Light gray/off-white
+- **Section dividers:** Short Arizona Red lines above headings
+- **Cards:** White with subtle shadows on light gray background
+- **Sticky bottom bar:** Dark navy with golden CTA
+
 ---
 
 ## Logo Usage by Background
@@ -162,6 +184,6 @@ Use: `"University of Arizona Global Campus"`
 
 ---
 
-*Last Updated: November 13, 2025*
+*Last Updated: March 5, 2026*
 *Official Logo File: UAGC_Main_Horizontal_RGB_FullColor.svg*
 

@@ -729,6 +729,231 @@
             border-radius: 2px;
             min-height: 40px;
         }
+        
+        /* Phase System */
+        .phase-overview {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: center;
+            gap: 0;
+            margin: 30px 0 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .phase-overview-card {
+            text-align: center;
+            padding: 24px 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .phase-overview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+        
+        .phase-overview-card.phase-1 {
+            background: linear-gradient(135deg, #e7f3ff 0%, #d6ebff 100%);
+            border: 2px solid var(--highlight-blue);
+        }
+        
+        .phase-overview-card.phase-2 {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+            border: 2px solid var(--highlight-purple);
+        }
+        
+        .phase-overview-card.phase-ty {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border: 2px solid var(--success-green);
+        }
+        
+        .phase-overview-card .phase-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .phase-overview-card .phase-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+        
+        .phase-overview-card.phase-1 .phase-label { color: var(--highlight-blue); }
+        .phase-overview-card.phase-2 .phase-label { color: var(--highlight-purple); }
+        .phase-overview-card.phase-ty .phase-label { color: var(--success-green); }
+        
+        .phase-overview-card .phase-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 4px;
+        }
+        
+        .phase-overview-card .phase-fields {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .phase-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--silver);
+            padding: 0 8px;
+        }
+        
+        .phase-banner {
+            position: relative;
+            padding: 28px 35px;
+            border-radius: 14px;
+            margin: 50px 0 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            overflow: hidden;
+        }
+        
+        .phase-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.06;
+            z-index: 0;
+        }
+        
+        .phase-banner.phase-1-banner {
+            background: linear-gradient(135deg, #0076A8 0%, #0C234B 100%);
+            color: white;
+        }
+        
+        .phase-banner.phase-2-banner {
+            background: linear-gradient(135deg, #621244 0%, #0C234B 100%);
+            color: white;
+        }
+        
+        .phase-banner .phase-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        
+        .phase-1-banner .phase-badge {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .phase-2-banner .phase-badge {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .phase-banner .phase-info {
+            flex: 1;
+            z-index: 1;
+        }
+        
+        .phase-banner .phase-info h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0 4px 0;
+            font-weight: 800;
+        }
+        
+        .phase-banner .phase-info .phase-subtitle {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .phase-banner .phase-meta {
+            display: flex;
+            gap: 20px;
+            z-index: 1;
+        }
+        
+        .phase-banner .phase-meta-item {
+            text-align: center;
+        }
+        
+        .phase-banner .phase-meta-item .meta-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+        
+        .phase-banner .phase-meta-item .meta-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            opacity: 0.8;
+        }
+        
+        .phase-transition {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 40px 0;
+            padding: 20px;
+        }
+        
+        .phase-transition .transition-line {
+            flex: 1;
+            height: 3px;
+            background: linear-gradient(90deg, var(--highlight-blue), var(--highlight-purple));
+            border-radius: 2px;
+        }
+        
+        .phase-transition .transition-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--highlight-blue), var(--highlight-purple));
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+        
+        .phase-transition .transition-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .phase-overview {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .phase-arrow { transform: rotate(90deg); padding: 4px 0; }
+            .phase-banner { flex-direction: column; text-align: center; padding: 24px 20px; }
+            .phase-banner .phase-meta { flex-direction: row; justify-content: center; }
+        }
     </style>
 </head>
 <body>
@@ -742,6 +967,8 @@
         <ol>
             <li><a href="#executive-summary">1. Executive Summary</a></li>
             <li><a href="#bubble-flow">2. Support Bubble Flow</a></li>
+            <li style="padding-left: 18px; list-style: none;"><a href="#phase-1" style="font-size: 0.9em;">↳ Phase 1 — Program Selection</a></li>
+            <li style="padding-left: 18px; list-style: none;"><a href="#phase-2" style="font-size: 0.9em;">↳ Phase 2 — Contact Information</a></li>
             <li><a href="#component-overview">3. Component Overview</a></li>
             <li><a href="#smart-tip-container">4. Smart Tip Container</a></li>
             <li><a href="#floating-help-button">5. Floating Help Button</a></li>
@@ -813,7 +1040,12 @@
         <h2>Table of Contents</h2>
         <ol>
             <li><a href="#executive-summary">Executive Summary</a></li>
-            <li><a href="#bubble-flow"><strong>Support Bubble Flow</strong></a></li>
+            <li><a href="#bubble-flow"><strong>Support Bubble Flow</strong></a>
+                <ul style="list-style: none; margin: 6px 0 6px 10px; padding-left: 0;">
+                    <li style="margin-bottom: 4px;"><a href="#phase-1">Phase 1 — Program Selection</a></li>
+                    <li style="margin-bottom: 4px;"><a href="#phase-2">Phase 2 — Contact Information</a></li>
+                </ul>
+            </li>
             <li><a href="#component-overview">Component Overview</a></li>
             <li><a href="#smart-tip-container">Smart Tip Container</a></li>
             <li><a href="#floating-help-button">Floating Help Button</a></li>
@@ -831,7 +1063,8 @@
         <div class="quick-takeaway">
             <h4>Key Takeaways</h4>
             <ul>
-                <li>Support bubbles are a 4-component contextual help system</li>
+                <li>Support bubbles are a 4-component contextual help system across a <strong>2-phase form flow</strong></li>
+                <li><strong>Phase 1:</strong> Program Selection (education level + degree) &rarr; <strong>Phase 2:</strong> Contact Information &rarr; Thank You Page</li>
                 <li>Goal: reduce form abandonment by 5-15%</li>
                 <li>Primary metric: form completion rate</li>
                 <li>3-variation A/B test via Optimizely</li>
@@ -885,7 +1118,7 @@
             <span class="icon">🗺️</span>
             <div class="text">
                 <h2>Support Bubble Flow</h2>
-                <div class="subtitle">Exactly what appears, when, and why &mdash; step by step</div>
+                <div class="subtitle">Two-phase journey: Phase 1 (Program Selection) → Phase 2 (Contact Info) → Thank You</div>
             </div>
         </div>
         
@@ -898,12 +1131,55 @@
             </ul>
         </div>
         
-        <!-- STEP 1 FLOW -->
+        <!-- PHASE OVERVIEW -->
+        <div class="phase-overview">
+            <div class="phase-overview-card phase-1">
+                <div class="phase-icon">📋</div>
+                <div class="phase-label">Phase 1</div>
+                <div class="phase-name">Program Selection</div>
+                <div class="phase-fields">Education Level &rarr; Degree Program</div>
+            </div>
+            <div class="phase-arrow">&rarr;</div>
+            <div class="phase-overview-card phase-2">
+                <div class="phase-icon">👤</div>
+                <div class="phase-label">Phase 2</div>
+                <div class="phase-name">Contact Information</div>
+                <div class="phase-fields">Name &rarr; Email &rarr; Phone &rarr; ZIP</div>
+            </div>
+            <div class="phase-arrow">&rarr;</div>
+            <div class="phase-overview-card phase-ty">
+                <div class="phase-icon">🎉</div>
+                <div class="phase-label">Complete</div>
+                <div class="phase-name">Thank You Page</div>
+                <div class="phase-fields">Confirmation &amp; Next Steps</div>
+            </div>
+        </div>
+        
+        <!-- PHASE 1 BANNER -->
+        <div class="phase-banner phase-1-banner" id="phase-1">
+            <div class="phase-badge">1</div>
+            <div class="phase-info">
+                <h3>Phase 1 &mdash; Program Selection</h3>
+                <p class="phase-subtitle">User selects their education level and degree program. This is the entry point of the form experience.</p>
+            </div>
+            <div class="phase-meta">
+                <div class="phase-meta-item">
+                    <div class="meta-value">7</div>
+                    <div class="meta-label">Bubble Events</div>
+                </div>
+                <div class="phase-meta-item">
+                    <div class="meta-value">2</div>
+                    <div class="meta-label">Fields</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PHASE 1 - STEP 1 FLOW -->
         <div class="flow-step-group">
             <div class="flow-step-group-header">
                 <span class="step-num">1</span>
                 <div>
-                    <h3>Step 1 &mdash; Program Selection</h3>
+                    <h3>Phase 1 &mdash; Program Selection</h3>
                     <div class="step-desc">Education Level → Degree Program → Next</div>
                 </div>
             </div>
@@ -1036,7 +1312,7 @@
                         <span class="action-badge">Navigate</span>
                     </div>
                     <div class="flow-result">
-                        <div class="flow-arrow">Transition to Step 2 + show encouragement bubble</div>
+                        <div class="flow-arrow">Transition to Phase 2 + show encouragement bubble</div>
                         <div class="flow-bubble success">
                             <span class="bubble-icon">🚀</span>
                             <div class="bubble-content">
@@ -1049,12 +1325,40 @@
             </div>
         </div>
         
-        <!-- STEP 2 FLOW -->
+        <!-- PHASE TRANSITION -->
+        <div class="phase-transition">
+            <div class="transition-line"></div>
+            <div class="transition-label">User clicks Next</div>
+            <div class="transition-icon">→</div>
+            <div class="transition-label">Advances to Phase 2</div>
+            <div class="transition-line"></div>
+        </div>
+        
+        <!-- PHASE 2 BANNER -->
+        <div class="phase-banner phase-2-banner" id="phase-2">
+            <div class="phase-badge">2</div>
+            <div class="phase-info">
+                <h3>Phase 2 &mdash; Contact Information</h3>
+                <p class="phase-subtitle">User provides personal details. This is the final step before the thank-you page confirmation.</p>
+            </div>
+            <div class="phase-meta">
+                <div class="phase-meta-item">
+                    <div class="meta-value">6</div>
+                    <div class="meta-label">Bubble Events</div>
+                </div>
+                <div class="phase-meta-item">
+                    <div class="meta-value">4+</div>
+                    <div class="meta-label">Fields</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PHASE 2 - STEP 2 FLOW -->
         <div class="flow-step-group">
             <div class="flow-step-group-header">
                 <span class="step-num">2</span>
                 <div>
-                    <h3>Step 2 &mdash; Contact Information</h3>
+                    <h3>Phase 2 &mdash; Contact Information</h3>
                     <div class="step-desc">Name → Email → Phone → ZIP → Consent → Submit</div>
                 </div>
             </div>
@@ -1170,6 +1474,15 @@
             </div>
         </div>
         
+        <!-- PHASE 2 → THANK YOU TRANSITION -->
+        <div class="phase-transition">
+            <div class="transition-line" style="background: linear-gradient(90deg, var(--highlight-purple), var(--success-green));"></div>
+            <div class="transition-label">Successful Submit</div>
+            <div class="transition-icon" style="background: linear-gradient(135deg, var(--success-green), #059669);">✓</div>
+            <div class="transition-label">Thank You Page</div>
+            <div class="transition-line" style="background: linear-gradient(90deg, var(--success-green), #d4edda);"></div>
+        </div>
+        
         <!-- PASSIVE / AMBIENT BEHAVIORS -->
         <div class="flow-step-group">
             <div class="flow-step-group-header">
@@ -1268,7 +1581,7 @@
                     </div>
                     <div class="flow-result">
                         <div class="flow-arrow">Open Help Modal with step-specific content</div>
-                        <div class="flow-note">Step 1: shows program selection guidance + popular programs. Step 2: shows contact info explanation + "what happens next" + privacy assurance.</div>
+                        <div class="flow-note">Phase 1: shows program selection guidance + popular programs. Phase 2: shows contact info explanation + "what happens next" + privacy assurance.</div>
                     </div>
                 </div>
             </div>
@@ -1481,20 +1794,20 @@
         <details>
             <summary>📖 Step-Specific Help Content</summary>
             <div class="card-grid" style="padding: 25px;">
-                <div class="visual-card">
+                <div class="visual-card" style="border-top-color: var(--highlight-blue);">
                     <div class="card-header">
                         <span class="card-icon">📋</span>
-                        <h4 class="card-title">Step 1: Program Selection</h4>
+                        <h4 class="card-title">Phase 1: Program Selection</h4>
                     </div>
                     <div class="card-body">
                         <p><strong>Career goals</strong> – Choose the field you want to study.</p>
                         <p><strong>Popular programs:</strong> Business (MBA, Accounting), Healthcare (RN to BSN), Education, Technology (IT, Cybersecurity)</p>
                     </div>
                 </div>
-                <div class="visual-card">
+                <div class="visual-card" style="border-top-color: var(--highlight-purple);">
                     <div class="card-header">
                         <span class="card-icon">📋</span>
-                        <h4 class="card-title">Step 2: Contact Information</h4>
+                        <h4 class="card-title">Phase 2: Contact Information</h4>
                     </div>
                     <div class="card-body">
                         <p><strong>What happens next:</strong> Email with program details, admissions counselor call within 1-2 business days.</p>
@@ -1553,7 +1866,7 @@
                 <tr><td>&gt;30s on empty field</td><td>Smart Tip</td><td>warning</td><td>On blur</td><td>User spent 30+ seconds on a field and left it empty</td></tr>
                 <tr><td>Education level selected</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>After valid selection</td></tr>
                 <tr><td>Program selected</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>After valid selection</td></tr>
-                <tr><td>Step 1 completed</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>On step transition</td></tr>
+                <tr><td>Phase 1 completed</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>On phase transition (Phase 1 → Phase 2)</td></tr>
                 <tr><td>60s inactivity</td><td>Smart Tip + Badge</td><td>warning</td><td>After timeout</td><td>Has form data, not submitted</td></tr>
                 <tr><td>Form data restored</td><td>Smart Tip</td><td>success</td><td>Immediate</td><td>On page load with saved data</td></tr>
                 <tr><td>Validation error</td><td>Smart Tip</td><td>warning</td><td>On validation</td><td>Form is invalid and user has engaged</td></tr>
@@ -1593,7 +1906,7 @@
             <tbody>
                 <tr><td>Form Completion Rate</td><td>Primary</td><td>Submissions / Unique Visitors</td></tr>
                 <tr><td>Time to Complete</td><td>Secondary</td><td>Avg seconds from load to submit</td></tr>
-                <tr><td>Step 1 Drop-off</td><td>Secondary</td><td>% who don't advance to Step 2</td></tr>
+                <tr><td>Phase 1 Drop-off</td><td>Secondary</td><td>% who don't advance to Phase 2</td></tr>
                 <tr><td>Help Interaction Rate</td><td>Secondary</td><td>% who interact with help system</td></tr>
                 <tr><td>Field Error Rate</td><td>Secondary</td><td>Errors per submission attempt</td></tr>
                 <tr><td>Abandonment Rate</td><td>Secondary</td><td>% who leave with partial data</td></tr>
@@ -1605,17 +1918,17 @@
             <table>
                 <thead><tr><th>Event Name</th><th>Data Fields</th><th>When Fired</th></tr></thead>
                 <tbody>
-                    <tr><td>form_viewed</td><td>step, variation</td><td>Page load</td></tr>
+                    <tr><td>form_viewed</td><td>phase, variation</td><td>Page load</td></tr>
                     <tr><td>form_engaged</td><td>timeToEngage</td><td>First interaction</td></tr>
                     <tr><td>welcome_message_shown</td><td>-</td><td>After engagement</td></tr>
                     <tr><td>field_help_shown</td><td>field, helpType</td><td>Focus on field</td></tr>
                     <tr><td>struggling_help_shown</td><td>field, attempts</td><td>&gt;2 attempts</td></tr>
-                    <tr><td>abandonment_help_offered</td><td>step, timeOnPage</td><td>60s inactivity</td></tr>
-                    <tr><td>help_modal_opened</td><td>step</td><td>Click help button</td></tr>
+                    <tr><td>abandonment_help_offered</td><td>phase, timeOnPage</td><td>60s inactivity</td></tr>
+                    <tr><td>help_modal_opened</td><td>phase</td><td>Click help button</td></tr>
                     <tr><td>tooltip_opened</td><td>tooltipId</td><td>Hover/click tooltip</td></tr>
                     <tr><td>smart_tip_closed</td><td>tipType, autoOrManual</td><td>Tip dismissed</td></tr>
-                    <tr><td>step_completed</td><td>step, educationLevel, program</td><td>Step transition</td></tr>
-                    <tr><td>form_submitted</td><td>timeToComplete, helpInteractions</td><td>Successful submit</td></tr>
+                    <tr><td>phase_completed</td><td>phase, educationLevel, program</td><td>Phase 1 → Phase 2 transition</td></tr>
+                    <tr><td>form_submitted</td><td>timeToComplete, helpInteractions</td><td>Phase 2 successful submit</td></tr>
                     <tr><td>validation_error_shown</td><td>field, errorType</td><td>Validation failure</td></tr>
                 </tbody>
             </table>
@@ -1641,7 +1954,7 @@
                 <li>Floating help button visible and clickable on all pages</li>
                 <li>Help badge appears after 60 seconds of inactivity</li>
                 <li>Help modal opens/closes correctly (overlay, × button, Escape)</li>
-                <li>Help modal content switches based on current form step</li>
+                <li>Help modal content switches based on current phase (Phase 1 vs Phase 2)</li>
                 <li>Tooltips work on hover (desktop) and click (mobile)</li>
                 <li>All events fire correctly to GA4</li>
                 <li>Mobile responsive design works (test 320px-768px)</li>

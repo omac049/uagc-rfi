@@ -11,6 +11,8 @@
 
 1. [Executive Summary](#1-executive-summary)
 2. [**Support Bubble Flow**](#2-support-bubble-flow)
+   - [Phase 1 — Program Selection](#phase-1--program-selection)
+   - [Phase 2 — Contact Information](#phase-2--contact-information)
 3. [Component Overview](#3-component-overview)
 4. [Smart Tip Container](#4-smart-tip-container)
 5. [Floating Help Button](#5-floating-help-button)
@@ -41,6 +43,13 @@ Support bubbles are a contextual help system designed to:
 | Help Modal | Detailed assistance | On-demand |
 | Field Tooltips | Quick field hints | On hover/click |
 
+### Form Flow
+
+The form follows a **2-phase approach** before reaching the thank-you page:
+- **Phase 1:** Program Selection (education level + degree program)
+- **Phase 2:** Contact Information (name, email, phone, ZIP)
+- **Complete:** Thank You Page (confirmation & next steps)
+
 ### Expected Impact
 
 - **Primary Metric:** Form completion rate
@@ -53,7 +62,9 @@ Support bubbles are a contextual help system designed to:
 
 > **How to read this section:** Each item describes a **user action** followed by the **exact bubble** that appears. Bubbles are typed: 🔵 info · 🟢 success · 🟡 warning.
 
-### Step 1 — Program Selection
+> **Two-phase journey:** Phase 1 (Program Selection) → Phase 2 (Contact Info) → Thank You Page
+
+### Phase 1 — Program Selection
 
 | # | User Action | → Bubble Response | Type |
 |---|------------|-------------------|------|
@@ -63,9 +74,11 @@ Support bubbles are a contextual help system designed to:
 | 4 | **Clicks / focuses the Select Your Degree dropdown** | 📚 **Select Your Degree Program** — "Choose the specific degree that matches your educational goals. Each program is designed for working adults and offers flexible online learning." | 🔵 info |
 | 5 | **Selects a Degree Program** | ✨ **Progress Update** — "Excellent! 👏 You're halfway there. Just need your contact info." | 🟢 success |
 | 6 | **Clicks Next with missing required fields** | ⚠️ **Required Fields Missing** — "Please complete all required fields before continuing." · *Scrolls to first error* | 🟡 warning |
-| 7 | **Clicks Next with valid fields** | 🚀 **Progress Update** — "Almost done! 🚀 Last step — your contact information." · *Transitions to Step 2* | 🟢 success |
+| 7 | **Clicks Next with valid fields** | 🚀 **Progress Update** — "Almost done! 🚀 Last step — your contact information." · *Transitions to Phase 2* | 🟢 success |
 
-### Step 2 — Contact Information
+---
+
+### Phase 2 — Contact Information
 
 | # | User Action | → Bubble Response | Type |
 |---|------------|-------------------|------|
@@ -84,7 +97,7 @@ Support bubbles are a contextual help system designed to:
 | **30+ seconds on a field**, leaves it empty | 🆘 **Need Help?** — Field-specific struggling message | 🟡 warning | |
 | **60 seconds of total inactivity** (no mouse, keyboard, click) | 🆘 **Need Assistance?** — "Still here? Need help completing the form? Click the help button (?)!" · *Red badge on floating help button* | 🟡 warning | Only if user has entered some data |
 | **Returns to form with saved data** (within 7 days) | 💾 **Progress Restored** — "We restored your previous progress! Continue where you left off." | 🟢 success | Data auto-saves every 10s |
-| **Clicks floating help button (?)** at any time | *Opens Help Modal* with step-specific content | — | Step 1: program guidance. Step 2: contact info + privacy |
+| **Clicks floating help button (?)** at any time | *Opens Help Modal* with phase-specific content | — | Phase 1: program guidance. Phase 2: contact info + privacy |
 
 ### Timing Rules
 
@@ -184,7 +197,7 @@ Each smart tip contains:
 |---------|---------|------|
 | Education level selected | Great choice! 🎯 Now let's find your perfect program. | success |
 | Program selected | Excellent! 👏 You're halfway there. Just need your contact info. | success |
-| Step 1 completed | Almost done! 🚀 Last step — your contact information. | success |
+| Phase 1 completed | Almost done! 🚀 Last step — your contact information. | success |
 
 #### Error & Warning Messages
 
@@ -264,13 +277,13 @@ The modal contains three sections:
 
 ### Content by Step
 
-#### Step 1 Content (Program Selection)
+#### Phase 1 Content (Program Selection)
 
 - **Area of Interest guidance:** "Choose the field you want to study — this could be related to your current career or a new field you want to explore."
 - **Degree Program guidance:** "After selecting an area, choose the specific degree. Consider your career goals, bachelor's vs. master's, and programs that match your interests."
 - **Popular Programs list:** Business (MBA, Accounting), Healthcare (RN to BSN), Education (Early Childhood), Technology (IT, Cybersecurity)
 
-#### Step 2 Content (Contact Information)
+#### Phase 2 Content (Contact Information)
 
 - **Why we need it:** Send program information, answer enrollment questions, explain financial aid options, guide through application
 - **Privacy assurance:** "Your information is secure and will only be used by UAGC for educational opportunities. We won't share it with third parties."
@@ -319,7 +332,7 @@ Each form field with a tooltip has a small (?) icon next to its label. Clicking 
 | >30s on empty field | Smart Tip | warning | On blur | User spent 30+ seconds on a field and left it empty |
 | Education level selected | Smart Tip | success | Immediate | After valid selection |
 | Program selected | Smart Tip | success | Immediate | After valid selection |
-| Step 1 completed | Smart Tip | success | Immediate | On step transition |
+| Phase 1 completed | Smart Tip | success | Immediate | On phase transition (Phase 1 → Phase 2) |
 | 60s inactivity | Smart Tip + Badge | warning | After timeout | Has form data, not submitted |
 | Form data restored | Smart Tip | success | Immediate | On page load with saved data |
 | Validation error | Smart Tip | warning | On validation | Form is invalid and user has engaged |
@@ -354,16 +367,16 @@ Each form field with a tooltip has a small (?) icon next to its label. Clicking 
 
 | Event Name | Data Fields | When Fired |
 |------------|-------------|------------|
-| form_viewed | step, variation | Page load |
+| form_viewed | phase, variation | Page load |
 | form_engaged | timeToEngage | First interaction |
 | welcome_message_shown | — | After engagement |
 | field_help_shown | field, helpType | Focus on field |
 | struggling_help_shown | field, attempts | >2 attempts on field |
-| abandonment_help_offered | step, timeOnPage | 60s inactivity |
-| help_modal_opened | step | Click help button |
+| abandonment_help_offered | phase, timeOnPage | 60s inactivity |
+| help_modal_opened | phase | Click help button |
 | tooltip_opened | tooltipId | Hover/click tooltip |
 | smart_tip_closed | tipType, autoOrManual | Tip dismissed |
-| step_completed | step, educationLevel, program | Step transition |
+| phase_completed | phase, educationLevel, program | Phase 1 → Phase 2 transition |
 | form_submitted | timeToComplete, helpInteractions | Successful submit |
 | validation_error_shown | field, errorType | Validation failure |
 
@@ -373,7 +386,7 @@ Each form field with a tooltip has a small (?) icon next to its label. Clicking 
 |--------|------|------------|
 | Form Completion Rate | Primary | Submissions / Unique Visitors |
 | Time to Complete | Secondary | Avg seconds from load to submit |
-| Step 1 Drop-off | Secondary | % who don't advance to Step 2 |
+| Phase 1 Drop-off | Secondary | % who don't advance to Phase 2 |
 | Help Interaction Rate | Secondary | % who interact with help system |
 | Field Error Rate | Secondary | Errors per submission attempt |
 | Abandonment Rate | Secondary | % who leave with partial data |

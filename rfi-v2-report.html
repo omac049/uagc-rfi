@@ -41,6 +41,8 @@
             /* UAGC Official Brand Colors */
             --arizona-red: #AB0520;
             --arizona-blue: #0C234B;
+            --cta-gold: #E8A93E;
+            --cta-gold-hover: #D4952F;
             
             /* Brand Highlight Colors */
             --highlight-orange: #EF9600;
@@ -3141,7 +3143,7 @@
                 <p style="margin: 0; color: #666; font-size: 0.95rem;">Analyzing 4 major competitors across 6 key dimensions</p>
             </div>
             <div style="display: flex; gap: 10px;">
-                <button onclick="expandAll()" style="padding: 12px 24px; background: linear-gradient(135deg, #0C234B 0%, #1a3a6b 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; box-shadow: 0 2px 8px rgba(12,35,75,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(12,35,75,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(12,35,75,0.2)'">
+                <button onclick="expandAll()" style="padding: 12px 24px; background: var(--cta-gold); color: #0C234B; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; box-shadow: 0 2px 8px rgba(232,169,62,0.3);" onmouseover="this.style.background='var(--cta-gold-hover)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(232,169,62,0.4)'" onmouseout="this.style.background='var(--cta-gold)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(232,169,62,0.3)'">
                     📂 Expand All
                 </button>
                 <button onclick="collapseAll()" style="padding: 12px 24px; background: linear-gradient(135deg, #6c757d 0%, #868e96 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; box-shadow: 0 2px 8px rgba(108,117,125,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(108,117,125,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(108,117,125,0.2)'">

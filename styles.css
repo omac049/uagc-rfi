@@ -29,6 +29,7 @@
     
     /* Status Colors */
     --color-success: #007D8A;      /* River */
+    --river: #007D8A;              /* Alias for River (used in some components) */
     --color-error: #AB0520;        /* Arizona Red */
     --color-warning: #EF9600;      /* Orange */
     
@@ -125,7 +126,7 @@ body {
 
 .rfi-subtitle {
     font-size: var(--font-size-lg);
-    color: var(--highlight-sky);
+    color: var(--cta-gold);
     font-weight: 400;
 }
 
@@ -149,7 +150,7 @@ body {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--arizona-red), var(--highlight-orange));
+    background: linear-gradient(90deg, var(--arizona-blue) 0%, var(--color-primary-light) 100%);
     border-radius: 999px;
     transition: width 0.4s ease-in-out;
     width: 50%;
@@ -389,9 +390,9 @@ details summary:hover {
 }
 
 .radio-label:hover {
-    background-color: #FFF5F7;
-    border-color: var(--arizona-red);
-    box-shadow: 0 2px 4px rgba(171, 5, 32, 0.1);
+    background-color: var(--color-bg-light);
+    border-color: var(--arizona-blue);
+    box-shadow: 0 2px 4px rgba(12, 35, 75, 0.1);
 }
 
 .radio-label input[type="radio"] {
@@ -399,6 +400,7 @@ details summary:hover {
     cursor: pointer;
     width: 1.25rem;
     height: 1.25rem;
+    accent-color: var(--arizona-blue);
 }
 
 .radio-label span {
@@ -420,6 +422,7 @@ details summary:hover {
     width: 1.25rem;
     height: 1.25rem;
     flex-shrink: 0;
+    accent-color: var(--arizona-blue);
 }
 
 .checkbox-text {
@@ -497,21 +500,21 @@ details summary:hover {
 }
 
 .btn-primary {
-    background: var(--river);
-    color: white;
+    background: var(--cta-gold);
+    color: var(--arizona-blue);
     font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 125, 138, 0.25);
+    box-shadow: 0 4px 6px rgba(232, 169, 62, 0.25);
 }
 
 .btn-primary:hover {
-    background: #005f6a;
+    background: var(--cta-gold-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 125, 138, 0.3);
+    box-shadow: 0 6px 16px rgba(232, 169, 62, 0.3);
 }
 
 .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 125, 138, 0.25);
+    box-shadow: 0 2px 4px rgba(232, 169, 62, 0.25);
 }
 
 .btn-primary:disabled {
@@ -934,7 +937,7 @@ details summary:hover {
 
 .progress-percentage {
     font-size: var(--font-size-sm);
-    color: var(--river);
+    color: var(--arizona-blue);
     font-weight: 700;
 }
 
@@ -1550,7 +1553,7 @@ details summary:hover {
 .smart-tip-close:focus-visible,
 .help-modal-close:focus-visible,
 .suggestion-accept:focus-visible {
-    outline: 3px solid var(--arizona-red);
+    outline: 3px solid var(--arizona-blue);
     outline-offset: 2px;
 }
 
