@@ -445,57 +445,74 @@
                             <span class="form-error" id="stateError" role="alert"></span>
                         </div>
 
-                        <!-- Optional Fields - Compact -->
-                        <details style="border-top: 1px solid #e5e7eb; margin: 15px 0; padding-top: 15px;">
-                            <summary style="color: #6b7280; font-size: 0.85rem; margin-bottom: 15px; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 6px; font-weight: 500;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.2s;">
-                                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Personalization Fields -->
+                        <div class="field-group">
+                            <div class="field-group-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Optional: Help us personalize your experience
-                            </summary>
-                            
-                            <div class="form-row" style="gap: 15px; margin-bottom: 0;">
-                                <div class="form-group" style="margin-bottom: 0;">
-                                    <label class="form-label" style="margin-bottom: 8px; font-size: 0.9rem;">Military Status</label>
-                                    <div class="radio-group" style="gap: 8px;">
-                                        <label class="radio-label" style="padding: 8px 12px; font-size: 0.9rem;">
-                                            <input type="radio" name="militaryStatus" value="active-duty" autocomplete="off" />
-                                            <span>Active Duty</span>
-                                        </label>
-                                        <label class="radio-label" style="padding: 8px 12px; font-size: 0.9rem;">
-                                            <input type="radio" name="militaryStatus" value="veteran" autocomplete="off" />
-                                            <span>Veteran</span>
-                                        </label>
-                                        <label class="radio-label" style="padding: 8px 12px; font-size: 0.9rem;">
-                                            <input type="radio" name="militaryStatus" value="spouse-dependent" autocomplete="off" />
-                                            <span>Spouse/Dependent</span>
-                                        </label>
-                                        <label class="radio-label" style="padding: 8px 12px; font-size: 0.9rem;">
-                                            <input type="radio" name="militaryStatus" value="no" autocomplete="off" />
-                                            <span>No</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                Help Us Personalize Your Experience
+                            </div>
 
-                                <div class="form-group" style="margin-bottom: 0;">
-                                    <label for="startTimeline" class="form-label" style="margin-bottom: 8px; font-size: 0.9rem;">Start Timeline</label>
-                                    <select 
-                                        id="startTimeline" 
-                                        name="startTimeline" 
-                                        class="form-select"
-                                        autocomplete="off"
-                                        style="font-size: 0.9rem;"
-                                    >
-                                        <option value="">Select timeline...</option>
-                                        <option value="immediately">Immediately - Ready to enroll</option>
-                                        <option value="within-3-months">Within 3 months</option>
-                                        <option value="3-6-months">3-6 months</option>
-                                        <option value="6-12-months">6-12 months</option>
-                                        <option value="just-exploring">Just exploring</option>
-                                    </select>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label class="form-label" style="margin-bottom: 10px; font-size: 0.9rem;">Military Status</label>
+                                <div class="bubble-radio-group">
+                                    <label class="bubble-radio">
+                                        <input type="radio" name="militaryStatus" value="active-duty" autocomplete="off" />
+                                        <span class="bubble-radio-pill">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 2L2 7V13C2 18.5 6.84 23.74 12 25C17.16 23.74 22 18.5 22 13V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                                <path d="M12 8L13.1 10.9L16 11.2L14 13L14.6 16L12 14.4L9.4 16L10 13L8 11.2L10.9 10.9L12 8Z" fill="currentColor"/>
+                                            </svg>
+                                            Active Duty
+                                        </span>
+                                    </label>
+                                    <label class="bubble-radio">
+                                        <input type="radio" name="militaryStatus" value="veteran" autocomplete="off" />
+                                        <span class="bubble-radio-pill">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Veteran
+                                        </span>
+                                    </label>
+                                    <label class="bubble-radio">
+                                        <input type="radio" name="militaryStatus" value="spouse-dependent" autocomplete="off" />
+                                        <span class="bubble-radio-pill">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 21V19C17 16.79 15.21 15 13 15H5C2.79 15 1 16.79 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                            Spouse/Dependent
+                                        </span>
+                                    </label>
+                                    <label class="bubble-radio">
+                                        <input type="radio" name="militaryStatus" value="no" autocomplete="off" />
+                                        <span class="bubble-radio-pill">Not Military</span>
+                                    </label>
                                 </div>
                             </div>
-                        </details>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="startTimeline" class="form-label" style="margin-bottom: 8px; font-size: 0.9rem;">When do you want to start?</label>
+                                <select 
+                                    id="startTimeline" 
+                                    name="startTimeline" 
+                                    class="form-select"
+                                    autocomplete="off"
+                                    style="font-size: 0.9rem;"
+                                >
+                                    <option value="">Select timeline...</option>
+                                    <option value="immediately">Immediately - Ready to enroll</option>
+                                    <option value="within-3-months">Within 3 months</option>
+                                    <option value="3-6-months">3-6 months</option>
+                                    <option value="6-12-months">6-12 months</option>
+                                    <option value="just-exploring">Just exploring options</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <!-- Compact TCPA Consent -->
                         <div class="form-group" style="margin: 15px 0 12px 0;">
@@ -558,12 +575,51 @@
                         </div>
                     </div>
 
-                    <!-- Hidden Fields -->
+                    <!-- Hidden Fields — Lead API Payload -->
+                    <!-- Program / Education Level -->
                     <input type="hidden" id="programId" name="programId" />
-                    <input type="hidden" id="vendor" name="vendor" value="uagc-homepage" />
-                    <input type="hidden" id="formType" name="formType" value="rfi-homepage" />
+                    <input type="hidden" id="salesforceProgramId" name="salesforceProgramId" />
+
+                    <!-- Tracking / Session -->
+                    <input type="hidden" id="uniqueLeadId" name="uniqueLeadId" />
+                    <input type="hidden" id="vendor" name="vendor" value="uagc-homegrown" />
+                    <input type="hidden" id="sourceid" name="sourceid" value="UAGCFTG" />
+                    <input type="hidden" id="webLandingURL" name="webLandingURL" />
+                    <input type="hidden" id="referrer" name="referrer" />
+                    <input type="hidden" id="originpage" name="originpage" />
+                    <input type="hidden" id="clientid" name="clientid" />
+                    <input type="hidden" id="deviceType" name="deviceType" />
+                    <input type="hidden" id="leadidTcpaDisclosure" name="leadidTcpaDisclosure" />
+
+                    <!-- Analytics / Behavioral -->
+                    <input type="hidden" id="gaGoogleId" name="gaGoogleId" />
+                    <input type="hidden" id="visitorStatus" name="visitorStatus" />
+                    <input type="hidden" id="gaSource" name="gaSource" />
+                    <input type="hidden" id="gaMedium" name="gaMedium" />
+                    <input type="hidden" id="gaTimestamp" name="gaTimestamp" />
+                    <input type="hidden" id="gaTotalTimeSec" name="gaTotalTimeSec" />
+                    <input type="hidden" id="gtmPageviewCount" name="gtmPageviewCount" />
+                    <input type="hidden" id="lastVisitedPage" name="lastVisitedPage" />
+                    <input type="hidden" id="ipAddress" name="ipAddress" />
+
+                    <!-- Optimizely Experiments (v2 — up to 4 concurrent) -->
+                    <input type="hidden" id="experimentId1" name="experimentId1" />
+                    <input type="hidden" id="experienceVariation1" name="experienceVariation1" />
+                    <input type="hidden" id="experimentId2" name="experimentId2" />
+                    <input type="hidden" id="experienceVariation2" name="experienceVariation2" />
+                    <input type="hidden" id="experimentId3" name="experimentId3" />
+                    <input type="hidden" id="experienceVariation3" name="experienceVariation3" />
+                    <input type="hidden" id="experimentId4" name="experimentId4" />
+                    <input type="hidden" id="experienceVariation4" name="experienceVariation4" />
+
+                    <!-- Partner -->
                     <input type="hidden" id="partnerId" name="partnerId" value="" />
                     <input type="hidden" id="partnerName" name="partnerName" value="" />
+
+                    <!-- RFI Form Metadata -->
+                    <input type="hidden" id="rfiFormName" name="rfiFormName" value="homepage_rfi_form" />
+                    <input type="hidden" id="rfiFormType" name="rfiFormType" value="homepage desktop" />
+                    <input type="hidden" id="rfiFormId" name="rfiFormId" value="1" />
                     
                 </form>
 

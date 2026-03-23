@@ -408,6 +408,73 @@ details summary:hover {
     color: var(--color-text);
 }
 
+/* Bubble Radio Pills */
+.bubble-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.bubble-radio {
+    cursor: pointer;
+}
+
+.bubble-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.bubble-radio-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 2px solid var(--color-border);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    background: white;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.bubble-radio-pill svg {
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.bubble-radio-pill:hover {
+    border-color: var(--arizona-blue);
+    color: var(--arizona-blue);
+    background: #f0f5ff;
+    box-shadow: 0 2px 6px rgba(12, 35, 75, 0.1);
+}
+
+.bubble-radio-pill:hover svg {
+    opacity: 1;
+}
+
+.bubble-radio input[type="radio"]:checked + .bubble-radio-pill {
+    border-color: var(--arizona-blue);
+    background: var(--arizona-blue);
+    color: white;
+    box-shadow: 0 2px 8px rgba(12, 35, 75, 0.25);
+}
+
+.bubble-radio input[type="radio"]:checked + .bubble-radio-pill svg {
+    opacity: 1;
+    color: white;
+}
+
+.bubble-radio input[type="radio"]:focus-visible + .bubble-radio-pill {
+    outline: 3px solid rgba(12, 35, 75, 0.3);
+    outline-offset: 2px;
+}
+
 /* Checkbox */
 .checkbox-label {
     display: flex;
